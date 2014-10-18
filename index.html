@@ -1,11 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Documento sin título</title>
+    <meta charset="utf-8">
+    <title>k_heal</title>
+    <link rel="stylesheet" type="text/css" href="css/KHeal.css">
+	<script src="js/jquery.min.js"></script>
+    <script src="js/KHeal.js"></script>
 </head>
 
 <body>
-<h1>hola mundo</h1>
+<p>K-Heal </p>
+<ul>
+  <li><a href="#venModaIngresar"  onClick="Ingresar();">Ingresar</a> // abre ventana modal que esta en div oculto *</li>
+  <li><a href="#venModaIngresar"  onClick="Navegar('admin.html');">Admin </a>// Administracion, cuando se ingresa logeado con admin</li>
+  <li><a href="#venModaRegistrar"  onClick="Registrar();"> Registrarse *</a></li>
+  <li><a href="#venModaNotif"  onClick="Notificaciones();"> Notificaciones  *</a></li>   
+  <li><a href="#" onClick="Navegar('cuenta.html');" >Cuenta </a>// se habre al estar ya registrado</li>
+  <li><a href="#" onClick="Navegar('consuTratamiento.html');"> Consultar Tratamiento</a>//al seleccionar un tratamiento de una enfermedad </li> 
+  <li><a href="#" onClick="Navegar('verTratamientosDe.html');"> Listar Tratamiento de Enfermedad  </a>//  muestra lista de tratamientos de  una enfer</li> 
+  <li><a href="#" onClick="Navegar('mantTratamiento.html');">Editar Tratamiento </a>// al consultar un tratamiento por el usuario que lo creo o solicitar la creacion de uno nuevo</li> 
+  <li><a href="#" onClick="Navegar('consuEnferme.html')">Constultar Enfermedad </a>// seleccion de una enfermedad </li>
+  <li>Salir</li>
+</ul>
+<h2>K-HEAL</h2>
+<div id="divFramePrincipal">Acá estara el componente de Buscar las enfermedades </div> 
+
+<div id="venModaIngresar" class="Oculto"><!-- este seria el apartado de la ventana modal de INGRESAR-->	
+		<div >
+			<div >
+				 <button id="btnCerrarModal" type="button">X</button>
+				<h4 id="myModalLabel">
+					ENTRAR
+				</h4>
+			</div>
+			<div>
+				 <form >                    
+					<div >
+						 <label for="txtNombre">Usuario</label><input type="text"  id="txtUsuario" value="" />
+					</div>                        
+					<div >
+						 <label for="txtCotrase">Contraseña</label><input type="password"  id="txtCotrase" />
+					</div> 
+				</form>
+			</div>
+			<div  > 
+                 <button type="button" id="btnAceptarIngreso">ACEPTAR</button>
+			</div>
+		</div>						
+</div>
+
+
+<div id="venModaRegistrar" class="Oculto"><!-- este seria el apartado de la ventana modal de REGISTRO -->
+	<div>		
+			<div>
+				 <button id="btnCerrarModal2" type="button">X</button>
+				<h4>
+					REGISTRO
+				</h4>
+			</div>
+			<div>
+				 <form>             
+					<div >
+						 <label for="txtCorreo">Correo Electronico</label><input type="text"  id="txtCorreo"/>
+					</div>                        
+					<div >
+						 <label for="txtNombre">Nombre</label><input type="text"  id="txtNombre" />
+					</div> 
+					<div >
+						 <label for="txtCotrase">Contraseña</label><input type="password"  id="txtCotrase" />
+					</div> 
+					<div >
+						 <label for="txtCotraseVerif">Verifique</label><input type="password"  id="txtCotraseVerif" />
+					</div> 
+				</form>
+			</div>
+			<div > 
+                 <button type="button" id="btnAceptarRegistro">ACEPTAR</button>
+			</div>
+			<div > 
+                 <button type="button" id="btnRegistroFace">FACEBOOK</button>
+			</div>
+			<div > 
+                 <button type="button" id="btnRegistroGoogle">GOOGLE</button>
+			</div>
+	</div>
+						
+</div>
+
+<div id="venModaNotif" class="Oculto"><!-- este seria el apartado de la ventana modal de NOTIFICACIONES-->
+	<div>		
+			<div>
+				 <button id="btnCerrarNotif" type="button">X</button>
+				<h4>
+					NOTIFICACIONES
+				</h4>
+			</div>
+			<div id="divCuerpoNotif">
+			    <ul>
+				 <li><a href="#" >Notificacion 1</a></li>
+				 <li><a href="#" >Notificacion 2</a></li>
+				</ul>
+			</div>			
+	</div>
+						
+</div>
+
 </body>
 </html>
