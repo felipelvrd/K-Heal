@@ -21,7 +21,7 @@ $(document).ready(function(){
 		});
 		
 	$("#btnAceptarRegistro").click(function (){			
-		$("#venModaRegistrar").addClass("Oculto");
+		//$("#venModaRegistrar").addClass("Oculto");
 		});
 	$("#btnRegistroFace").click(function (){			
 		$("#venModaRegistrar").addClass("Oculto");

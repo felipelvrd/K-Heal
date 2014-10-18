@@ -1,13 +1,9 @@
 <?php
 
-/**
- * @author Juan Luis Granados
- * @Fecha 27/08/14
- * @Descripcion Es un clase que tiene el string de conexion necesario para cualquier cosulta a BD,
- * es necesario incluir este archivo en cada archivo php donde se hagan consultas a BD
- */
+
 
 class DBManager{
+	
     var $conect;//Esta variable guarda la conexion a BD
     var $BaseDatos;//Nombre de la BD
     var $Servidor;//Servidor
@@ -16,11 +12,12 @@ class DBManager{
     
     //Constructor de la Conexion
     function DBManager(){
-        $this->BaseDatos = "bd_una_pregunta";
-        $this->Servidor = "localhost";
-        $this->Usuario ="root";
-        $this->Clave = "123";
-        $this->Puerto=8888;//Puede que en su pc el puerto no sea necesario, en la mia si porque yo especifique otro
+		include_once("configuracion.php");
+        $this->BaseDatos = $database_Conexion;
+        $this->Servidor = $hostname_Conexion;
+        $this->Usuario =$username_Conexion;
+        $this->Clave = $password_Conexion;
+        $this->Puerto=$port_Conexion;
     }
 
     //Inicia la conexion, retorna true si fue existosa
