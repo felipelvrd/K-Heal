@@ -27,7 +27,7 @@ function registrar(email,nombre,contrasena){
        var parametros = {
 		   "nombre" : nombre,
 		   "email" : email,
-		   "contrasena" : contrasena
+		   "contrasena" : $.sha256(contrasena)
        };
 	   
        $.ajax({

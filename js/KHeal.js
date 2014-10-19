@@ -17,7 +17,7 @@ function Notificaciones()
 
 $(document).ready(function(){ 
 	$("#btnAceptarIngreso").click(function (){		
-		$("#venModaIngresar").addClass("Oculto");
+		//$("#venModaIngresar").addClass("Oculto");
 		});
 		
 	$("#btnAceptarRegistro").click(function (){			

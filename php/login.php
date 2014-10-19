@@ -3,22 +3,29 @@
 include_once("phpClassConexion.php");
 
 $email = $_POST['email'];
-$nombre = $_POST['nombre'];
 $contrasena = NTLMHash($_POST['contrasena']);
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
 
 if($conexion->Conectar()==true){
 	try{
-		//Verifico si el correo ya esta registrado
-		if($resultado=mysqli_query($conexion->conect,"Select id from khlusuarios where correo = '$email';"))
-			if($resultado->num_rows!=0)
-				throw new Exception("El correo ya esta en uso.");
-			
-		//Registro el usuario
-		if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlusuarios (Nombre, Correo, Contrasena, Rol, Estado) VALUES ('$nombre', '$email', '$contrasena', 'U', 'A');")){
-			echo "Usuario registrado satisfactoriamente";
-		}
+		//Busco al usuario
+		if($resultado=mysqli_query($conexion->conect,"Select id,nombre,correo,rol,estado from khlusuarios where correo = '$email' and contrasena = '$contrasena';"))
+			//si regresa resultados
+			if($resultado->num_rows!=0){
+				$row=$resultado->fetch_assoc();
+				//verifico si es usuario activo
+				if($row['estado']=='A'){
+					session_start();
+					$_SESSION['idUsuario']=$row['id'];
+					echo "Login exitoso";
+				}
+				else{
+					throw new Exception("El usuario esta baneado");
+				}
+			}
+			else
+				throw new Exception("El correo electrónico o la contraseña ingresada es incorrecta.");
 		else{
 			throw new Exception("Ocurrio un error al intentar registrar al usuario".mysqli_connect_error());
 			exit;
