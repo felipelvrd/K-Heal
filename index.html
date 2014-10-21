@@ -1,30 +1,47 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
     <meta charset="utf-8">
     <title>k_heal</title>
     <link rel="stylesheet" type="text/css" href="css/KHeal.css">
-	<script src="javascript/jquery.min.js"></script>
-	<script src="javascript/sha256.jquery.debug.js"></script>
-    <script src="javascript/KHeal.js"></script>
-	<script src="javascript/registro.js"></script>
-	<script src="javascript/login.js"></script>
+	<script src="js/jquery.min.js"></script>
+    <script src="js/KHeal.js"></script>
 </head>
 
 <body>
-<p>K-Heal </p>
-<ul>
-  <li><a href="#venModaIngresar"  onClick="Ingresar();">Ingresar</a> // abre ventana modal que esta en div oculto *</li>
-  <li><a href="#venModaIngresar"  onClick="Navegar('admin.html');">Admin </a>// Administracion, cuando se ingresa logeado con admin</li>
-  <li><a href="#venModaRegistrar"  onClick="Registrar();"> Registrarse *</a></li>
-  <li><a href="#venModaNotif"  onClick="Notificaciones();"> Notificaciones  *</a></li>   
-  <li><a href="#" onClick="Navegar('cuenta.html');" >Cuenta </a>// se habre al estar ya registrado</li>
-  <li><a href="#" onClick="Navegar('consuTratamiento.html');"> Consultar Tratamiento</a>//al seleccionar un tratamiento de una enfermedad </li> 
-  <li><a href="#" onClick="Navegar('verTratamientosDe.html');"> Listar Tratamiento de Enfermedad  </a>//  muestra lista de tratamientos de  una enfer</li> 
-  <li><a href="#" onClick="Navegar('mantTratamiento.html');">Editar Tratamiento </a>// al consultar un tratamiento por el usuario que lo creo o solicitar la creacion de uno nuevo</li> 
-  <li><a href="#" onClick="Navegar('consuEnferme.html')">Constultar Enfermedad </a>// seleccion de una enfermedad </li>
-  <li>Salir</li>
-</ul>
+<div id="BarraSuperior" class="nav" > 
+      <!-- <img src="imagenes/kheal.ico" style="height:80px; width:80px;"></img>-->
+    <ul>
+      <li><a href="#" onClick="Salir();">Salir</a></li>
+      <li><a href="#venModaRegistrar"  onClick="Registrar();"> Registrarse</a></li>
+      <li><a href="#venModaIngresar"  onClick="Ingresar();">Ingresar</a></li>
+      <li><a href="#venModaIngresar"  onClick="Navegar('buscador.html');">Inicio</a></li>
+     
+	<!-- <li><a href="#venModaIngresar"  onClick="Navegar('admin.html');">Admin </a></li>
+      <li><a href="#venModaNotif"  onClick="Notificaciones();"> Notificaciones  *</a></li>   
+      
+      <li><a href="#" onClick="Navegar('cuenta.html');" >Cuenta </a></li>
+      <li><a href="#" onClick="Navegar('consuTratamiento.html');"> Consultar Tratamiento</a></li> 
+      <li><a href="#" onClick="Navegar('verTratamientosDe.html');"> Listar Tratamiento de Enfermedad  </a></li> 
+      <li><a href="#" onClick="Navegar('mantTratamiento.html');">Editar Tratamiento </a></li> 
+      <li><a href="#" onClick="Navegar('consuEnferme.html')">Constultar Enfermedad </a></li>
+	
+      <li><a href="#venModaRegistrar"  onClick="Registrar();"> Registrarse</a></li>
+      <li><a href="#venModaIngresar"  onClick="Ingresar();">Ingresar</a></li>
+      <li><a href="#venModaIngresar"  onClick="Navegar('buscador.html');">Inicio</a></li>
+      <li><a href="#venModaIngresar"  onClick="Navegar('admin.html');">Admin </a>// Administracion, cuando se ingresa logeado con admin</li>
+      <li><a href="#venModaNotif"  onClick="Notificaciones();"> Notificaciones  *</a></li>   
+      <li><a href="#" onClick="Navegar('cuenta.html');" >Cuenta </a>// se habre al estar ya registrado</li>
+      <li><a href="#" onClick="Navegar('consuTratamiento.html');"> Consultar Tratamiento</a>//al seleccionar un tratamiento de una enfermedad </li> 
+      <li><a href="#" onClick="Navegar('verTratamientosDe.html');"> Listar Tratamiento de Enfermedad  </a>//  muestra lista de tratamientos de  una enfer</li> 
+      <li><a href="#" onClick="Navegar('mantTratamiento.html');">Editar Tratamiento </a>// al consultar un tratamiento por el usuario que lo creo o solicitar la creacion de uno nuevo</li> 
+      <li><a href="#" onClick="Navegar('consuEnferme.html')">Constultar Enfermedad </a>// seleccion de una enfermedad </li>
+	
+	 -->     
+
+
+    </ul>
+</div>
 <h2>K-HEAL</h2>
 <div id="divFramePrincipal">Acá estara el componente de Buscar las enfermedades </div> 
 
@@ -39,19 +56,16 @@
 			<div>
 				 <form >                    
 					<div >
-						 <label for="txtUsuarioLogin">Usuario</label><input type="text"  id="txtUsuarioLogin" value="" />
+						 <label for="txtNombre">Usuario</label><input type="text"  id="txtUsuario" value="" />
 					</div>                        
 					<div >
-						 <label for="txtCotrasenaLogin">Contraseña</label><input type="password"  id="txtCotrasenaLogin" />
+						 <label for="txtCotrase">Contraseña</label><input type="password"  id="txtCotrase" />
 					</div> 
 				</form>
 			</div>
 			<div  > 
-                 <button type="button" id="btnAceptarLogin">ACEPTAR</button>
+                 <button type="button" id="btnAceptarIngreso">ACEPTAR</button>
 			</div>
-            <div>
-            <span id=spnMensajeLogin></span>
-            </div>
 		</div>						
 </div>
 
@@ -67,16 +81,16 @@
 			<div>
 				 <form>             
 					<div >
-						 <label for="txtCorreoRegistro">Correo Electronico</label><input type="text"  id="txtCorreoRegistro"/>
+						 <label for="txtCorreo">Correo Electronico</label><input type="text"  id="txtCorreo"/>
 					</div>                        
 					<div >
-						 <label for="txtNombreRegistro">Nombre</label><input type="text"  id="txtNombreRegistro" />
+						 <label for="txtNombre">Nombre</label><input type="text"  id="txtNombre" />
 					</div> 
 					<div >
-						 <label for="txtContrasenaRegistro">Contraseña</label> <input type="password"  id="txtContrasenaRegistro" />
+						 <label for="txtCotrase">Contraseña</label><input type="password"  id="txtCotrase" />
 					</div> 
 					<div >
-						 <label for="txtReContrasenaRegistro">Verifique</label><input type="password"  id="txtReContrasenaRegistro" />
+						 <label for="txtCotraseVerif">Verifique</label><input type="password"  id="txtCotraseVerif" />
 					</div> 
 				</form>
 			</div>
@@ -89,10 +103,6 @@
 			<div > 
                  <button type="button" id="btnRegistroGoogle">GOOGLE</button>
 			</div>
-            <div>
-            <span id=spnMensajeRegistro></span>
-            </div>
-            
 	</div>
 						
 </div>

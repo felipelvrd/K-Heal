@@ -3,22 +3,57 @@
 /*****************************************************************************
  ***********************  universal ******************************************
  *****************************************************************************/
- 
+nav{
+ 	display:block;
+ }
+
+
+ a:link {text-decoration:none;color:#0000cc;}
+ a:visited {text-decoration:none;color:#ffcc33;}
+ a:active {text-decoration:none;color:#ff0000;}
+ a:hover {text-decoration:underline;color:#999999;}
+  
+/*****************************************************************************
+ *************************** Clases ******************************************
+ *****************************************************************************/
+
  .Oculto
 {
 	visibility:collapse;
 }
  
- 
- 
- 
-/*****************************************************************************
- *************************** Clases ******************************************
- *****************************************************************************/
- 
- 
- 
+  #BarraSuperior{
+	font-family: "Century Gothic";
+	font-size: 18px;
+	width: 100%;
+	float: left;
+	margin: 0px;
+
+	border-radius: 0px 29px 29px 29px;
+	-moz-border-radius: 0px 29px 29px 29px;
+	-webkit-border-radius: 0px 29px 29px 29px;
+	border: 0px solid #000000;
+	background-color: #DDD;
+
+	} 
+		
+	#BarraSuperior ul li{
+	list-style: none;
+	position: relative;
+	display: block;
+	text-align: center;
+	float: right;
+	/*background: rgba(153,153,153,1);*/
+	padding: 10px;
+	}
+	#BarraSuperior ul li a{	
+		padding-right:15px;
+	}
+	
+
+	
  
  /*****************************************************************************
  ******************************** Id ******************************************
  *****************************************************************************/
+ 
