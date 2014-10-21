@@ -7,21 +7,20 @@ function ObtenerDatos()
 {
 	if (isset($_GET["Busqueda"])) {
 
-		echo $_GET["Busqueda"];
+		//echo $_GET["Busqueda"];
 
 		$conexion = new DBManager();//Instancia de la Conexion a BD
 		$conexion->Conectar();
 
 		$result = array();
-			
+	/*		
 		//$stmt = $conexion->conect->prepare("SELECT NOMBRE_EMPRESA,NOMBRE_CLIENTE,DESCRIPCION FROM tb_empresa WHERE ETIQUETAS LIKE ?");
-		$resultado=mysqli_query($conexion->conect,"SELECT NOMBRE_EMPRESA,NOMBRE_CLIENTE,DESCRIPCION FROM tb_empresa WHERE ETIQUETAS LIKE '".$_GET["Busqueda"] ."';");
+		$resultado=mysqli_query($conexion->conect,"SELECT Nombre,Descripcion FROM khlenfermedades WHERE ETIQUETAS LIKE '".$_GET["Busqueda"] ."';");
 		$salida="";
 		if($resultado->num_rows!=0){
 			while($row=$resultado->fetch_assoc()){
-				array_push($result,$row["NOMBRE_EMPRESA"]);
-				array_push($result,$row["NOMBRE_CLIENTE"]);
-				array_push($result,$row["DESCRIPCION"]);
+				array_push($result,$row["Nombre"]);
+				array_push($result,$row["Descripcion"]);
 			}
 		}
 		echo json_encode($result);
