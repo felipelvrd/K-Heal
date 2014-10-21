@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="registro.js" server="C:/xampp/htdocs/k-heal/" local="130582148447828767" remote="130582148440000000" Dst="0" />
-<file name="jquery.min.js" server="C:/xampp/htdocs/k-heal/" local="130581420780145680" remote="130581420780000000" Dst="0" />
-<file name="kheal.js" server="C:/xampp/htdocs/k-heal/" local="130581316174481822" remote="130581316170000000" Dst="0" />
-<file name="sha256.jquery.debug.js" server="C:/xampp/htdocs/k-heal/" local="130154513800000000" remote="130154513800000000" Dst="0" />
-<file name="login.js" server="C:/xampp/htdocs/k-heal/" local="130582164716564736" remote="130582164710000000" Dst="0" />
+<file name="registro.js" server="C:/xampp/htdocs/k-heal/" local="130582148447828767" remote="130582148440000000" />
+<file name="jquery.min.js" server="C:/xampp/htdocs/k-heal/" local="130581420780145680" remote="130581420780000000" />
+<file name="sha256.jquery.debug.js" server="C:/xampp/htdocs/k-heal/" local="130154513800000000" remote="130154513800000000" />
+<file name="login.js" server="C:/xampp/htdocs/k-heal/" local="130582164716564736" remote="130582164710000000" />
+<file name="jquery.min.js" server="C:/xampp/htdocs/kheal" local="130583232634927559" remote="130583232630000000" />
+<file name="sha256.jquery.debug.js" server="C:/xampp/htdocs/kheal" local="130583196270422788" remote="130583196270000000" />
+<file name="KHeal.js" server="C:/xampp/htdocs/kheal" local="130583196270929371" remote="130583196270000000" />
+<file name="registro.js" server="C:/xampp/htdocs/kheal" local="130583196270323458" remote="130583196270000000" />
+<file name="login.js" server="C:/xampp/htdocs/kheal" local="130583196270273793" remote="130583196270000000" />
+<file name="jquery-ui-1.9.2.min.js" server="C:/xampp/htdocs/kheal/" local="130583232632917358" remote="130583232630000000" />
+<file name="jquery.min.js" server="C:/xampp/htdocs/kheal/" local="130583232634927559" remote="130583232630000000" />
+<file name="sha256.jquery.debug.js" server="C:/xampp/htdocs/kheal/" local="130583196270422788" remote="130583196270000000" />
+<file name="KHeal.js" server="C:/xampp/htdocs/kheal/" local="130583196270929371" remote="130583196270000000" />
+<file name="registro.js" server="C:/xampp/htdocs/kheal/" local="130583196270323458" remote="130583196270000000" />
+<file name="login.js" server="C:/xampp/htdocs/kheal/" local="130583196270273793" remote="130583196270000000" />
 </dwsync>
