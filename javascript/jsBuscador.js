@@ -266,16 +266,16 @@ function ObtenerDatos(pBusqueda)
 	$.ajax({
 		type:'GET',
 		data:B,
-		url:'PHP/BUSQUEDAS/Consulta.php',
+		url:'php/Consulta.php',
 		dataType:'json',
 		success:function(response)
 		{
   		    var ResultadoBusqueda = response;
             items = [];
                                                   
-		    for(i=0;i<ResultadoBusqueda.length;i=i+3)
+		    for(i=0;i<ResultadoBusqueda.length;i=i+2)
 		    {
-			  addItem(ResultadoBusqueda[i],"Clientes/"+ResultadoBusqueda[i+1],ResultadoBusqueda[i+2]);   
+			  addItem(ResultadoBusqueda[i],"#",ResultadoBusqueda[i+1]);   
 		    }
 
             search();
