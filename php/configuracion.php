@@ -1,9 +1,9 @@
 <?php
 //     MySql
-$hostname_Conexion = "localhost";
+$hostname_Conexion = "felipelvrd.tk";
 $database_Conexion = "kheal";
-$username_Conexion = "root";
-$password_Conexion = "";
+$username_Conexion = "kheal";
+$password_Conexion = "123";
 $port_Conexion = 3306;
 
 ?>
