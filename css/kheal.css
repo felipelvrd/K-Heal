@@ -8,10 +8,12 @@ nav{
  }
 
 
- a:link {text-decoration:none;color:#0000cc;}
- a:visited {text-decoration:none;color:#ffcc33;}
- a:active {text-decoration:none;color:#ff0000;}
- a:hover {text-decoration:underline;color:#999999;}
+
+ a:link {text-decoration:none;color:rgba(3,2,1,1);}
+ a:visited {text-decoration:none;color:#ffffff;}
+ a:active {text-decoration:none;color:rgba(96,96,96,1);}
+ a:hover {text-decoration:underline;color:#ffffff;}
+ 
   
 /*****************************************************************************
  *************************** Clases ******************************************
@@ -29,11 +31,11 @@ nav{
 	float: left;
 	margin: 0px;
 
-	border-radius: 0px 29px 29px 29px;
-	-moz-border-radius: 0px 29px 29px 29px;
-	-webkit-border-radius: 0px 29px 29px 29px;
+	border-radius: 0px 10px 10px 10px;
+	-moz-border-radius: 0px 10px 10px 10px;
+	-webkit-border-radius: 0px 10px 10px 10px;
 	border: 0px solid #000000;
-	background-color: #DDD;
+	background-color: rgba(114,177,255,1);
 
 	} 
 		
