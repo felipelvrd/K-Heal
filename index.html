@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/cssBuscador.css">
     <script type="text/javascript" src="javascript/jsBuscador.js"></script>
     
-
+	<link rel="stylesheet" type="text/css" href="css/cajaFlotante.css">
     <script src="javascript/registro.js"></script>
 	<script src="javascript/login.js"></script>
 
@@ -102,7 +102,9 @@
 
 
 <div id="venModaRegistrar" class="Oculto"><!-- este seria el apartado de la ventana modal de REGISTRO -->
-	<div>		
+	<div class="dvTrianguloBorde" id='tbRegistrar'>
+    <div class="dvTriangulo" id="trRegistrar"></div>
+    <div class="dvFlotante" id="dvRegistrar">		
 			<div>
 				 <button id="btnCerrarModal2" type="button">X</button>
 				<h4>
@@ -136,7 +138,7 @@
 			</div>
 			<div>
             <span id=spnMensajeRegistro></span>
-            </div>	</div>
+            </div>	</div></div>
 						
 </div>
 

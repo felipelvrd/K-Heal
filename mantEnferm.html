@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Mantenimiento de Enfermedades</title>
+</head>
+
+<body>
+<h1>Enfermedades</h1>
+<div id="divBusEnfer"><img src="imagenes/Componentejose.png" width="551" height="450" alt="Imagen no disponible"></div>
+<div id="divDatEnfer">
+	<!-- -->
+        <div id="divImagenEnfer">
+          <h3>Imagen de Enfermedad</h3> 
+          <img id="imgPerfil"  alt="Imagen no disponible" src="" style="width:140px !important; height:140px !important;"/>
+           <h4> <a href="#">Cambiar Imagen</a></h4>              	 
+        </div>
+        <!-- -->
+       <div id="divDatosBasicos">
+        <h3>Nombre</h3>     
+        <div >
+             <input type="text"  id="txtNombEnfer"/>
+      	</div>   
+        <h3>Familia</h3>     
+        <div >
+        	 <input type="text"  id="txtFamiEnfer"/>
+        </div>   
+        <h3>Estado</h3>     
+        <div >
+         	<SELECT id="cbEstaEnfer" SIZE=1> 
+            <OPTION  class="form-control" >Activo</OPTION>
+            <OPTION  class="form-control" >Bloqueado</OPTION>
+            </SELECT> 
+        </div>
+      </div>
+      <!-- -->
+	  <div>
+		<div>
+			<h2>Descripcion </h2>
+			<input type="text" id="divDescriEnferCons"/>			
+		</div>
+
+		<div>
+			<h2>Historia </h2>
+			<input type="text" id="divHistoria"/>
+		</div>
+
+		<div>
+			<h2>Sintomas </h2>
+			<input type="text" id="divSintomas"/>
+		</div>
+
+		<div>
+			<h2>Enfermedades Relacionadas </h2>
+			<input type="text" id="DivEnferRelaci"/>
+		</div>
+
+		<div>
+			<h2>Enlaces Externos </h2>
+			<input type="text" id="DivEnlaces"/>
+		</div>
+		<div>
+			<h2>Otros </h2>
+			<input type="text" id="DivOtros"/>
+		</div>
+	  </div>
+</div>
+<div id="divBtnsEnfer">
+	<div > 
+         <button type="button" id="btnModificarEnfer">MODIFICAR</button>
+    </div>
+    <div > 
+         <button type="button" id="btnAgregarEnfer">AGREGAR</button>
+    </div>
+    <div > 
+         <button type="button" id="btnGuardarEnfer">GUARDAR</button>
+    </div>
+    <div > 
+         <button type="button" id="btnCancelarEnfer">CANCELAR</button>
+    </div>
+</div>
+</body>
+</html>

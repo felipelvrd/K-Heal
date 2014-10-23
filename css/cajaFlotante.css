@@ -1,0 +1,49 @@
+/* CSS Document */
+
+.dvFlotante, .dvTriangulo, .dvTrianguloBorde{
+	position:fixed;
+}
+.dvFlotante {
+	margin:2%;
+	margin-top:0px;
+	padding: 2%;	
+	background-color: #FFF;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #7B7B7B;
+	-webkit-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
+	box-shadow: 1px 1px 10px 1px rgba(0,0,0,0.75);
+	text-align: left;
+	z-index: 9;
+}
+.dvTriangulo {
+  border-bottom: 10px solid white;
+  border-left: 10px dotted transparent;
+  border-right: 10px dotted transparent;
+  margin-top:10px;
+  z-index: 10;
+}
+.dvTrianguloBorde{
+  border-bottom: 11px solid #7B7B7B;
+  border-left: 11px dotted transparent;
+  border-right: 11px dotted transparent;
+  margin-top:10px;
+  z-index: 11;
+}
+
+#dvRegistrar{
+	left:10px;
+	top: 60px;
+}
+#trRegistrar{
+  top: 41px;
+  left:121px;
+}
+#tbRegistrar{
+  top: 40px;
+  left:120px;
+}
+
+
