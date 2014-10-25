@@ -1,12 +1,12 @@
 /* CSS Document */
 
 .dvFlotante, .dvTriangulo, .dvTrianguloBorde{
-	position:fixed;
+	position:absolute;
 }
 .dvFlotante {
 	margin:2%;
 	margin-top:0px;
-	padding: 2%;	
+	padding: 20px;	
 	background-color: #FFF;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -34,12 +34,12 @@
 }
 
 #dvRegistrar{
-	left:10px;
-	top: 60px;
+	left:-110px;
+	top: 10px;
 }
 #trRegistrar{
-  top: 41px;
-  left:121px;
+  top: -9px;
+  left:-10px;
 }
 #tbRegistrar{
   top: 40px;
