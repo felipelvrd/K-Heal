@@ -1,9 +1,13 @@
 <?php
-//header('Content-Type: application/json');
-$ds          = DIRECTORY_SEPARATOR;  //1
 
-$storeFolder = 'Previsualizacion';   //2
+//if(mkdir("../recursos/Usuarios/test", 0700));//Esta se crea cuando se hace un usuario
 
+header('Content-Type: application/json');
+
+$ds          = DIRECTORY_SEPARATOR;  
+
+$storeFolder = 'Usuarios';   
+$Nombre_Usuario='Nombre_Usuario';
 
 //print_r($_FILES);
 //echo $_POST["data"]; // validar que venga data
@@ -34,7 +38,7 @@ if (!empty($_FILES)) {
 	    
     $tempFile = $_FILES['file']['tmp_name'];           
       
-    $targetPath = dirname('C:\xampp\htdocs\YUBLITZ\PROYECTO PARA LA PRACTICA\Practica\Proyecto\YUBLITZ\MANTENIMIENTO\Previsualizacion').$ds. $storeFolder.$ds; 
+    $targetPath = dirname('C:\xampp\htdocs\PROYECTO INTERFACES DE USUARIO\recursos\Usuarios').$ds. $storeFolder.$ds.  $Nombre_Usuario.$ds; 
      
 
     $targetFile =  $targetPath. $Datos;
@@ -56,5 +60,7 @@ else
    header("HTTP/1.0 400");
    echo '"Error -> No se enviaron archivos"';	
 }
+
+
 ?>   
 
