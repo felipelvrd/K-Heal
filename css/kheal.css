@@ -19,7 +19,8 @@ nav{
 
 .Oculto
 {
-	visibility:collapse;
+	//visibility:collapse;
+	display: none;
 }
  
   #BarraSuperior{
