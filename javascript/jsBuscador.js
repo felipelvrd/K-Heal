@@ -162,8 +162,19 @@ function ConstruirElementos(itemsFound)
 		{
             if (itemsFound[i]) 
 			{
+				//$("#capa").load('/demos/2013/03-jquery-load05.php #contenido');
+				     $("#section" + s).append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
+				     //$("#Resul"+i).load('paginas/Componente_Resultado.php?d='+itemsFound[i].description+'&n=test');
+					 $("#Resul"+i).load('paginas/Componente_Resultado.php',{d:itemsFound[i].description,n:itemsFound[i].title});
+                     //$.result = $.ajax({async:false,url:"paginas/Componente_Resultado.php"}).responseText; 
+          
+   
+							    
+						
 				
-                $.result = $('\
+				
+			/*		
+				\
 				               <div class="media">\
                                \
 							    <p class="pull-left">\
@@ -179,12 +190,12 @@ function ConstruirElementos(itemsFound)
                                  \
 								 <p>'+ itemsFound[i].description +'</p>\
                                  \
-							    </div>\ </div>\ '); 
-							    
-						
+							    </div>\ </div>\ 
+			
+			
 				
-				
-			/*	
+			
+			
 								'\
 							<div class="itemResultado">\
 							<img src=' + itemsFound[i].link + '/IMGS/LOGO.png \u0022  style={float:left; width=200px; heigh=200px;} >\
@@ -195,7 +206,7 @@ function ConstruirElementos(itemsFound)
 				
 				
 				
-               $("#section" + s).append($.result); // Aca lo introduce en la seccion correspondiente
+              // $("#section" + s).append($.result); // Aca lo introduce en la seccion correspondiente
 			   
                 if (i == ((Cant_Max_Pag  * s) - 1)) {
                     current++;

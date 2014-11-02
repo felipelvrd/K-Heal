@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>k_heal</title>
     <link rel="stylesheet" type="text/css" href="css/KHeal.css">
+    <link rel="stylesheet" type="text/css" href="css/PumbleTrap.css">
+    
 	<script src="javascript/jquery-2.1.1.min.js"></script>
 	<script src="javascript/sha256.jquery.debug.js"></script>
     <script src="javascript/KHeal.js"></script>

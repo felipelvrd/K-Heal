@@ -7,28 +7,48 @@ body,html {
   min-width:380px;*/
 }
 
+.desplegable,
+a[name='more']:target ~ .ver_mas {
+ visibility: hidden;
+ width:0;
+ height:0; 
+}
+
+a[name='more']:target ~ .desplegable {
+ visibility: visible;
+ width: 200px;
+ height: 200px;
+}
+
+.clColum-mov-1,.clColum-mov-2,.clColum-mov-3,.clColum-mov-4,.clColum-mov-5,.clColum-mov-6{
+    min-height: 10px;
+    float: left;
+  }
+
+.clColum-esc-1,.clColum-esc-2,.clColum-esc-3,.clColum-esc-4,.clColum-esc-5,.clColum-esc-6{
+    min-height: 10px;
+    float: left;
+  }
+
+
+
 /*===============FILAS Y COLUMNAS==================*/
 /*===============ESCRITORIO==================*/
 @media only screen and (min-width : 1024px) {
   .clContenedor {
     padding: 0.1px;
-    margin: 0px;
+    margin: 0.1px;
+	min-height:20px;
   }
 
   .clRow {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 1%;
+    margin-left: 1%;
     margin-top: 5px;
     margin-bottom: 5px;
 	min-height:20px;
 	display:inline-block;
-    width:100%;
-  }
-
-  .clColum-esc-1,.clColum-esc-2,.clColum-esc-3,.clColum-esc-4,.clColum-esc-5,.clColum-esc-6{
-    min-height: 10px;
-    float: left;
-	
+    width:97%;
   }
 
   .clColum-esc-1{
@@ -60,23 +80,18 @@ body,html {
 /*===============MOVIL==================*/
 @media only screen and (max-width : 1023px) {
   .clContenedor {
-    padding: 0px;
-    margin: 0px;
+    padding: 0.1px;
+    margin: 0.1px;
   }
 
   .clRow {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 1%;
+    margin-left: 1%;
     margin-top: 3px;
     margin-bottom: 3px;
     min-height: 20px;
 	display:inline-block;
-    width:100%;
-  }
-
-  .clColum-mov-1,.clColum-mov-2,.clColum-mov-3,.clColum-mov-4,.clColum-mov-5,.clColum-mov-6{
-    min-height: 10px;
-    float: left;
+    width:97%;
   }
 
   .clColum-mov-1{
