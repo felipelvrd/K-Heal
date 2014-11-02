@@ -7,27 +7,30 @@
     <link rel="stylesheet" type="text/css" href="css/PumbleTrap.css">
     
 	<script src="javascript/jquery-2.1.1.min.js"></script>
-	<script src="javascript/sha256.jquery.debug.js"></script>
     <script src="javascript/KHeal.js"></script>
     <link rel="stylesheet" type="text/css" href="css/cssBuscador.css">
     <script type="text/javascript" src="javascript/jsBuscador.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/cajaFlotante.css">
-    <script src="javascript/registro.js"></script>
-	<script src="javascript/login.js"></script>
-
+    <?php 
+	include ("paginas/navegacion/header.html");
+   	if(empty($_GET["p"]));
+   		//include ("paginas/principal/index.php"); 
+   	else
+   		include ("paginas/".$_GET["p"]."/header.html"); 
+   	?>
+    
 </head>
 <body>
 <div id="BarraSuperior" class="nav" > 
-    <?php include("paginas/navegacion.php"); ?>    
+    <?php include("paginas/navegacion/index.php"); ?>    
 </div>
 
 <div id="divFramePrincipal"> 
 
    <?php 
    if(empty($_GET["p"]))
-   	include ("paginas/principal.php"); 
+   	include ("paginas/principal/index.php"); 
    else
-   	include ("paginas/".$_GET["p"].".php"); 
+   	include ("paginas/".$_GET["p"]."/index.php"); 
    ?>
 						
 </div>

@@ -1,8 +1,5 @@
 <ul>
-      <li><a href="#" onClick="Salir();">Salir</a></li>
-      <li><a href="#venModaRegistrar"  onClick="Registrar();"> Registrarse</a></li>
-      <li><a href="#venModaIngresar"  onClick="Ingresar();">Ingresar</a></li>
-      <li><a href="#venModaIngresar"  onClick="Navegar('buscador.html');">Inicio</a></li>
+<div id="dvBarraNavegacion"></div>
 </ul>
 
 
@@ -64,8 +61,8 @@
 				</ul>
 			</div>			
 	</div>
-
-	<div id="venModaIngresar" class="Oculto"><!-- este seria el apartado de la ventana modal de INGRESAR-->	<!--
+-->
+	<div id="venModaIngresar" class="Oculto"><!-- este seria el apartado de la ventana modal de INGRESAR-->
 		<div >
 			<div >
 				 <button id="btnCerrarModal" type="button">X</button>
@@ -91,4 +88,3 @@
             </div>		</div>						
 </div>
 
--->

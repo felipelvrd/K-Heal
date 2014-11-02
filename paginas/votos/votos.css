@@ -1,0 +1,27 @@
+#dvVotos{
+
+}
+#dvMecure, #dvNocure{
+float:left;
+margin:5px;
+}
+#dvMecure p, #dvNocure p{
+	text-align:center;
+	margin:0px;
+}
+
+#dvMecure a, #dvNocure a{
+	text-decoration:none;
+}
+
+#dvMecure p{
+	color:green;
+}
+
+#dvNocure p{
+	color:red;
+}
+
+#dvMecure p img, #dvNocure p img{
+}
+

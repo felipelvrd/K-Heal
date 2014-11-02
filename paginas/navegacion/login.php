@@ -1,6 +1,6 @@
 <?php
 
-include_once("phpClassConexion.php");
+include_once("../../php/phpClassConexion.php");
 
 $email = $_POST['email'];
 $contrasena = NTLMHash($_POST['contrasena']);

@@ -32,7 +32,7 @@ function registrar(email,nombre,contrasena){
 	   
        $.ajax({
                data:  parametros,
-               url:   'php/registro.php',
+               url:   'paginas/navegacion/registro.php',
                type:  'post',
                beforeSend: function () {
                        $("#spnMensajeRegistro").html("Espere por favor...");

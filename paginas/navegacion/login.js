@@ -27,7 +27,7 @@ function logear(email,contrasena){
 	   
        $.ajax({
                data:  parametros,
-               url:   'php/login.php',
+               url:   'paginas/navegacion/login.php',
                type:  'post',
                beforeSend: function () {
                        $("#spnMensajeLogin").html("Espere por favor...");
