@@ -1,0 +1,263 @@
+/* CSS Document */
+
+/*****************************************************************************
+ ***********************  universal ******************************************
+ *****************************************************************************/
+	body{
+		color:rgba(51,51,51,1);/*gris oscuro*/
+		}
+	nav{
+		display:block;
+	 }
+	
+	a{
+		font-size:16px;
+				
+	}
+	
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	p{
+	color: rgba(51,51,51,1);
+	font-family: "Century Gothic";
+	}
+
+	
+
+img{
+	border-radius:5px;
+	}
+
+
+p,
+div{ 
+	font-size:18px;
+	font-family:"Century Gothic";
+}
+ul {
+	list-style:none;
+	}
+ul a {
+	font-family:"Century Gothic" !important;
+	font-size:18px;
+	list-style:none;
+}
+
+p a {
+	font-family:"Century Gothic" !important;
+	font-size:18px;
+	list-style:none;
+	color:rgba(51,51,255,1);
+	}
+a:link {
+  color: rgba(0,0,0,1);
+  }
+a:visited {
+  color: rgba(153,153,153,1);
+  }
+ a:hover {
+	 color: rgba(0,102,255,0.8);
+	 }
+  
+/*****************************************************************************
+ *************************** Clases ******************************************
+ *****************************************************************************/
+ button{ 
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+	background-color:#599bb3;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:18px;
+	font-weight:bold;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+}
+
+button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+}
+
+button:active {
+  position:relative;
+	top:1px;
+}
+
+	.succes{
+	background:rgba(0,153,0,0.4);	
+	}
+	.danger{
+	background:rgba(255,0,0,0.5);
+	}
+	.warning{
+	background:rgba(255,255,0,0.5);
+	}
+	.default{
+	background:rgba(0,153,0,0.5);
+	}
+
+.clListTratamientos > div{
+	border: thin solid rgba(153,153,153,1);
+	margin: 6px;
+	padding: 2px;
+	
+	}
+
+
+
+
+.clMenuLateral > ul {
+	background:rgba(204,204,204,1);
+	margin:25px;
+}
+
+.clMenuLateral{
+	text-align:center;
+}
+
+.clMenuLateral > ul > li{
+	background:rgba(255,255,255,1);
+	margin-right:38px;	
+}
+.clMenuLateral > ul > li:hover{
+	background:rgba(51,153,255,1);
+	margin-right:38px;	
+}	
+.clMenuLateral > ul >li > a:hover{
+	color:rgba(255,255,255,1);
+}
+	
+
+.clMenuLateral > label,
+.form-control >  label, 
+.form-control >  form > label 
+{
+	display: inline;
+  	margin-bottom: 5px;
+  	font-weight: bold;
+	padding: .3em;
+	font-size:20px;
+	display:block;
+}
+
+.form-control > SELECT,
+.form-control > input,
+.form-control > form  > input{
+		padding: .3em;
+		color:#666;
+		font-size:16px;
+		border-radius:5px;
+		height:auto;
+		white-space:pre-wrap;
+		display:block;
+		margin-bottom:15px;
+		width:80%;
+}
+
+.form-control:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+@page  {
+    margin: 2cm .5cm;
+	background-color: rgba(114,177,255,0.4) !important;
+}
+
+.Oculto
+{
+	visibility:collapse;
+}
+
+	
+.descrEnfer{
+	border: thin solid rgba(153,153,153,1);
+	padding: 10px;	
+	}
+.clAporte{
+	display:block;
+	font-family:"Century Gothic";	
+	font-size:24px;
+	color:rgba(51,51,255,1);
+	}
+.clContenedor{
+	 padding-left:30px !important;
+	}
+	
+
+#divAportesPerfil > ul > li{
+	list-style:none;	
+	}
+	
+@media screen and (min-width: 768px){	
+	#BarraSuperior{
+	background-image: url(../recursos/texturas/textura1.jpg);
+	background-attachment: fixed;
+	background-repeat: repeat;
+	background-position: center;
+	}
+}
+ 
+  #BarraSuperior{
+	width: 100%;
+	float: left;
+	margin: 0px;
+	padding: 5px;
+	background-image: url(../recursos/texturas/textura1.jpg);
+	} 
+		
+	#BarraSuperior ul li{
+		list-style: none;
+		position: relative;
+		display: block;
+		text-align: center;
+		float: left;
+	}
+	#BarraSuperior ul li a{	
+		padding-right:15px;
+	color:rgba(255,255,255,1);
+	font-family:"Century Gothic";
+	font-size:18px;
+	font-weight:bold;
+	}
+	
+	#BarraSuperior img{	
+		position: absolute;
+		width: 54px;
+		height: 53px;
+		z-index: 1;
+		right:0px;
+		top: 0px;
+	}
+	
+	
+	
+
+	
+ 
+ /*****************************************************************************
+ ******************************** Id ******************************************
+ *****************************************************************************/
+ 
