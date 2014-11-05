@@ -213,7 +213,7 @@ button:active {
 	
 @media screen and (min-width: 768px){	
 	#BarraSuperior{
-	background-image: url(../recursos/texturas/textura1.jpg);
+	/*background-image: url(../recursos/texturas/textura1.jpg);*/
 	background-attachment: fixed;
 	background-repeat: repeat;
 	background-position: center;
@@ -225,7 +225,7 @@ button:active {
 	float: left;
 	margin: 0px;
 	padding: 5px;
-	background-image: url(../recursos/texturas/textura1.jpg);
+	/*background-image: url(../recursos/texturas/textura1.jpg);*/
 	} 
 		
 	#BarraSuperior ul li{
@@ -236,8 +236,8 @@ button:active {
 		float: left;
 	}
 	#BarraSuperior ul li a{	
-		padding-right:15px;
-	color:rgba(255,255,255,1);
+	padding-right:15px;
+	color:rgba(0,255,255,1);
 	font-family:"Century Gothic";
 	font-size:18px;
 	font-weight:bold;

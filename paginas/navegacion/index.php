@@ -39,8 +39,10 @@
                  <button type="button" id="btnRegistroGoogle">GOOGLE</button>
 			</div>
 			<div>
-            <span id=spnMensajeRegistro></span>
-            </div>	</div></div>
+            <span id="spnMensajeRegistro"></span>
+            </div>	
+        </div>
+    </div>
 						
 </div>
 
@@ -84,7 +86,7 @@
                  <button type="button" id="btnAceptarLogin">ACEPTAR</button>
 			</div>
 			<div>
-            <span id=spnMensajeLogin></span>
+            <span id="spnMensajeLogin"></span>
             </div>		</div>						
 </div>
 
