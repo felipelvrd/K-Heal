@@ -11,8 +11,7 @@
 	 }
 	
 	a{
-		font-size:16px;
-				
+		font-size:16px;		
 	}
 	
 	h1,
@@ -59,7 +58,7 @@ a:visited {
   color: rgba(153,153,153,1);
   }
  a:hover {
-	 color: rgba(0,102,255,0.8);
+  color: rgba(0,102,255,0.8);
 	 }
   
 /*****************************************************************************
@@ -103,18 +102,18 @@ button:active {
 	top:1px;
 }
 
-	.succes{
-	background:rgba(0,153,0,0.4);	
-	}
-	.danger{
-	background:rgba(255,0,0,0.5);
-	}
-	.warning{
-	background:rgba(255,255,0,0.5);
-	}
-	.default{
-	background:rgba(0,153,0,0.5);
-	}
+.succes{
+background:rgba(0,153,0,0.4);	
+}
+.danger{
+background:rgba(255,0,0,0.5);
+}
+.warning{
+background:rgba(255,255,0,0.5);
+}
+.default{
+background:rgba(0,153,0,0.5);
+}
 
 .clListTratamientos > div{
 	border: thin solid rgba(153,153,153,1);
@@ -171,25 +170,25 @@ button:active {
 .form-control > SELECT,
 .form-control > input,
 .form-control > form  > input{
-		padding: .3em;
-		color:#666;
-		font-size:16px;
-		border-radius:5px;
-		height:auto;
-		white-space:pre-wrap;
-		display:block;
-		margin-bottom:15px;
-		width:80%;
+	padding: .3em;
+	color:#666;
+	font-size:16px;
+	border-radius:5px;
+	height:auto;
+	white-space:pre-wrap;
+	display:block;
+	margin-bottom:15px;
+	width:80%;
 }
 
 .form-control:focus {
   border-color: #66afe9;
   outline: 0;
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-@page  {
+@page{
     margin: 2cm .5cm;
 	background-color: rgba(114,177,255,0.4) !important;
 }
@@ -220,45 +219,47 @@ button:active {
 	}
 	
 @media screen and (min-width: 768px){	
-	#BarraSuperior{
-	/*background-image: url(../recursos/texturas/textura1.jpg);*/
-	background-attachment: fixed;
-	background-repeat: repeat;
-	background-position: center;
-	}
+#BarraSuperior{
+/*background-image: url(../recursos/texturas/textura1.jpg);*/
+background-attachment: fixed;
+background-repeat: repeat;
+background-position: center;
+}
+
 }
  
-  #BarraSuperior{
-	width: 100%;
-	float: left;
-	margin: 0px;
-	padding: 5px;
-	/*background-image: url(../recursos/texturas/textura1.jpg);*/
-	} 
-		
-	#BarraSuperior ul li{
-		list-style: none;
-		position: relative;
-		display: block;
-		text-align: center;
-		float: left;
-	}
-	#BarraSuperior ul li a{	
-	padding-right:15px;
-	color:rgba(0,255,255,1);
-	font-family:"Century Gothic";
-	font-size:18px;
-	font-weight:bold;
-	}
+#BarraSuperior{
+width: 100%;
+float: left;
+margin: 0px;
+padding: 5px;
+/*background-image: url(../recursos/texturas/textura1.jpg);*/
+} 
 	
-	#BarraSuperior img{	
-		position: absolute;
-		width: 54px;
-		height: 53px;
-		z-index: 1;
-		right:0px;
-		top: 0px;
-	}
+#BarraSuperior ul li{
+list-style: none;
+position: relative;
+display: block;
+text-align: center;
+float: left;
+}
+
+#BarraSuperior ul li a{	
+padding-right:15px;
+color:rgba(0,255,255,1);
+font-family:"Century Gothic";
+font-size:18px;
+font-weight:bold;
+}
+
+#BarraSuperior img{	
+position: absolute;
+width: 54px;
+height: 53px;
+z-index: 1;
+right:0px;
+top: 0px;
+}
 	
 	
 	
