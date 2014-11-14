@@ -54,7 +54,7 @@ function Navegar2(uri)
 	$("#divFrameAdmin").load(uri);	
 }
 
-function cargarBarra(funcion){	 
+/*function cargarBarra(funcion){	 
  		var parametros = {
 		   "funcion" : funcion
        };  
@@ -69,4 +69,4 @@ function cargarBarra(funcion){
                        $('#dvBarraNavegacion').html(response);
                }
        });
-}
+}*/

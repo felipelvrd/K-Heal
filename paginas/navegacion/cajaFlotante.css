@@ -46,4 +46,29 @@
   left:120px;
 }
 
+#dvLogin{
+	left:-110px;
+	top: 10px;
+}
+#trLogin{
+  top: -9px;
+  left:-10px;
+}
+#tbLogin{
+  top: 40px;
+  left:120px;
+}
+
+#dvNotif{
+	left:-110px;
+	top: 10px;
+}
+#trNotif{
+  top: -9px;
+  left:-10px;
+}
+#tbNotif{
+  top: 40px;
+  left:120px;
+}
 

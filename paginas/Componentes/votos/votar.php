@@ -1,6 +1,6 @@
 <?php
 
-include_once("../../php/phpClassConexion.php");
+include_once("../../../php/phpClassConexion.php");
 session_start();
 $TipoEvaluacion = $_POST['TipoEvaluacion'];
 $idTratamiento = $_POST['idTratamiento'];
