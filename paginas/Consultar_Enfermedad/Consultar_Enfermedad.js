@@ -22,6 +22,8 @@ function CargarDatos_Enfermedad(id){
 					   $('#divSintomas').html(response.sintomas);
 					   $('#divDiagnostico').html(response.diagnostico);
 					   $('#divPrevencion').html(response.prevencion);
+					   
+					   $('#link_Tratamientos').attr("href","index.php?p=Listar_Tratamientos&n=" + response.nombre + "&t="+response.test); 
 						 
                }
        });

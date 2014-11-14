@@ -6,6 +6,7 @@ $(document).ready(function(e) {
 });
 
 
+
 </script>
 
 
@@ -33,6 +34,7 @@ Cargando
 							  <li><a href="#divSintomas "> Sintomas</a></li>
 							  <li><a href="#divDiagnostico ">Prevencion</a></li>
 							  <li><a href="#divReferencias">Referencias</a></li>  
+                              <li><a id="link_Tratamientos" href="#">Tratamientos propuestos por usuarios</a></li> 
 							</ul>
 						</div>
 				</div>
@@ -72,7 +74,6 @@ Cargando
 				Datos
 				</div>
 			</div>
-
 
 			</div>
 		

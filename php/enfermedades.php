@@ -103,14 +103,6 @@ else if($Accion==3){
 						$Enfermedad->prevencion = $row["Prevencion"];
 					}
 					
-				$Tratamientos = mysqli_query($conexion->conect,"Select Id from khltratamientos where IdEnfermedad  = $Id");
-				if($Tratamientos->num_rows!=0){
-					while($row=$Tratamientos->fetch_assoc()){
-						array_push($Enfermedad->tratamientos,$row["Id"]);
-					}
-
-				}
-	
 	              echo json_encode($Enfermedad); 
                 }
         else{

@@ -57,9 +57,7 @@ else if($Accion==2){
         		if($resultado->num_rows!=0){
             	//Si todavia hay filas del resultado por procesar
             		while($row=$resultado->fetch_assoc()){
-                		$salida.="<li>
-                        	    <a href='#'>".$row['Descripcion']."</a>
-                         	</li>";
+                		
             	}
         }
         else{

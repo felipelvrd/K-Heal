@@ -7,9 +7,7 @@ class Enfermedad
    public $diagnostico;
    public $prevencion;
    public $nombre;	
-   public $tratamientos = array();
+   public $test;
 }
-
-
 ?>   
 
