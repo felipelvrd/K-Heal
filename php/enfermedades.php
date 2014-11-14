@@ -6,7 +6,7 @@ $Id = isset($_POST['id']) ? $_POST['id'] : -1;
 $Nombre = isset($_POST['nombre']) ? $_POST['nombre'] : -1;
 $TipoEnfermedad = isset($_POST['tipoenfermedad']) ? $_POST['tipoenfermedad'] : -1;
 $Descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : -1;
-$Diagnostico = isset($_POST['descripcion']) ? $_POST['descripcion'] : -1;
+$Diagnostico = isset($_POST['diagnostico']) ? $_POST['diagnostico'] : -1;
 $Prevencion = isset($_POST['prevencion']) ? $_POST['prevencion'] : -1;
 $Familia = isset($_POST['familia']) ? $_POST['familia'] : -1;
 $Estado = isset($_POST['estado']) ? $_POST['estado'] : -1;
@@ -85,16 +85,33 @@ else if($Accion==2){
 else if($Accion==3){
 	if($conexion->Conectar()==true){
 		try{	
+		    header('Content-Type: application/json; charset = latin1_swedish_ci');
+		
 			if($resultado=mysqli_query($conexion->conect,"Select * from khlenfermedades where id  = $Id")){
 				//Si el resultado tiene mas de 0 columnas
-				$result_Enfermedad = array();
+
+				include_once("clEnfermedad.php");
+				$Enfermedad = new Enfermedad();
 				
         		if($resultado->num_rows!=0){
             	//Si todavia hay filas del resultado por procesar
             		while($row=$resultado->fetch_assoc()){
-                		array_push($result_Enfermedad,$row["Descripcion"]);
+                		$Enfermedad->descripcion = $row["Descripcion"];
+						$Enfermedad->diagnostico = $row["Diagnostico"];
+						$Enfermedad->nombre = $row["Nombre"];
+						$Enfermedad->sintomas = $row["Sintomas"];
+						$Enfermedad->prevencion = $row["Prevencion"];
 					}
-	              echo json_encode($result_Enfermedad); 
+					
+				$Tratamientos = mysqli_query($conexion->conect,"Select Id from khltratamientos where IdEnfermedad  = $Id");
+				if($Tratamientos->num_rows!=0){
+					while($row=$Tratamientos->fetch_assoc()){
+						array_push($Enfermedad->tratamientos,$row["Id"]);
+					}
+
+				}
+	
+	              echo json_encode($Enfermedad); 
                 }
         else{
             $salida="<li>No hay enfermedades<li>";

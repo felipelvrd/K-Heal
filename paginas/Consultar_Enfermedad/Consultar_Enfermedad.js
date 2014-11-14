@@ -15,7 +15,14 @@ function CargarDatos_Enfermedad(id){
                success:  function (response) {
                        $('#main').css("display","inline");
 					   $('#splash').css("display","none");
-					   $('#divDescriEnferCons').html('<p>'+response+'</p>');
+					   
+					   
+					   $('#Nombre_Enfermedad').html(response.nombre); 
+					   $('#divDescriEnferCons').html(response.descripcion);
+					   $('#divSintomas').html(response.sintomas);
+					   $('#divDiagnostico').html(response.diagnostico);
+					   $('#divPrevencion').html(response.prevencion);
+						 
                }
        });
 }
