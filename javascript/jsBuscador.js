@@ -43,8 +43,8 @@ var itemsFound = []; //Aca se guardan los resultados segun la busqueda
 
 
 //Esta funcion es para introducir nuevos objetos al vector items
-function addItem(title, link, description) {
-    items.push({"title": title, "link": link, "description": description});
+function addItem(Id,Nombre,Descripcion) {
+    items.push({"Id": Id, "Nombre": Nombre, "Descripcion": Descripcion});
 }
 
 function search() {
@@ -66,7 +66,7 @@ function search() {
 		
 		for (var k in items) //Se recorre los resultados que se pueden mostrar, para meterlos en los que se van a mostrar 
 		 {
-            if (items[k].title.toLowerCase().indexOf(matchString.toLowerCase()) !== -1)
+            if (items[k].Nombre.toLowerCase().indexOf(matchString.toLowerCase()) !== -1)
             {
 				itemsFound.push(items[k]);
 			}
@@ -165,7 +165,7 @@ function ConstruirElementos(itemsFound)
 				//$("#capa").load('/demos/2013/03-jquery-load05.php #contenido');
 				     $("#section" + s).append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
 				     //$("#Resul"+i).load('paginas/Componente_Resultado.php?d='+itemsFound[i].description+'&n=test');
-					 $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_ResultadoBusqueda',{d:itemsFound[i].description,n:itemsFound[i].title});
+					 $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_ResultadoBusqueda',{d:itemsFound[i].Descripcion,n:itemsFound[i].Nombre,id:itemsFound[i].Id});
                      //$.result = $.ajax({async:false,url:"paginas/Componente_Resultado.php"}).responseText; 
 			   
                 if (i == ((Cant_Max_Pag  * s) - 1)) {
@@ -244,9 +244,9 @@ function ObtenerDatos(pBusqueda)
   		    var ResultadoBusqueda = response;
             items = [];
                                                   
-		    for(i=0;i<ResultadoBusqueda.length;i=i+2)
+		    for(i=0;i<ResultadoBusqueda.length;i=i+3)
 		    {
-			  addItem(ResultadoBusqueda[i],"#",ResultadoBusqueda[i+1]);   
+			  addItem(ResultadoBusqueda[i],ResultadoBusqueda[i+1],ResultadoBusqueda[i+2]);   
 		    }
 
             search();

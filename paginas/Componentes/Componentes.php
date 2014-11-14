@@ -2,8 +2,6 @@
 <html>
 <head>
 <meta charset="utf-8">
-<!--Este link se agrega solo si estamos diseñando el componente -->
-<?php if(isset($_POST["n"])==false){echo '<link href="../css/PumbleTrap.css" rel="stylesheet" type="text/css">';} ?>
 
 <title>Documento sin título</title>
 </head>
@@ -30,7 +28,7 @@
 				echo '<p>'.$str.'</p>';} 
 			?>                 
           </div>
-         <a href="../index?" style="float:right; margin-right:5px;">Ver mas</a>
+         <a href="index.php?p=Consultar_Enfermedad&enf_id = <?php  echo $_POST["id"]?> " style="float:right; margin-right:5px;">Ver mas</a>
      </div>
      
      <div class="clColum-esc-1 clColum-mov-2">

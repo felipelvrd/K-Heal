@@ -17,10 +17,11 @@ function ObtenerDatos()
 			 $LikeString='%'.$Busqueda.'%';	
 			 $result = array();		
 			 
-			$resultado=mysqli_query($conexion->conect,"SELECT Nombre,Descripcion FROM khlenfermedades WHERE ETIQUETAS LIKE '$LikeString'");
+			$resultado=mysqli_query($conexion->conect,"SELECT Id,Nombre,Descripcion FROM khlenfermedades WHERE ETIQUETAS LIKE '$LikeString'");
 
 			if($resultado->num_rows!=0){
 				while($row=$resultado->fetch_assoc()){
+					array_push($result,$row["Id"]);
 					array_push($result,$row["Nombre"]);
 					array_push($result,$row["Descripcion"]);
 				}

@@ -1,30 +1,28 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Consultar Enfermedad</title>
-<link rel="stylesheet" type="text/css" href="../css/dropzone.css">
-<link rel="stylesheet" type="text/css" href="../css/PumbleTrap.css">
-<link rel="stylesheet" type="text/css" href="../css/KHeal.css">
+
+<script>
+
+$(document).ready(function(e) {  
+	CargarDatos_Enfermedad("<?php echo $_GET["enf_id"]?>");
+});
 
 
-<script src="../javascript/jquery-2.1.1.min.js"></script>
-<!-- Enriqesedor de texto-->
-<link rel="stylesheet" type="text/css" href="../javascript/enriquecedor/jquery-te-1.4.0.css">
-<script src="../javascript/enriquecedor/jquery-te-1.4.0.min.js"></script>
+</script>
 
-<!-- -->
 
-</head>
+<div id="splash">
+Cargando
+</div>
 
-<body id="divCuerpoEnferCons">
-<div class="clContenedor">
-		<div class="clRow"  >
+<div id="main" class="clContenedor">
+     
+        <div class="clRow"  >
 			<h1>Nombre de la enfemedad</h1>
 		</div>
+        
 		<div class="clRow"  >
 			<div id="divFichaEnfermCons"><p>Ejemplo de ficha tecnica de la ENFERMEDAD</p><img  src="../recursos/ficTec.jpg" width="426" height="118" alt="alt 500X300"></div>
 		</div>
+        
 		<div class="clRow"  >
 			<div class="clColum-esc-2 clColum-mov-6"  >
 				<div class="clRow">
@@ -41,11 +39,11 @@
 						</div>
 				</div>
 			</div>
+            
 			<div class="clColum-esc-3 clColum-mov-6"  >
 			<div>
 				<h2>Descripcion </h2>
 				<div id="divDescriEnferCons" class="descrEnfer">
-				  Datos
 				</div>
 			</div>
 
@@ -96,20 +94,3 @@
 		
 		</div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
-</html>
