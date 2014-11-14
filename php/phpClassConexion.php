@@ -1,6 +1,6 @@
 <?php
 
-
+header('Content-Type: text/html; charset=ISO-8859-1');
 
 class DBManager{
 	
@@ -23,11 +23,13 @@ class DBManager{
     //Inicia la conexion, retorna true si fue existosa
     function Conectar() {	 
         $con=mysqli_connect($this->Servidor,$this->Usuario,$this->Clave,$this->BaseDatos,$this->Puerto);
+		
         if(mysqli_connect_errno()){
             echo "Error al conectar con la BD. ".mysqli_connect_error();
             return false;
         }
         else{
+			@mysql_query("SET NAMES 'utf8'",$con);
             $this->conect=$con;
             return true;
         }
