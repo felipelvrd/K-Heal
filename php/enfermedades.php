@@ -1,5 +1,6 @@
 <?php
 
+ header('Content-Type: application/json; charset = latin1_swedish_ci');
 include_once("phpClassConexion.php");
 
 $Id = isset($_POST['id']) ? $_POST['id'] : -1;
@@ -85,7 +86,7 @@ else if($Accion==2){
 else if($Accion==3){
 	if($conexion->Conectar()==true){
 		try{	
-		    header('Content-Type: application/json; charset = latin1_swedish_ci');
+		   
 		
 			if($resultado=mysqli_query($conexion->conect,"Select * from khlenfermedades where id  = $Id")){
 				//Si el resultado tiene mas de 0 columnas

@@ -1,7 +1,18 @@
 
+<script>
+
+$(document).ready(function(e) {  
+	CargarDatos_Tratamiento("<?php echo $_GET["enf_id"]?>");
+});
+
+</script>
+
+
+<div id="splash">
+Cargando
+</div>    
     
-    
-    <div class="clContenedor">
+    <div class="clContenedor" id="main">
 		<div class="clRow" >
 			<div class="clColum-esc-2 clColum-mov-6">
 			</div>
@@ -27,11 +38,6 @@
 				<h2>Lista de Tratamientos</h2>
 				<div id="divListaTrata" class="clListTratamientos">                 
 					<div>Tratamiento 1</div>
-                    <?php 
-					     
-					?>
-                    
-                    
 					<div>Tratamiento 2</div>
 					<div>Tratamiento 3</div>
 				</div>

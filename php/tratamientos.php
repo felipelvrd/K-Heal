@@ -1,13 +1,13 @@
 <?php
-
+header('Content-Type: application/json; charset = latin1_swedish_ci');
 include_once("phpClassConexion.php");
 
-$Id = $_POST['id'];
-$IdUsuario = $_SESSION['idUsuario'];
-$IdEnfermedad = $_POST['idEnfermedad'];
-$Descripcion = $_POST['descripcion'];
+$Id = isset($_POST['id'])?$_POST['id']:-1;
+$IdUsuario = isset($_SESSION['idUsuario'])?$_SESSION['idUsuario']:-1;
+$IdEnfermedad = isset($_POST['idEnfermedad'])? $_POST['idEnfermedad']:-1;
+$Descripcion = isset($_POST['descripcion'])? $_POST["descripcion"]:-1;
 $Accion = $_POST['accion']; // 0 = Registrar, 1 = Editar, 2=Listar, 3 = Eliminar,;
-$Fecha = date();
+//$Fecha = date();
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
 
@@ -54,18 +54,28 @@ else if($Accion==2){
 			//Listo los tratamientos
 			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where idEnfermedad = $IdEnfermedad")){
 				//Si el resultado tiene mas de 0 columnas
+				
+				include_once("clTratamiento.php");
+				$arrayTratamientos = array();
+				
         		if($resultado->num_rows!=0){
             	//Si todavia hay filas del resultado por procesar
             		while($row=$resultado->fetch_assoc()){
-                		
+                		$Tratamiento=new Tratamiento();
+						$Tratamiento->id = $row["Id"];
+						$Tratamiento->descripcion = $row["Descripcion"];
+						//$Tratamiento->nombre=$row["Nombre"];
+						array_push($arrayTratamientos,$Tratamiento);
             	}
+				
+				 echo json_encode($arrayTratamientos);
         }
         else{
             $salida="<li>No hay tratamientos<li>";
         }
 			}
 			else{
-				throw new Exception("Ocurrio un error al intentar modificar el tratamiento".mysqli_connect_error());
+				throw new Exception("Ocurrio un error al intentar listar los tratamientos".mysqli_connect_error());
 				exit;
 			}
 		}catch(Exception $ex){
