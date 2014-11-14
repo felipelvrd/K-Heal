@@ -43,6 +43,33 @@
 
 </div>
 
+<div id="cmp_Tratamiento" class="clContenedor" style="border: 1px solid #000; margin:25px; max-width:600px;">
+
+   <div class="clRow">
+   
+     <div class="clColum-esc-4 clColum-mov-4">
+          
+          <div class="clRow">
+             <h4 style="margin:0px"><?php $_POST["nombre"] ?> </h4>  
+          </div>
+          
+          <div class="clRow" style="max-height:100px; overflow:auto;">  
+                <p><?php $_POST["descripcion"] ?></p>
+          </div>
+  
+     </div>
+     
+     <div class="clColum-esc-2 clColum-mov-2 clTexto-cen">
+          <a href="../index?" style="float:right; margin-right:5px;">Ver mas</a>
+
+         <br></br>
+         <div>Aca van los votos</div>
+     </div>
+
+   </div>
+
+</div>
+
 
 </body>
 </html>
