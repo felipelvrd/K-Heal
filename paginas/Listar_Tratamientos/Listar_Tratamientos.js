@@ -16,11 +16,12 @@ function CargarDatos_Tratamiento(id){
                        $('#main').css("display","inline");
 					   $('#splash').css("display","none");
 					   
-					   alert(response); 
+					   for(i=0;i<response.length;i++)
+					   { 
+					     $("#divListaTrata").append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
+					     $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_Tratamiento',{d:response[i].descripcion,n:response[i].nombre,id:response[i].id});  
+					   }
 					   
-					   $("#section" + s).append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
-				     //$("#Resul"+i).load('paginas/Componente_Resultado.php?d='+itemsFound[i].description+'&n=test');
-					 $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_ResultadoBusqueda',{d:itemsFound[i].Descripcion,n:itemsFound[i].Nombre,id:itemsFound[i].Id});
                }
        });
 }

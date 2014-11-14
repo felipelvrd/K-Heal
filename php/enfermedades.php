@@ -1,7 +1,9 @@
 <?php
 
- header('Content-Type: application/json; charset = latin1_swedish_ci');
+
 include_once("phpClassConexion.php");
+
+header('Content-Type: application/json; charset = latin1_swedish_ci');
 
 $Id = isset($_POST['id']) ? $_POST['id'] : -1;
 $Nombre = isset($_POST['nombre']) ? $_POST['nombre'] : -1;
@@ -103,7 +105,7 @@ else if($Accion==3){
 						$Enfermedad->sintomas = $row["Sintomas"];
 						$Enfermedad->prevencion = $row["Prevencion"];
 					}
-					
+
 	              echo json_encode($Enfermedad); 
                 }
         else{

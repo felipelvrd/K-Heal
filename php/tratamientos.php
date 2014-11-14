@@ -1,6 +1,10 @@
 <?php
-header('Content-Type: application/json; charset = latin1_swedish_ci');
+
 include_once("phpClassConexion.php");
+
+header('Content-Type: application/json; charset = latin1_swedish_ci');
+
+
 
 $Id = isset($_POST['id'])?$_POST['id']:-1;
 $IdUsuario = isset($_SESSION['idUsuario'])?$_SESSION['idUsuario']:-1;
@@ -67,7 +71,7 @@ else if($Accion==2){
 						//$Tratamiento->nombre=$row["Nombre"];
 						array_push($arrayTratamientos,$Tratamiento);
             	}
-				
+				 
 				 echo json_encode($arrayTratamientos);
         }
         else{

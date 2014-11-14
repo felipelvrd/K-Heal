@@ -41,7 +41,7 @@ $(document).ready(function(){
 	$("#btnCerrarNotif").click(function (){			
 		$("#venModaNotif").addClass("Oculto");
 		});
-	cargarBarra(0);
+	//cargarBarra(0);
 });
 
 function Navegar(uri)

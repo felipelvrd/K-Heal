@@ -21,7 +21,7 @@
 </head>
 <body>
 <div id="BarraSuperior" class="nav" > 
-    <?php include("paginas/navegacion/index.php"); ?>    
+  <?php include("paginas/navegacion/index.php"); ?>    
 </div>
 
 <div id="divFramePrincipal"> 

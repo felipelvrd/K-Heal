@@ -28,13 +28,13 @@
 				echo '<p>'.$str.'</p>';} 
 			?>                 
           </div>
-         <a href="index.php?p=Consultar_Enfermedad&enf_id = <?php  echo $_POST["id"]?> " style="float:right; margin-right:5px;">Ver mas</a>
+         <a href="index.php?p=Consultar_Enfermedad&enf_id =  <?php if(isset($_POST["id"]))echo $_POST["id"];?> " style="float:right; margin-right:5px;">Ver mas</a>
      </div>
      
      <div class="clColum-esc-1 clColum-mov-2">
       
       <div style="margin:5% auto; border: 1px solid #660; min-height:50px; width:90%;">
-       <?php if(isset($_POST["n"])){echo '<img class="clIMG-responsive" src="recursos/Logo2.png" style="max-height:50px; width:100%" >';} ?>
+       <img class="clIMG-responsive" src="recursos/Logo2.png" style="max-height:50px; width:100%">
       </div>
 
      </div>
@@ -43,24 +43,24 @@
 
 </div>
 
-<div id="cmp_Tratamiento" class="clContenedor" style="border: 1px solid #000; margin:25px; max-width:600px;">
+<div id="cmp_Tratamiento" class="clContenedor">
 
    <div class="clRow">
    
      <div class="clColum-esc-4 clColum-mov-4">
           
           <div class="clRow">
-             <h4 style="margin:0px"><?php $_POST["nombre"] ?> </h4>  
+             <h4 style="margin:0px"><?php echo $_POST["n"] ?> </h4>  
           </div>
           
           <div class="clRow" style="max-height:100px; overflow:auto;">  
-                <p><?php $_POST["descripcion"] ?></p>
+                <p><?php echo $_POST["d"] ?></p>
           </div>
   
      </div>
      
      <div class="clColum-esc-2 clColum-mov-2 clTexto-cen">
-          <a href="../index?" style="float:right; margin-right:5px;">Ver mas</a>
+          <a href="../index?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style="float:right; margin-right:5px;">Ver mas</a>
 
          <br></br>
          <div>Aca van los votos</div>
