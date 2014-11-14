@@ -199,10 +199,30 @@ background:rgba(0,153,0,0.5);
 }
 
 	
-.descrEnfer{
+.textarea{
 	border: thin solid rgba(153,153,153,1);
-	padding: 10px;	
+	padding:15px;
+	height:50px;
+	width:100%;	
+    resize:vertical;
 	}
+	
+.txtsmall{
+  	max-height:100px;
+}
+
+.txtmedium{
+  	max-height:150px;
+}
+
+.txtbig{
+  	max-height:175px;
+}
+
+
+
+	
+	
 .clAporte{
 	display:block;
 	font-family:"Century Gothic";	

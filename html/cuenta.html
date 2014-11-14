@@ -5,37 +5,58 @@
 <title>cuenta</title>
 <link rel="stylesheet" type="text/css" href="../css/PumbleTrap.css">
 <link rel="stylesheet" type="text/css" href="../css/KHeal.css">
+<link rel="stylesheet" type="text/css" href="../css/dropzone.css">
+
+<script src="../javascript/dropzone.js"></script>
+<script src="../javascript/jquery-2.1.1.min.js"></script>
+
+<script>
+
+$(document).ready(function(e) {
+    
+ Dropzone.options.imgPerfil = {maxFiles:1};
+	
+});
+
+</script>
 
 </head>
+
+
+
 
 <body>
 
 <div class="clContenedor">
-    <div class="clRow" style="">
-    </div>
+
 	<div class="clRow" style="background:#FFF;">
 			
-			<div class="clColum-esc-2 clColum-mov-6" >
+			<div class="clColum-esc-4 clColum-mov-6" >
 
 					<div class="clRow" style="border:2px solid #FFF;">
 						
-						<div class="clColum-esc-2 clColum-mov-6"></div>
+						<div class="clColum-esc-1 clColum-mov-1"></div>
 
-						<div class="clColum-esc-3 clColum-mov-6" >	
+						<div class="clColum-esc-4 clColum-mov-6" >	
+                            <!-- Titulo1 --> <h2>Foto Perfil</h2>
+                             <form id="imgPerfil" action="subir1.php" class="dropzone dz_small" 
+																			 method="post" 
+																			 enctype="multipart/form-data"> 
+                             <input id="" name="data" type="hidden" value="imgPerfil">  
+                             <div class="fallback">
+                             <input name="file" type="file" multiple />
 
-							<div id="divImagen">								
-							  <p><img id="imgPerfil" class="clIMG-responsive"  alt="Imagen no disponible" src="" style="width:110px !important; height:110px !important;"/></p>
-							  <p><a href="#">Cambiar Imagen</a></p>
-                            </div>
-	
 					    </div>
+                        
+                        <div class="clColum-esc-1 clColum-mov-1"></div>
 			      
 			        </div>
+                    
+              </div>
 
 
 			      <div class="clRow">
-			      	<div class="clColum-esc-2 clColum-mov-6">
-						</div>
+			      	<div class="clColum-esc-1 clColum-mov-1"></div>
 						<div class="clColum-esc-3 clColum-mov-6" >
 						<div class="clRow" >
 						<!-- Titulo1 --> <h2>Datos del Perfil</h2>
@@ -52,22 +73,16 @@
 												<label for="txtCotraseConfiCuenta">Verifique</label>
 												<input type="password"  id="txtCotraseConfiCuenta" />													
 											</form>
-                                            
-											
-										  <div > 
-												 <p>&nbsp;</p>
-												 <button class="clBtnDefault" type="button" id="btnAcepCuent">ACEPTAR</button>
-										  </div>
 									</div>
 							</div>
 
 						</div>
+                        <div class="clColum-esc-1 clColum-mov-1"></div>
 						
 				</div>
 
 				<div class="clRow" >
-					<div class="clColum-esc-2 clColum-mov-6">
-						</div>
+					<div class="clColum-esc-1 clColum-mov-1"></div>
 						<div class="clColum-esc-3 clColum-mov-6" >
 							<div id="divContacto" class="form-control">
 								<h4>Contactos </h4>
@@ -80,12 +95,14 @@
                                         <input type="text"  id="txtFacebook"/>
                                         <label for="txtEmail">Correo Electronico</label>
                                         <input type="text"  id="txtEmail" />
-								   </form>
+                                        <div> 
+                                            <button class="clBtnDefault" type="button" id="btnAcepCuent">Aceptar</button>
+										</div>
+								   </form>   
 							 </div> 
 						</div>
-						<div class="clColum-esc-3 clColum-mov-6" style="2px solid #603;">
-						
-						</div>
+                        <div class="clColum-esc-1 clColum-mov-1"></div>
+                        
 				</div>
 
 			</div>
@@ -97,11 +114,10 @@
 				</div>
 				<div class="clRow">
 					<div id="divAportesPerfil" >
-										
-										<ul>
-											<li><a class="clAporte" href="#" >Aporte 1</a> </li>
-											<li><a class="clAporte"  href="#" >Aporte 2</a> </li>
-										  </ul>
+                        <ul>
+                            <li><a class="clAporte" href="#" >Aporte 1</a> </li>
+                            <li><a class="clAporte"  href="#" >Aporte 2</a> </li>
+                          </ul>
 					</div>
 				</div>
 			</div>
