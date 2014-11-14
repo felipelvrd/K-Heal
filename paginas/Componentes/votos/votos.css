@@ -1,10 +1,8 @@
 #dvVotos{
- 
+ 	float:left;
 }
 #dvMecure, #dvNocure{
 	float:left;
-		
-	
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 28px;
@@ -21,7 +19,7 @@
 	margin:0px;
 	color:#666066;
 }
-#dvMecure p:hover, #dvNocure p:hover{
+#dvMecure a:hover, #dvNocure a:hover{
 	text-align:center;
 	margin:0px;
 	color:#ffffff;

@@ -3,6 +3,9 @@
 	<head>
 	<meta charset="utf-8">
 	<link href="Tratamiento.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="../componentes/votos/votos.js"></script>
+	<style rel="stylesheet" type="text/css" href="../Componentes/votos/votos.css"></style>
+	<link rel="stylesheet" type="text/css" href="../Componentes/votos/votos.css">
 	<title>Componente</title>
 	</head>
 	<body>
@@ -40,7 +43,23 @@
 			 <div class="clColum-esc-2 clColum-mov-2 clTexto-cen TituloTratamiento">
 				  <a href="../index?" style="float:right; margin-right:5px;">Ver mas</a>
 				 <br></br>
-				 <div>Aca van los votos</div>
+				 
+				 
+				 <div id='dvVotos'>
+					  <div id='dvMecure'> <a href="#" onClick="votar('P',2);">
+						<p> <img src="../Componentes/votos/feliz.png" width="50" height="50" alt=""/> </p>
+						<p> ME CURE</p>
+						</a>
+						<p><span id='spVotosMecure'>0</span></p>
+					  </div>
+					  <div id='dvNocure'> <a href="#" onClick="votar('P',2);">
+						<p><img src="../Componentes/votos/triste.png" width="50" height="50" alt=""/></p>
+						<p>NO MECURE</p>
+						</a>
+						<p><span id='spVotosNocure'>0</span></p>
+					  </div>
+					  <span id='tmp'></span>
+				</div>
 			 </div>
 		   </div>
 		</div>
