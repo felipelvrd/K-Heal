@@ -1,13 +1,30 @@
 #dvVotos{
-
+ 
 }
 #dvMecure, #dvNocure{
-float:left;
-margin:5px;
+	float:left;
+		
+	
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	font-family: Arial;
+	color: #666066;
+	font-size: 20px;
+	background: #f0f3f5;
+	padding: 10px 20px 10px 20px;
+	border: solid #f0edf0 2px;
+	text-decoration: none;
 }
 #dvMecure p, #dvNocure p{
 	text-align:center;
 	margin:0px;
+	color:#666066;
+}
+#dvMecure p:hover, #dvNocure p:hover{
+	text-align:center;
+	margin:0px;
+	color:#ffffff;
 }
 
 #dvMecure a, #dvNocure a{
@@ -15,11 +32,11 @@ margin:5px;
 }
 
 #dvMecure p{
-	color:green;
+
 }
 
 #dvNocure p{
-	color:red;
+	
 }
 
 #dvMecure p img, #dvNocure p img{
