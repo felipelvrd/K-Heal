@@ -1,8 +1,8 @@
 #dvVotos{
- 	float:left;
+	display:inline-block;
 }
 #dvMecure, #dvNocure{
-	float:left;
+	display:inline-block;
 	-webkit-border-radius: 28;
 	-moz-border-radius: 28;
 	border-radius: 28px;

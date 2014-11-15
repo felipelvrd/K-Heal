@@ -2,17 +2,16 @@
 <html>
 	<head>
 	<meta charset="utf-8">
-	<link href="Tratamiento.css" rel="stylesheet" type="text/css">
+ 	<link href="Tratamiento.css" rel="stylesheet" type="text/css"> 
 	<script type="text/javascript" src="../componentes/votos/votos.js"></script>
 	<style rel="stylesheet" type="text/css" href="../Componentes/votos/votos.css"></style>
 	<link rel="stylesheet" type="text/css" href="../Componentes/votos/votos.css">
 	<title>Componente</title>
 	</head>
 	<body>
-		<div id="Contenido" class="clContenedor" >
-		   <div class="clRow">	   
-			 <div class="clColum-esc-4 clColum-mov-4">
-				  
+		<div id="Contenido" class="clContenedor tratamiento" >
+		   <div class="clRow ">	   
+			 <div class="clColum-esc-4 clColum-mov-4 ">				  
 				  <div class="clRow">
 					 <h4 style="margin:0px">Aca va el titulo</h4>  
 				  </div>			  
@@ -28,10 +27,9 @@
 			 </div>
 		   </div>
 		</div>
-		<div id="Contenido" class="clContenedor" >
+		<div id="Contenido" class="clContenedor tratamiento" >
 		   <div class="clRow">	   
-			 <div class="clColum-esc-4 clColum-mov-4">
-				  
+			 <div class="clColum-esc-4 clColum-mov-4">				  
 				  <div class="clRow TituloTratamiento">
 					 <h4 style="margin:0px">Aca va el titulo</h4>  
 				  </div>			  
@@ -45,16 +43,16 @@
 				 <br></br>
 				 
 				 
-				 <div id='dvVotos'>
+				 <div id='dvVotos' class="votos">
 					  <div id='dvMecure'> <a href="#" onClick="votar('P',2);">
-						<p> <img src="../Componentes/votos/feliz.png" width="50" height="50" alt=""/> </p>
-						<p> ME CURE</p>
+						<p> <img src="../Componentes/votos/mecure.png" width="50" height="50" alt=""/> </p>
+						
 						</a>
 						<p><span id='spVotosMecure'>0</span></p>
 					  </div>
 					  <div id='dvNocure'> <a href="#" onClick="votar('P',2);">
-						<p><img src="../Componentes/votos/triste.png" width="50" height="50" alt=""/></p>
-						<p>NO MECURE</p>
+						<p><img src="../Componentes/votos/nocure.png" width="50" height="50" alt=""/></p>
+						
 						</a>
 						<p><span id='spVotosNocure'>0</span></p>
 					  </div>
