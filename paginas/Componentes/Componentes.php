@@ -28,7 +28,7 @@
 				echo '<p>'.$str.'</p>';} 
 			?>                 
           </div>
-         <a href="index.php?p=Consultar_Enfermedad&enf_id =  <?php if(isset($_POST["id"]))echo $_POST["id"];?> " style="float:right; margin-right:5px;">Ver mas</a>
+         <a href="index.php?p=Consultar_Enfermedad&enf_id=<?php if(isset($_POST["id"])){echo $_POST["id"];}?>" style="float:right; margin-right:5px;">Ver mas</a>
      </div>
      
      <div class="clColum-esc-1 clColum-mov-2">
@@ -60,7 +60,7 @@
      </div>
      
      <div class="clColum-esc-2 clColum-mov-2 clTexto-cen">
-          <a href="../index?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style="float:right; margin-right:5px;">Ver mas</a>
+          <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style="float:right; margin-right:5px;">Ver mas</a>
 
          <br></br>
          <div><?php 
