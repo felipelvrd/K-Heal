@@ -7,7 +7,7 @@ function votar(TipoEvaluacion,idTratamiento){
        };
        $.ajax({
                data:  parametros,
-               url:   'paginas/votos/votar.php',
+               url:   'paginas/Componentes/votos/votar.php',
                type:  'post',
                beforeSend: function () {
                        $("#tmp").html("Espere por favor...");

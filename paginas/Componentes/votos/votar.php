@@ -4,7 +4,7 @@ include_once("../../../php/phpClassConexion.php");
 session_start();
 $TipoEvaluacion = $_POST['TipoEvaluacion'];
 $idTratamiento = $_POST['idTratamiento'];
-$idUsuario = $_SESSION['idUsuario'];
+$idUsuario =27;// $_SESSION['idUsuario'];
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
 
@@ -16,6 +16,7 @@ if($conexion->Conectar()==true){
 				throw new Exception("El usuario ya esta voto.");
 			
 		//Registro el usuario
+//		echo "INSERT INTO khlevaluacionestratamientos (idUsuario, idTratamiento, TipoEvaluacion) VALUES ($idUsuario,$idTratamiento,'$TipoEvaluacion')";
 		if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlevaluacionestratamientos (idUsuario, idTratamiento, TipoEvaluacion) VALUES ($idUsuario,$idTratamiento,'$TipoEvaluacion');")){
 			echo "Evaluacion registrada satisfactoriamente";
 		}
