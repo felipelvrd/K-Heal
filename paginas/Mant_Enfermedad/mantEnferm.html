@@ -25,7 +25,11 @@
 $(document).ready(function() {
    
     $('#example').dataTable ({
-        "ajax": "arrays.txt"
+		serverSide:true,
+		ajax: {
+				url: 'arrays.php',
+				type: 'POST'
+          }
       });
 	  
 	//$.fn.dataTable.ext.errMode = 'throw';
