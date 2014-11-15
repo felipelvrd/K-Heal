@@ -1,9 +1,23 @@
 
-<div class="clContenedor">
-	<div class="clRow"  >
+<script>
+
+$(document).ready(function(e) {  
+	CargarDatos_Tratamiento("<?php echo $_GET["id_trat"]?>");
+});
+
+</script>
+
+
+<div id="splash">
+Cargando
+</div>    
+    
+
+<div class="clContenedor" id="main">
+	<div class="clRow clTexto-cen"  >
 		<h1>Nombre del Tratamiento</h1>
 	</div>
-	<div class="clRow"  >
+	<div class="clRow clTexto-cen"  >
 		<div id="divFichaTrataCons">&nbsp;Datos en ficha tecnica del tratamiento</div>
 	</div>
 	<div class="clRow"  >
@@ -62,14 +76,7 @@
 					Datos
 					</div>
 				</div>
-                <div>
-				<h2>Comentar </h2>				
-				<textarea name="textarea" class="jqte-test"></textarea>	
-                <input id="btnGuardarComentario" type="button" value="Guardar"/>
-                <script>
-					$('.jqte-test').jqte();
-				</script>
-			</div>
+               
 				
                 <div id="mantTrata"></div>
 				

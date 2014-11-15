@@ -10,7 +10,7 @@ $Id = isset($_POST['id'])?$_POST['id']:-1;
 $IdUsuario = isset($_SESSION['idUsuario'])?$_SESSION['idUsuario']:-1;
 $IdEnfermedad = isset($_POST['idEnfermedad'])? $_POST['idEnfermedad']:-1;
 $Descripcion = isset($_POST['descripcion'])? $_POST["descripcion"]:-1;
-$Accion = $_POST['accion']; // 0 = Registrar, 1 = Editar, 2=Listar, 3 = Eliminar,;
+$Accion = $_POST['accion']; // 0 = Registrar, 1 = Editar, 2 = Listar , 3 = Consultar 4 = Eliminar,;
 //$Fecha = date();
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
@@ -89,8 +89,45 @@ else if($Accion==2){
 	}
 }
 
-
 else if($Accion==3){
+	if($conexion->Conectar()==true){
+		try{	
+			//Listo los tratamientos
+			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where id = $Id")){
+				//Si el resultado tiene mas de 0 columnas
+				
+				include_once("clTratamiento.php");
+                $Tratamiento=new Tratamiento();
+				
+        		if($resultado->num_rows!=0){
+            	//Si todavia hay filas del resultado por procesar
+            		while($row=$resultado->fetch_assoc()){
+
+						$Tratamiento->id = $row["Id"];
+						$Tratamiento->descripcion = $row["Descripcion"];
+						//$Tratamiento->nombre=$row["Nombre"];
+
+            	}
+				 
+				 echo json_encode($Tratamiento);
+        }
+        else{
+            $salida="<li>No hay tratamientos<li>";
+        }
+			}
+			else{
+				throw new Exception("Ocurrio un error al intentar listar los tratamientos".mysqli_connect_error());
+				exit;
+			}
+		}catch(Exception $ex){
+			echo $ex->getMessage();
+		}
+		$conexion->CerrarConexion();
+	}
+}
+
+
+else if($Accion==4){
 	if($conexion->Conectar()==true){
 		try{	
 			//Elimino el tratamiento

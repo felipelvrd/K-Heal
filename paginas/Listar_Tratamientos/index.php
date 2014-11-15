@@ -2,7 +2,7 @@
 <script>
 
 $(document).ready(function(e) {  
-	CargarDatos_Tratamiento("<?php echo $_GET["enf_id"]?>");
+	Listar_Tratamientos("<?php echo $_GET["enf_id"]?>");
 });
 
 </script>

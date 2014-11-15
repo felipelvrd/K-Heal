@@ -1,8 +1,8 @@
 // JavaScript Document
-function Listar_Tratamientos(id){
+function CargarDatos_Tratamiento(id){
 	   var parametros = {
-		   "idEnfermedad" : id,
-		   "accion" : 2
+		   "id" : id,
+		   "accion" : 3
        };
        $.ajax({
                data:  parametros,
@@ -16,11 +16,6 @@ function Listar_Tratamientos(id){
                        $('#main').css("display","inline");
 					   $('#splash').css("display","none");
 					   
-					   for(i=0;i<response.length;i++)
-					   { 
-					     $("#divListaTrata").append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
-					     $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_Tratamiento',{d:response[i].descripcion,n:response[i].nombre,id:response[i].id});  
-					   }
 					   
                }
        });
