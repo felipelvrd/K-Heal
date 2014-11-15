@@ -63,10 +63,7 @@
           <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style="float:right; margin-right:5px;">Ver mas</a>
 
          <br></br>
-         <div><?php 
-		 include "votos/index.php"; 
-		// $_POST["id"]
-		 ?></div>
+         <div><?php include "votos/index.php"; // $_POST["id"]?></div>
      </div>
 
    </div>
