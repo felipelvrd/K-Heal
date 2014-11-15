@@ -41,7 +41,7 @@ $(document).ready(function(){
 	$("#btnCerrarNotif").click(function (){			
 		$("#venModaNotif").addClass("Oculto");
 		});
-	//cargarBarra(0);
+	cargarBarra(0);
 });
 
 function Navegar(uri)
@@ -54,7 +54,7 @@ function Navegar2(uri)
 	$("#divFrameAdmin").load(uri);	
 }
 
-/*function cargarBarra(funcion){	 
+function cargarBarra(funcion){	 
  		var parametros = {
 		   "funcion" : funcion
        };  
@@ -69,4 +69,4 @@ function Navegar2(uri)
                        $('#dvBarraNavegacion').html(response);
                }
        });
-}*/
+}

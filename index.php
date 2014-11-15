@@ -1,7 +1,8 @@
 ﻿<!doctype html>
-<html>
+<html lang="es">
 <head>
     <meta charset="utf-8">
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>k_heal</title>
     <link rel="stylesheet" type="text/css" href="css/KHeal.css">
     <link rel="stylesheet" type="text/css" href="css/PumbleTrap.css">

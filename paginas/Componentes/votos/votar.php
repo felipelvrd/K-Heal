@@ -4,16 +4,22 @@ include_once("../../../php/phpClassConexion.php");
 session_start();
 $TipoEvaluacion = $_POST['TipoEvaluacion'];
 $idTratamiento = $_POST['idTratamiento'];
-$idUsuario =27;// $_SESSION['idUsuario'];
+@$idUsuario = $_SESSION['idUsuario'];
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
 
 if($conexion->Conectar()==true){
 	try{
+		if(!isset($_SESSION['idUsuario'])){
+			throw new Exception("Necesita estar logueado para poder votar");
+		}
 		//Verifico si el correo ya esta registrado
 		if($resultado=mysqli_query($conexion->conect,"Select id from khlevaluacionestratamientos where idTratamiento = $idTratamiento and idUsuario=$idUsuario;"))
 			if($resultado->num_rows!=0)
-				throw new Exception("El usuario ya esta voto.");
+				if($resultado=mysqli_query($conexion->conect,"Update khlevaluacionestratamientos set TipoEvaluacion = '$TipoEvaluacion' where idUsuario = $idUsuario and idTratamiento=idTratamiento;")){
+			echo "Evaluacion modificada satisfactoriamente";
+			return;
+		}
 			
 		//Registro el usuario
 //		echo "INSERT INTO khlevaluacionestratamientos (idUsuario, idTratamiento, TipoEvaluacion) VALUES ($idUsuario,$idTratamiento,'$TipoEvaluacion')";

@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: text/html; charset=utf-8');
+
 include_once("../../php/phpClassConexion.php");
 
 $email = $_POST['email'];
@@ -31,7 +33,7 @@ if($conexion->Conectar()==true){
 			exit;
 		}
 	}catch(Exception $ex){
-		echo $ex->getMessage();
+		echo utf8_decode ($ex->getMessage());
 	}
 	$conexion->CerrarConexion();
 }
