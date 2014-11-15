@@ -543,3 +543,133 @@ hr {
 }
 
 
+/*====================================TABLAS==============================*/
+
+  
+  
+
+.clPumbleTable {
+  border-collapse: collapse;
+  border: 1px solid #dddddd;
+  border-spacing: 0;
+  font-family: 'PumbleFont';
+}
+
+.clPumbleTable td {
+  border-left: 1px solid #dddddd;
+  border-width: 0 0 0 1px;
+  margin: 0px 5px;
+  overflow: visible;
+  padding: 5px 7px; 
+}
+
+.clPumbleTable thead {
+  background-color: #0F6;
+  color: #000000;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px 10px; 
+}
+
+.clPumbleTableBordes td {
+    border-bottom: 1px solid #cbcbcb;
+}
+
+.clPumbleTableBordes-hor td,
+.clPumbleTableBordes-hor th {
+    border-width: 0 0 1px 0;
+    border-bottom: 1px solid #cbcbcb;
+}
+
+/*==========================================MENUS=========================*/
+.clMenu{
+  padding: 5px;
+  margin: 30px auto;
+}
+
+.clMenu > label{
+  width: auto;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.clMenu ul{
+  list-style: none;
+  display: inline-block;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+}
+
+.clMenu ul li{
+  display: inline;
+  margin: 5px; 
+  vertical-align: middle;
+  height: 30px;
+}
+
+.clMenu ul li a{
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0px;
+  vertical-align: middle;
+  padding: 5px;
+  text-align: center;
+}
+
+.clMenu ul li a:hover{
+  text-decoration: none;
+  background-color: #b7b7b7;
+  color: #000;
+}
+
+/*Menu vertical*/
+.clMenuVert{
+  display: inline-block;
+  padding: 5px;
+} 
+
+.clMenuVert > label{
+  display: block;
+  width: auto;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+
+.clMenuVert ul{
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  text-align: left;
+}
+
+.clMenuVert ul li{
+  display: block;
+  font-size: 20px;
+  margin: 5px;
+  width: 100%;
+}
+
+.clMenuVert ul li a{
+  display: block;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0px;
+  vertical-align: middle;
+  padding: 5px;
+  width: 100%;
+}
+
+.clMenuVert ul li a:hover{
+  text-decoration: none;
+  background-color: #b7b7b7;
+  color: #000;
+}
+
+

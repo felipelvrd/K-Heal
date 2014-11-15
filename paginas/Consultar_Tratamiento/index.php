@@ -58,25 +58,18 @@ Cargando
 				</div>
 
 				<div>
-					<h2>Efectos Adversos </h2>
+					<h2>Efectos Segundarios</h2>
 					<div id="DivEfecConsTrat" class="descrEnfer">
 					Datos
 					</div>
 				</div>
 
 				<div>
-					<h2>Enlaces Externos </h2>
-					<div id="DivEnlacesConsTrat" class="descrEnfer">
+					<h2>Referencias</h2>
+					<div id="DivReferencias" class="descrEnfer">
 					Datos
 					</div>
-				</div>
-				<div>
-					<h2>Otros </h2>
-					<div id="DivOtrosConsTrat" class="descrEnfer">
-					Datos
-					</div>
-				</div>
-               
+				</div>               
 				
                 <div id="mantTrata"></div>
 				

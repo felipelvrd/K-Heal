@@ -16,7 +16,10 @@ function CargarDatos_Tratamiento(id){
                        $('#main').css("display","inline");
 					   $('#splash').css("display","none");
 					   
-					   
+					   $("#divDescriConsTrat").html(response.descripcion);
+					   $("#divAplicacion").html(response.indicaciones);
+					   $("#DivEfecConsTrat").html(response.efectos_segundarios);
+					   $("#DivReferencias").html(response.referencias);	   
                }
        });
 }

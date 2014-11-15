@@ -68,7 +68,7 @@ else if($Accion==2){
                 		$Tratamiento=new Tratamiento();
 						$Tratamiento->id = $row["Id"];
 						$Tratamiento->descripcion = $row["Descripcion"];
-						//$Tratamiento->nombre=$row["Nombre"];
+						$Tratamiento->nombre=$row["Nombre"];
 						array_push($arrayTratamientos,$Tratamiento);
             	}
 				 
@@ -102,11 +102,13 @@ else if($Accion==3){
         		if($resultado->num_rows!=0){
             	//Si todavia hay filas del resultado por procesar
             		while($row=$resultado->fetch_assoc()){
-
-						$Tratamiento->id = $row["Id"];
-						$Tratamiento->descripcion = $row["Descripcion"];
-						//$Tratamiento->nombre=$row["Nombre"];
-
+					
+					$Tratamiento->id = $row["Id"];
+					$Tratamiento->descripcion = $row["Descripcion"];
+					$Tratamiento->nombre=$row["Nombre"];
+					$Tratamiento->indicaciones=$row["Indicaciones"];
+					$Tratamiento->efectos_segundarios=$row["Efectos_Segundarios"];
+					$Tratamiento->refencias=$row["Referencias"];
             	}
 				 
 				 echo json_encode($Tratamiento);
