@@ -12,7 +12,7 @@ class DBManager{
     
     //Constructor de la Conexion
     function DBManager(){
-		include_once("configuracion.php");
+		include("configuracion.php");
         $this->BaseDatos = $database_Conexion;
         $this->Servidor = $hostname_Conexion;
         $this->Usuario =$username_Conexion;
