@@ -7,19 +7,6 @@ body,html {
   min-width:380px;*/
 }
 
-.desplegable,
-a[name='more']:target ~ .ver_mas {
- visibility: hidden;
- width:0;
- height:0; 
-}
-
-a[name='more']:target ~ .desplegable {
- visibility: visible;
- width: 200px;
- height: 200px;
-}
-
 .clColum-mov-1,.clColum-mov-2,.clColum-mov-3,.clColum-mov-4,.clColum-mov-5,.clColum-mov-6{
     min-height: 10px;
     float: left;

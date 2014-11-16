@@ -68,13 +68,15 @@ else if($Accion==2){
 		    $dtPeticion = new dtPeticion();	
 			$dtPeticion->length = $_POST["length"];
 			$dtPeticion->star = $_POST["start"];	
-			$dtPeticion->busqueda = $_POST["search"];													
+			$dtPeticion->busqueda = $_POST["search"];
+			$dtPeticion->busqueda = $dtPeticion->busqueda["value"]==""? "%":$dtPeticion->busqueda["value"]; 											
 			
 			$dtRespuesta = new dtRespuesta();
 
 																		
 			if($resultado=mysqli_query($conexion->conect,"Select Id,Nombre,TipoEnfermedad,Estado 
-                                                          from khlenfermedades"))
+                                                          from khlenfermedades
+														  where Nombre like '%".$dtPeticion->busqueda."%' "))
 			 {
 		     	$resultTotalRegistros= mysqli_query($conexion->conect,"Select COUNT(*) AS Total
 													             from khlenfermedades");
