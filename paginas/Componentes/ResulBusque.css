@@ -1,30 +1,5 @@
 
-.ResultadoBusqueda {
-		font-family: "Century Gothic";
-		margin:25px; 
-		max-width:600px;
-		color: #000000;
-		font-size: 20px;
-		background: #dbdbdb;
-		padding: 10px 20px 10px 20px;
-		text-decoration: none;
-	}
-
-.ResultadoBusqueda:hover {		
-		background: rgba(153,153,153,0.5);
-	}
-	
-.ResultadoBusqueda p{
-		font-family: "Century Gothic";		
-		color: #000000;
-		font-size: 18px;		
-		text-decoration: none;
-	}
-.ResultadoBusqueda h4 {
-		font-family: "Century Gothic";
-		color:rgba(51,51,51,1);
-		font-size:24px;	
-	}
-.ResultadoBusqueda a:hover {
-		color:white;
+/*Porque en este caso es una lista hacia abajo*/
+.group{	
+	margin:10px;
 	}
