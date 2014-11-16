@@ -5,29 +5,45 @@
 <!--Este link se agrega solo si estamos diseñando el componente -->
 <link href="../../css/PumbleTrap.css" rel="stylesheet" type="text/css">
 <link href="Aporte.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="votos/votos.css">
 
 <title>Componente</title>
 </head>
 
 <body>
 
-<div id="Contenido" class="clContenedor" style="margin:25px; max-width:600px; border: solid 2px rgba(153,153,153,1)">
+<div id="Contenido" class="clContenedor" >
 
-   <div class="clRow">   
+   <div class="clRow group">   
      <div class="clColum-esc-4 clColum-mov-4">          
-          <div class="clRow" style="background:rgba(153,153,153,1); margin:-5px; ">
-             <h4 style="margin:10px; color:rgba(255,255,255,1); ">Aca va el titulo</h4>  
-          </div>
-          
-          <div class="clRow" style="max-height:100px; overflow:auto;">  
+          <div class="clRow" >
+             <h2 >Aca va el titulo</h2>  
+          </div>          
+          <div class="clRow" >  
                 <p>Aca va la descripcion</p>
           </div>  
      </div>     
      <div class="clColum-esc-2 clColum-mov-2 clTexto-cen">
-          <a href="../index?" style="float:right; margin-right:5px; ">Ver mas</a>
+          <a href="../index?" >Ver mas</a>
 
          <br></br>
-         <div>Aca van los votos</div>
+         <div>
+         <div id='dvVotos' title="Me Cure">
+  <div id='dvMecure'> <a href="#" onClick="votar('P',2);">
+    <p> <img src="votos/mecure.png" width="50" height="50"  alt=""/> </p>
+    
+    </a>
+    <p><span id='spVotosMecure'>0</span></p>
+  </div>
+  <div id='dvNocure' title="No Me Cure"> <a href="#" onClick="votar('P',2);">
+    <p><img src="votos/nocure.png" width="50"  height="50" alt=""/></p>
+    
+    </a>
+    <p><span id='spVotosNocure'>0</span></p>
+  </div>
+  <span id='tmp'></span>
+</div>
+         </div>
      </div>
 
    </div>

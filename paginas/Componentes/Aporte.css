@@ -1,24 +1,6 @@
 
 .tratamiento {
-		font-family: "Century Gothic";
-		color: #000000;
-		font-size: 20px;
-		background: #dbdbdb;
-		padding: 10px 20px 10px 20px;
-		text-decoration: none;
-		margin-top:15px;
-	}
-
-.tratamiento:hover {
-	
-	}
-
-.tratamiento h4 {
-		font-family: "Century Gothic";
-		color:rgba(51,51,51,1);
-		font-size:24px;	
-		text-align:center;
-	}
+}
 
 .group {
     border: 1px solid #999;
