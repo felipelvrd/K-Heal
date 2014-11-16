@@ -12,7 +12,7 @@ $conexion= new DBManager();//Instancia de la Conexion a BD
 if($conexion->Conectar()==true){
 	try{
 		//Busco al usuario
-		if($resultado=mysqli_query($conexion->conect,"Select id,nombre,correo,rol,estado from khlusuarios where correo = '$email' and contrasena = '$contrasena';"))
+		if($resultado=mysqli_query($conexion->conect,"Select id,nombre,correo,Rol,estado from khlusuarios where correo = '$email' and contrasena = '$contrasena';"))
 			//si regresa resultados
 			if($resultado->num_rows!=0){
 				$row=$resultado->fetch_assoc();
@@ -20,6 +20,7 @@ if($conexion->Conectar()==true){
 				if($row['estado']=='A'){
 					session_start();
 					$_SESSION['idUsuario']=$row['id'];
+					$_SESSION['Rol']=$row['Rol'];
 					echo "Login exitoso";
 				}
 				else{

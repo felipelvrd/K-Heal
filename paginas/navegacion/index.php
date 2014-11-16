@@ -61,8 +61,7 @@
 			</div>
 			<div id="divCuerpoNotif">
 			    <ul>
-				 <li><a href="#" >Notificacion 1</a></li>
-				 <li><a href="#" >Notificacion 2</a></li>
+				 <div id='dvNotificaciones'></div>
 				</ul>
 			</div>			
 	</div>

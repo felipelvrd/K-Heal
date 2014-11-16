@@ -20,7 +20,7 @@
     <p><img src="paginas/Componentes/votos/nocure.png" width="50" height="50" alt=""/></p>
     <p></p>
     </a>
-    <p><span id='spVotosCNo<?php echo $nVotoC?>'></span></p>
+    <p><span id='spVotosCNo<?php echo $nVotoC?>'>0</span></p>
   </div>
   <span id='tmp<?php echo $nVotoC; ?>'></span>
 </div>
