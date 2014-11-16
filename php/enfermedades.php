@@ -58,21 +58,54 @@ else if($Accion==1){
 
 else if($Accion==2){
 	if($conexion->Conectar()==true){
-		try{	
-			if($resultado=mysqli_query($conexion->conect,"Select * from khlenfermedades where Nombre like = $Nombre")){
-				//Si el resultado tiene mas de 0 columnas
-        		if($resultado->num_rows!=0){
-            	//Si todavia hay filas del resultado por procesar
-            		while($row=$resultado->fetch_assoc()){
-                		$salida.="<li>
-                        	    <a href='#'>".$row['Nombre']."</a>
-                         	</li>";
-            	}
-        }
-        else{
-            $salida="<li>No hay enfermedades<li>";
-        }
+		try
+		{	
+																				 /*SELECT * 
+																		FROM khlenfermedades
+																		LIMIT 0 , 1*/
+			
+			include_once("../paginas/Mant_Enfermedad/cldataTable.php");															
+		    $dtPeticion = new dtPeticion();	
+			$dtPeticion->length = $_POST["length"];
+			$dtPeticion->star = $_POST["start"];	
+			$dtPeticion->busqueda = $_POST["search"];													
+			
+			$dtRespuesta = new dtRespuesta();
+
+																		
+			if($resultado=mysqli_query($conexion->conect,"Select Id,Nombre,TipoEnfermedad,Estado 
+                                                          from khlenfermedades"))
+			 {
+		     	$resultTotalRegistros= mysqli_query($conexion->conect,"Select COUNT(*) AS Total
+													             from khlenfermedades");
+				
+				$TotalRegistros=$resultTotalRegistros->fetch_assoc();
+				$dtRespuesta->recordsTotal=$TotalRegistros["Total"];
+				
+				if($resultado->num_rows!=0)
+				{
+					$dtRespuesta->recordsFiltered = $resultado->num_rows;
+                    
+
+            		while($row=$resultado->fetch_assoc())
+					{
+                       $tdDato = array();
+					   array_push($tdDato,$row["Id"]);
+					   array_push($tdDato,$row["Nombre"]);
+					   array_push($tdDato,$row["TipoEnfermedad"]);
+					   array_push($tdDato,$row["Estado"]);
+					   
+					   array_push($dtRespuesta->data,$tdDato);
+            	    }
+					
+					echo json_encode($dtRespuesta);
+                 }
+			    else
+			    {
+				 $salida="<li>No hay enfermedades<li>";
+			    }
 			}
+			
 			else{
 				throw new Exception("Ocurrio un error al listar las enfermedades".mysqli_connect_error());
 				exit;
