@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="comentario.css">
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+<div class='dvComentario'>
+<p><textarea id='taComentario' class='taComentario'></textarea></p>
+<p><input id='btnEnviarComentario' type="button" value="Envíar comentario" onClick="comentar(<?php echo $_GET['id_trat'];?>);"></p>
+<div id='dvMensajeComentario'></div>
+</div>
+</body>
+</html>
