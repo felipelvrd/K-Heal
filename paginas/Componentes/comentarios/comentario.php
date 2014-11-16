@@ -32,14 +32,13 @@ if($accion==1){
 else if ($accion==2){
 	$conexion= new DBManager();//Instancia de la Conexion a BD
 	if($conexion->Conectar()==true){
-		$salida="";
 		//Si la consulta produjo resultados
-		if($resultado=mysqli_query($conexion->conect,"SELECT distinct(c.Descripcion), c.Fecha, u.Nombre FROM hklcomentarios c inner join khlusuarios u on c.IdUsuario = u.Id  where IdTratamientos = $IdTratamientos;")){
+		if($resultado=mysqli_query($conexion->conect,"SELECT distinct(c.Descripcion),c.Id, c.Fecha, u.Nombre FROM hklcomentarios c inner join khlusuarios u on c.IdUsuario = u.Id  where IdTratamientos = $IdTratamientos;")){
 			//Si el resultado tiene mas de 0 columnas
 			if($resultado->num_rows!=0){
 				//Si todavia hay filas del resultado por procesar
 				while($row=$resultado->fetch_assoc()){
-					$salida.='<div class="dvLComentario">
+					echo '<div class="dvLComentario">
 									<div class="dvLUsuaComentario">
 										<div class="dvLAvatarUsuario">
 											<img src="recursos/Usuarios/Nombre_Usuario/imgPerfil.jpeg" width="100" height="100" alt=""/>
@@ -50,11 +49,16 @@ else if ($accion==2){
 									<div class="dvLDescripcionComentario">
 									'.$row['Descripcion'].'
 									</div>
+									<div class="dvLVotos">
+         								';
+										$idComent = $row['Id'];
+										 include ("../votosComentarios/index.php");
+         							echo '</div>
 								</div>';
 				}
 			}
 			else{
-				$salida="No hay comentarios";
+				echo "No hay comentarios";
 			}
 		}
 		else{
@@ -62,8 +66,6 @@ else if ($accion==2){
 			exit;
 		}
 		$conexion->CerrarConexion();
-	
-		echo $salida;
 	}
 }
 ?>

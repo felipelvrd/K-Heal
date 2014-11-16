@@ -15,6 +15,7 @@
 	text-decoration: none;
 }
 #dvMecure p, #dvNocure p{
+	width:75px;
 	text-align:center;
 	margin:0px;
 	color:#666066;

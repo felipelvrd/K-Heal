@@ -48,3 +48,9 @@
 .pLNombreUsuario, .pFechaComentario{
 	text-align:center;
 }
+
+.dvLVotos{
+	flex: 1 1 250px;
+	margin:auto;
+	height:100%;
+}
