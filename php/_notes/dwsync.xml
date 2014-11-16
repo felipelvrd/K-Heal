@@ -3,7 +3,7 @@
 <file name="configuracion.php" server="C:/xampp/htdocs/k-heal" local="130581321956023696" remote="130581321950000000" Dst="-1" />
 <file name="phpClassConexion.php" server="C:/xampp/htdocs/k-heal" local="130581321931362265" remote="130581321930000000" Dst="-1" />
 <file name="listar.php" server="C:/xampp/htdocs/k-heal" local="130581323890462448" remote="130581323890000000" Dst="-1" />
-<file name="phpClassConexion.php" server="C:/xampp/htdocs/k-heal/" local="130605492677223595" remote="130605492670000000" Dst="0" />
+<file name="phpClassConexion.php" server="C:/xampp/htdocs/k-heal/" local="130605717741201964" remote="130605717740000000" Dst="0" />
 <file name="configuracion.php" server="C:/xampp/htdocs/k-heal/" local="130583339478630009" remote="130583339470000000" Dst="0" />
 <file name="listar.php" server="C:/xampp/htdocs/k-heal/" local="130581325560496708" remote="130581325560000000" Dst="0" />
 <file name="configuracion.php" server="C:/xampp/htdocs/kheal/" local="130583295817745585" remote="130583295810000000" Dst="-1" />
@@ -12,8 +12,8 @@
 <file name="Consulta.php" server="C:/xampp/htdocs/kheal/" local="130583279740418013" remote="130583279740000000" Dst="-1" />
 <file name="Consulta.php" server="C:/xampp/htdocs/k-heal/" local="130604694228039745" remote="130604694220000000" Dst="0" />
 <file name="subir1.php" server="C:/xampp/htdocs/k-heal/" local="130587288934630182" remote="130587288930000000" Dst="0" />
-<file name="tratamientos.php" server="C:/xampp/htdocs/k-heal/" local="130605351325637005" remote="130605351320000000" Dst="0" />
+<file name="tratamientos.php" server="C:/xampp/htdocs/k-heal/" local="130605714739360526" remote="130605714730000000" Dst="0" />
 <file name="enfermedades.php" server="C:/xampp/htdocs/k-heal/" local="130604804261356945" remote="130604804260000000" Dst="0" />
 <file name="clEnfermedad.php" server="C:/xampp/htdocs/k-heal/" local="130604721232435597" remote="130604721230000000" Dst="0" />
-<file name="clTratamiento.php" server="C:/xampp/htdocs/k-heal/" local="130604721232485599" remote="130604721230000000" Dst="0" />
+<file name="clTratamiento.php" server="C:/xampp/htdocs/k-heal/" local="130605714739190516" remote="130605714730000000" Dst="0" />
 </dwsync>

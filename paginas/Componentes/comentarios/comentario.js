@@ -1,4 +1,6 @@
-
+$(document).ready(function(e) {
+     $(".taComentario").jqte();
+});
 
 function comentar(IdTratamientos){
 	   var parametros = {

@@ -75,6 +75,6 @@ Cargando
 				
 			</div>
 	</div>
-
+<?php include 'paginas/Componentes/comentarios/index.php';?>
 </body>
 </html>

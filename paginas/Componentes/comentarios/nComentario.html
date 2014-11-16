@@ -1,15 +1,23 @@
 <!doctype html>
 <html>
 <head><link rel="stylesheet" type="text/css" href="comentario.css">
+<script src="../../../javascript/jquery-2.1.1.min.js"></script>
+<script src="../enriquecedor/jquery-te-1.4.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../enriquecedor/jquery-te-1.4.0.css">
+
 <meta charset="utf-8">
 <title>Documento sin título</title>
-</head>
-
-<body>
+</head>    
+    
 <div class='dvComentario'>
 <p><textarea id='taComentario' class='taComentario'></textarea></p>
 <p><input id='btnEnviarComentario' type="button" value="Envíar comentario" onClick="comentar(<?php echo $_GET['id_trat'];?>);"></p>
 <div id='dvMensajeComentario'></div>
 </div>
+
+<script>
+ $(".taComentario").jqte();
+ 
+</script>
 </body>
 </html>
