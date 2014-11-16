@@ -133,29 +133,47 @@ background:rgba(0,153,0,0.5);
 	font-size:13px;
 }
 
-.clMenuLateral > ul {
-	background:rgba(204,204,204,1);
-	margin:25px;
+.clMenuLateral {	
+	border: 1px solid rgba(114,177,255,1);   
+    
+	text-decoration:none;
+}
+.clMenuLateral > ul {	
+	color:rgba(255,0,0,1);
+	list-style-image:url(../paginas/Consultar_Enfermedad/RedCross.png);
 }
 
-.clMenuLateral{
-	text-align:center;
+.clMenuLateral label{
+	color:rgba(0,102,255,0.8);
 }
 
 .clMenuLateral > ul > li{
-	background:rgba(255,255,255,1);
-	margin-right:38px;	
+	font-size:22px;	
 }
-.clMenuLateral > ul > li:hover{
-	background:rgba(51,153,255,1);
-	margin-right:38px;	
-}	
+.clMenuLateral h2{
+	font-size:22px;	
+	padding-left:15px;
+}
+
+.clMenuLateral a{
+	text-decoration:none;	
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+	
+	text-decoration:none;
+	margin:2px;
+}
 .clMenuLateral > ul >li > a:hover{
-	color:rgba(255,255,255,1);
+	border: 1px solid #999;
+    background: #f3f3f3;
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+	text-decoration:none;
 }
 	
 
-.clMenuLateral > label,
 .form-control >  label, 
 .form-control >  form > label 
 {
@@ -166,7 +184,42 @@ background:rgba(0,153,0,0.5);
 	font-size:20px;
 	display:block;
 }
+.group-enfermedad{
+	border: 1px solid #999;
+    background: #f3f3f3;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+	}
+.group-enfermedad h2 {
+	 -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background-color: rgba(96,96,96,0.5);
+    padding: .1em .3em;
+    margin-top: 0;
+    color: #fff;
+    font-size: 1.6em;
+    font-weight: normal;
+    text-shadow: 0 1px 0 #777;
+    -moz-box-shadow: 1px 1px 15px #999 inset;
+    -webkit-box-shadow: 1px 1px 15px #999 inset;
+    box-shadow: 1px 1px 15px #999 inset;
+}
 
+.group-enfermedad p {
+	 font-family:"Century Gothic";
+	 font-size:18px;
+	 padding-left:10px;
+}	
+	
+	
+	
 .form-control > SELECT,
 .form-control > input,
 .form-control > form  > input{
