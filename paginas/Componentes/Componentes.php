@@ -33,7 +33,7 @@
      
      <div class="clColum-esc-1 clColum-mov-2">
       
-      <div style="margin:5% auto; border: 1px solid #660; min-height:50px; width:90%;">
+      <div style="margin:5% auto; min-height:50px; width:90%;">
        <img class="clIMG-responsive" src="recursos/Logo2.png" style="max-height:50px; width:100%">
       </div>
 
