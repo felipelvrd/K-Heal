@@ -12,11 +12,9 @@ function comentar(IdTratamientos){
                data:  parametros,
                url:   'paginas/Componentes/comentarios/comentario.php',
                type:  'post',
-               beforeSend: function () {
-                       $("#dvMensajeComentario").html("Espere por favor...");
-               },
+			   dataType: 'json',
                success:  function (response) {
-                       $('#dvMensajeComentario').html(response);
+				   		msgMostrar(response.msg, response.tipo);
 					   listarComentarios(IdTratamientos);
                }
        });

@@ -25,3 +25,19 @@ function Listar_Tratamientos(id){
                }
        });
 }
+
+function nTratamiento(enf_id){
+       $.ajax({
+               url:   'paginas/Listar_Tratamientos/isLogin.php',
+               type:  'post',
+
+               success:  function (response) {
+                       if(response == 1){
+					   		url = "?p=NuevoTratamiento&enf_id="+enf_id;
+							$(location).attr("href", url);
+					   }
+						else
+							msgMostrar("Necesita estar logueado para poder publicar un tratamiento",1);
+               }
+       });
+}

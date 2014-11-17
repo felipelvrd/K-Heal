@@ -17,14 +17,16 @@ if($accion==1){
 				throw new Exception("Necesita estar logueado para poder comentar");
 			}
 			if($resultado=mysqli_query($conexion->conect,"INSERT INTO hklcomentarios (Descripcion, IdTratamientos, IdUsuario,Fecha) VALUES ('$Descripcion',$IdTratamientos,$idUsuario,'$Fecha');")){
-				echo "Comentario registrado satisfactoriamente";
+				$msg=array("msg"=>"Comentario registrado satisfactoriamente", "tipo" => 2);
+				print json_encode($msg);
 			}
 			else{
 				throw new Exception("Ocurrio un error al intentar registrar el comentario".mysqli_connect_error());
 				exit;
 			}
 		}catch(Exception $ex){
-			echo $ex->getMessage();
+			$msg = array("msg" => $ex->getMessage(), "tipo"=>1);
+			print json_encode($msg);
 		}
 		$conexion->CerrarConexion();
 	}
