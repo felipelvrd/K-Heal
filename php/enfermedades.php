@@ -11,7 +11,7 @@ $TipoEnfermedad = isset($_POST['tipoenfermedad']) ? $_POST['tipoenfermedad'] : -
 $Descripcion = isset($_POST['descripcion']) ? $_POST['descripcion'] : -1;
 $Diagnostico = isset($_POST['diagnostico']) ? $_POST['diagnostico'] : -1;
 $Prevencion = isset($_POST['prevencion']) ? $_POST['prevencion'] : -1;
-$Familia = isset($_POST['familia']) ? $_POST['familia'] : -1;
+$Referencias = isset($_POST['referencias']) ? $_POST['referencias'] : -1;
 $Estado = isset($_POST['estado']) ? $_POST['estado'] : -1;
 $Sintomas = isset($_POST['sintomas']) ? $_POST['sintomas'] : -1;
 $Etiquetas = isset($_POST['etiquetas']) ? $_POST['etiquetas'] : -1;
@@ -24,7 +24,7 @@ if($Accion==0){
 		try{	
 			//Registro la enfermedad
 			if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlenfermedades (Nombre,TipoEnfermedad,Descripcion,Diagnostico,Prevencion,Familia,Estado,Sintomas,Etiquetas) 
-															VALUES ('$Nombre','$TipoEnfermedad','$Descripcion','$Diagnostico','$Prevencion','$Familia','$Estado','$Sintomas','$Etiquetas');")){
+															VALUES ('$Nombre','$TipoEnfermedad','$Descripcion','$Diagnostico','$Prevencion','$Referencias','$Estado','$Sintomas','$Etiquetas');")){
 				echo "Enfermedad registrada satisfactoriamente";
 			}
 			else{

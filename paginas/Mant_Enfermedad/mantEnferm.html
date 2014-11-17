@@ -7,6 +7,9 @@
 <script src="../../javascript/dropzone.js"></script>
 <script src="../../javascript/jquery-2.1.1.min.js"></script>
 
+<script src="../Componentes/enriquecedor/jquery-te-1.4.0.min.js"> </script>
+
+
 
 <script src="jquery.dataTables.js"></script>
 <script src="dataTables.responsive.js"></script>
@@ -15,6 +18,8 @@
 <link rel="stylesheet" type="text/css" href="../../css/KHeal.css">
 <link rel="stylesheet" type="text/css" href="../../css/dropzone.css">
 <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
+
+<link rel="stylesheet" type="text/css" href="../Componentes/enriquecedor/jquery-te-1.4.0.css">
 
 <script>
 
@@ -52,8 +57,37 @@ $(document).ready(function() {
       });
 	  
 	$.fn.dataTable.ext.errMode = 'throw';
-});
+}); 
 
+
+function Agregar_Enfermedad()
+{
+	var json = {"descripcion":$('#jqte-Descripcion').val(),
+	            "diagnostico":$('#jqte-Diagnostico').val(),
+				"sintomas":$('#jqte-Sintomas').val(),
+				"prevencion":$('#jqte-Prevencion').val(),
+				"referencias":$('#jqte-Referencias').val(),
+				"nombre":$('#txtNombEnfer').val(),
+				"tipoenfermedad":$("#txtTipoEnfermedad").val(),
+				"etiquetas":$("#txtEtiquetas").val(),
+				"estado":$("#cbEstaEnfer").val(),
+				"accion":0       
+			   }
+			   
+	$.ajax({url:"../../php/enfermedades.php",
+	        data:json,
+			type:"POST",
+			dataType:"json",
+			success: function(response)
+			{
+				
+			
+			} 
+	       	
+	      });
+			   
+   // alert($('#jqte-Descripcion').val());
+}
 
 
 </script>
@@ -103,13 +137,71 @@ $(document).ready(function() {
                         </div>
                         <div class="clColum-esc-3 clColum-mov-6"   >  
                             <div  id="divEnfeFamilia" class="form-control">
-                                <label>Familia</label>
-                                <input type="text"  id="txtFamiEnfer"/>
+                                <label>TipoEnfermedad</label>
+                                <input type="text"  id="txtTipoEnfermedad"/>
                             </div>
                         </div>
                     </div>
                     <div class="clRow"   >
+                        <div class="clColum-esc-6 clColum-mov-6"   >
+                            <div id="divEnfeDescri" class="form-control">
+                                <label>Descripcion </label>		
+                                <textarea name="textarea" class="jqte-Descripcion" id="jqte-Descripcion"></textarea>	
+                                <script>
+                                    $('.jqte-Descripcion').jqte();
+                                </script>		
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="clRow"   >
+                        <div class="clColum-esc-6 clColum-mov-6"   >
+                            <div id="divEnfeHistoria" class="form-control">
+                                <label>Diagnostico </label>		
+                                <textarea name="textarea" class="jqte-Diagnostico"></textarea>	
+                                <script>
+                                    $('.jqte-Diagnostico').jqte();
+                                </script>
+                            </div>
+                        </div>
+                        <div class="clColum-esc-6 clColum-mov-6"   >
+                            <div id="divEnfeSintoma" class="form-control">
+                                 <label>Sintomas</label>		
+                                <textarea name="textarea" class="jqte-Sintomas"></textarea>	
+                                <script>
+                                    $('.jqte-Sintomas').jqte();
+                                </script>
+                            </div>	
+                        </div>
+                    </div>
+                    <div class="clRow"   >
+                        <div class="clColum-esc-6 clColum-mov-6"   >
+                            <div id="divEnfeRelacion" class="form-control">
+                            <label>Prevención</label>		
+                            <textarea name="textarea" class="jqte-Prevencion"></textarea>	
+                            <script>
+                              $('.jqte-Prevencion').jqte();
+                            </script>
+                        </div>
+                        </div>
+                        <div class="clColum-esc-6 clColum-mov-6" >
+                            <div id="divEnfeEnlaces" class="form-control">
+                                <label>Referencias</label>
+                                <textarea name="textarea" class="jqte-Referencias"></textarea>	
+								<script>
+                                  $('.jqte-Referencias').jqte();
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clRow" >
                         <div class="clColum-esc-3 clColum-mov-6"   >
+                            <div id="divEnfeOtros" class="form-control">
+                                <label>Etiquetas de busqueda</label>
+                                <textarea id="txtEtiquetas" name="textarea"></textarea>	
+                            </div>
+                        </div>
+                        
+                         <div class="clColum-esc-3 clColum-mov-6"   >
                             <div id="divEnfeEstado" class="form-control">
                                 <label>Estado</label>     
                                 <SELECT id="cbEstaEnfer" SIZE=1> 
@@ -117,49 +209,7 @@ $(document).ready(function() {
                                     <OPTION  class="form-control" >Bloqueado</OPTION>
                                 </SELECT> 
                             </div>
-                        </div>
-                        <div class="clColum-esc-3 clColum-mov-6"   >
-                            <div id="divEnfeDescri" class="form-control">
-                                <label>Descripcion </label>
-                                <input type="text" id="divDescriEnferCons"/>			
-                            </div>	
-                        </div>
-                    </div>
-                    <div class="clRow"   >
-                        <div class="clColum-esc-3 clColum-mov-6"   >
-                            <div id="divEnfeHistoria" class="form-control">
-                                <label>Historia </label>
-                                <input type="text" id="divHistoria"/>
-                            </div>
-                        </div>
-                        <div class="clColum-esc-3 clColum-mov-6"   >
-                            <div id="divEnfeSintoma" class="form-control">
-                                <label>Sintomas </label>
-                                <input type="text" id="divSintomas"/>
-                            </div>	
-                        </div>
-                    </div>
-                    <div class="clRow"   >
-                        <div class="clColum-esc-3 clColum-mov-6"   >
-                            <div id="divEnfeRelacion" class="form-control">
-                            <label>Enfermedades Relacionadas </label>
-                            <input type="text" id="DivEnferRelaci"/>
-                        </div>
-                        </div>
-                        <div class="clColum-esc-3 clColum-mov-6" >
-                            <div id="divEnfeEnlaces" class="form-control">
-                                <label>Enlaces Externos </label>
-                                <input type="text" id="DivEnlaces"/>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="clRow"   >
-                        <div class="clColum-esc-3 clColum-mov-6"   >
-                            <div id="divEnfeOtros" class="form-control">
-                                <label>Otros </label>
-                                <input type="text" id="DivOtros"/>
-                            </div>
-                        </div>
+                        </div>   
                     </div>
                     <div class="clRow"   >
                         <div class="clRow"   >
@@ -170,7 +220,7 @@ $(document).ready(function() {
                             </div>
                             <div class="clColum-esc-1 clColum-mov-2"   >
                                 <div >
-                                    <button type="button" id="btnAgregarEnfer">Agregar</button>
+                                    <button type="button" id="btnAgregarEnfer" onClick="Agregar_Enfermedad()">Agregar</button>
                                 </div>
                             </div>
                             <div class="clColum-esc-1 clColum-mov-2"   >
@@ -195,20 +245,5 @@ $(document).ready(function() {
 		</div>
 	</div>
 
-<!--
-<h1>Enfermedades</h1>
-<div id="divBusEnfer"><img src="../recursos/Componentejose.png" width="551" height="450" alt="Imagen no disponible"></div>
-<div id="divDatEnfer">
-	
-        
-        
-		
-       <div id="divDatosBasicos">
-        
-           
-        
-      </div>
-</div>
--->
 </body>
 </html>
