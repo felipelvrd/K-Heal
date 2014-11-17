@@ -8,11 +8,11 @@
 
 <body>
 
-<div id="cmp_ResultadoBusqueda" class="clContenedor" style="border: 1px solid #000">
+<div id="cmp_ResultadoBusqueda" class="clContenedor ResultadoBusqueda group" >
 
    <div class="clRow">
    
-     <div class="clColum-esc-5 clColum-mov-4">
+     <div class="clColum-esc-5 clColum-mov-4 ">
           
           <div class="clRow">
              <?php if(isset($_POST["n"])){echo '<h4 style="margin:0px">'.$_POST["n"].'</h4>';} ?>   
