@@ -1,3 +1,4 @@
+<img id="imgBarraSuperior" src="recursos/Logo2.png"  alt="imgKheal"> 
 <ul>
 <div id="dvBarraNavegacion"></div>
 </ul>
