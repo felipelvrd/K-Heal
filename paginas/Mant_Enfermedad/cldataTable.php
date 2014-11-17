@@ -2,6 +2,21 @@
 
 //Clases creadas para funcionar con el scrip dataTable en el lado del servidor
 
+class tdDato
+{
+	public $ID;
+	public $Nombre;
+	public $TipoEnfermedad;
+	public $Diagnostico;
+	public $Prevencion;
+	public $Descripcion;
+	public $Enfermedades_Relacionadas;
+	public $Sintomas;
+	public $Etiquetas;
+	public $Estado;
+	public $Imagen;
+}
+
 
 class dtPeticion
 {
