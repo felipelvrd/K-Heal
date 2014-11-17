@@ -8,15 +8,6 @@
 	padding:10%;
 	padding-top:0px;
 	padding-bottom:80px;
-	border: 1px solid #999;
-    background: #f3f3f3;
-	-moz-border-radius: 4px;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    
-	-moz-box-shadow: 2px 2px 5px #ccc;
-    -webkit-box-shadow: 2px 2px 5px #ccc;
-    box-shadow: 2px 2px 5px #ccc;
 }
 
 #btRegistarTratamiento{

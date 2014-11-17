@@ -1,4 +1,4 @@
-<div class = 'dvNTratamiento' >
+<div class = 'dvNTratamiento clCaja' >
 <div class="clRow clTexto-cen">
 <h1>Nuevo Tratamiento</h1>
 </div>

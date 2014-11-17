@@ -38,7 +38,7 @@ else if ($accion==2){
 			if($resultado->num_rows!=0){
 				//Si todavia hay filas del resultado por procesar
 				while($row=$resultado->fetch_assoc()){
-					echo '<div class="dvLComentario">
+					echo '<div class="dvLComentario clCaja">
 									<div class="dvLUsuaComentario">
 										<div class="dvLAvatarUsuario">
 											<img src="recursos/Usuarios/Nombre_Usuario/imgPerfil.jpeg" width="100" height="100" alt=""/>
