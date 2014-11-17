@@ -17,19 +17,22 @@ if($conexion->Conectar()==true){
 		if($resultado=mysqli_query($conexion->conect,"Select id from khlevaluacionescomentarios where IdComentario = $IdComentario and idUsuario=$idUsuario;"))
 			if($resultado->num_rows!=0)
 				if($resultado=mysqli_query($conexion->conect,"Update khlevaluacionescomentarios set TipoEvaluacion = '$TipoEvaluacion' where idUsuario = $idUsuario and IdComentario=IdComentario;")){
-			echo "Evaluacion modificada satisfactoriamente";
+			$msg = array("msg"=>"Evaluacion modificada satisfactoriamente", "tipo" => 3);
+			print json_encode($msg);
 			return;
 		}
 			
 			if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlevaluacionescomentarios (idUsuario, IdComentario, TipoEvaluacion) VALUES ($idUsuario,$IdComentario,'$TipoEvaluacion');")){
-			echo "Evaluacion registrada satisfactoriamente";
+			$msg=array("msg"=>"Evaluacion registrada satisfactoriamente", "tipo" => 2);
+			print json_encode($msg);
 		}
 		else{
 			throw new Exception("Ocurrio un error al intentar registrar la evaluacion".mysqli_connect_error());
 			exit;
 		}
 	}catch(Exception $ex){
-		echo $ex->getMessage();
+		$msg = array ("msg"=> $ex->getMessage(), "tipo"=>1);
+		print json_encode($msg);
 	}
 	$conexion->CerrarConexion();
 }

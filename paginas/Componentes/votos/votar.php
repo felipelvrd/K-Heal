@@ -9,6 +9,7 @@ $idTratamiento = $_POST['idTratamiento'];
 $conexion= new DBManager();//Instancia de la Conexion a BD
 
 if($conexion->Conectar()==true){
+	$msg;
 	try{
 		if(!isset($_SESSION['idUsuario'])){
 			throw new Exception("Necesita estar logueado para poder votar");
@@ -17,21 +18,24 @@ if($conexion->Conectar()==true){
 		if($resultado=mysqli_query($conexion->conect,"Select id from khlevaluacionestratamientos where idTratamiento = $idTratamiento and idUsuario=$idUsuario;"))
 			if($resultado->num_rows!=0)
 				if($resultado=mysqli_query($conexion->conect,"Update khlevaluacionestratamientos set TipoEvaluacion = '$TipoEvaluacion' where idUsuario = $idUsuario and idTratamiento=idTratamiento;")){
-			echo "Evaluacion modificada satisfactoriamente";
+			$msg=array("msg" => "Evaluacion modificada satisfactoriamente", "tipo"=>3);
+			print json_encode($msg);
 			return;
 		}
 			
 		//Registro el usuario
 //		echo "INSERT INTO khlevaluacionestratamientos (idUsuario, idTratamiento, TipoEvaluacion) VALUES ($idUsuario,$idTratamiento,'$TipoEvaluacion')";
 		if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlevaluacionestratamientos (idUsuario, idTratamiento, TipoEvaluacion) VALUES ($idUsuario,$idTratamiento,'$TipoEvaluacion');")){
-			echo "Evaluacion registrada satisfactoriamente";
+			$msg=array("msg" => "Evaluacion registrada satisfactoriamente", "tipo"=>2);
+			print json_encode($msg);
 		}
 		else{
 			throw new Exception("Ocurrio un error al intentar registrar la evaluacion".mysqli_connect_error());
 			exit;
 		}
 	}catch(Exception $ex){
-		echo $ex->getMessage();
+		$msg=array ("msg" => $ex->getMessage(), "tipo"=>1);
+		print json_encode($msg);
 	}
 	$conexion->CerrarConexion();
 }

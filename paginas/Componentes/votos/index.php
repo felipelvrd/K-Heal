@@ -23,5 +23,4 @@
     </a>
     <p><span id='spVotosNocure<?php echo $nVoto?>'><?php obtenerVotos($_POST['id'],'N'); ?></span></p>
   </div>
-  <span id='tmp<?php echo $nVoto; ?>'></span>
 </div>

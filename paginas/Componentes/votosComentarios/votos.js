@@ -8,9 +8,10 @@ function votarC(TipoEvaluacion,IdComentario,int){
        $.ajax({
                data:  parametros,
                url:   'paginas/Componentes/votosComentarios/votar.php',
+			   dataType: 'json',
                type:  'post',
                success:  function (response) {
-                       $('#tmp'+int).html(response);
+                       msgMostrar(response.msg, response.tipo);
 					   nVotosC('N',IdComentario,int);
 					   pVotosC('P',IdComentario,int);
                }

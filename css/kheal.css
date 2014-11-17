@@ -287,7 +287,7 @@ background:rgba(0,153,0,0.5);
 	color:rgba(51,51,255,1);
 	}
 .clContenedor{
-	 padding-left:30px !important;
+	 //padding-left:30px !important;
 	}
 	
 
@@ -309,8 +309,7 @@ background-position: center;
 	
 width: 96%;
 float: left;
-margin: 0px;
-padding: 5px;
+padding: 0%;
 /*background-image: url(../recursos/texturas/textura1.jpg);*/
 
   border: 1px solid #999;
@@ -323,7 +322,9 @@ padding: 5px;
     box-shadow: 2px 2px 5px #ccc;
     margin-bottom: 1em;
     padding-bottom: 1em;
-	margin:10px;	
+	margin:2%;
+	margin-top:10px;
+	margin-bottom:10px;
 } 
 	
 #BarraSuperior ul li{
@@ -353,11 +354,7 @@ text-decoration:none;
 	right:0px;
 	top: 0px;
 }
-	
-	
-	
-
-	
+		
  
  /*****************************************************************************
  ******************************** Id ******************************************

@@ -22,7 +22,6 @@
     </a>
     <p><span id='spVotosCNo<?php echo $nVotoC?>'>0</span></p>
   </div>
-  <span id='tmp<?php echo $nVotoC; ?>'></span>
 </div>
 
 <script type="text/javascript">
