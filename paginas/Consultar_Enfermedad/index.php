@@ -8,15 +8,77 @@ $(document).ready(function(e) {
 
 
 </script>
-
-
 <div id="splash">
 Cargando
 </div>
 
 <div id="main" class="clContenedor">
-     
-        <div class="clRow clTexto-cen"  >
+      <div class="clRow clTexto-cen">
+			<h1 id="Nombre_Enfermedad">Nombre de la enfemedad</h1>
+		</div>
+        
+		<div class="clRow clTexto-cen"  >
+			<div id="divFichaEnfermCons"><img  src="recursos/Logo2.png" width="426" height="118" alt="alt 500X300"></div>
+		</div>
+        
+		<div class="clRow"  >
+			<div class="clColum-esc-2 clColum-mov-6"  >
+				<div class="clRow" >
+						<div id="divMenuEnferCons" class="clMenuLateral group-enfermedad" >
+                        	<h2>MENU</h2>
+							<ul>                              
+							  <li><a href="#divDescriEnferCons" >Descripcion</a></li>
+							  <li><a href="#divSintomas "> Sintomas</a></li>
+							  <li><a href="#divDiagnostico ">Prevencion</a></li>
+							  <li><a href="#divReferencias">Referencias</a></li> 
+                              <li><a href="#">Tratamientos propuestos por usuarios</a></li>  
+							</ul>
+						</div>
+				</div>
+			</div>
+            
+			<div class="clColum-esc-3 clColum-mov-6 " >
+			<div class="group-enfermedad">
+				<h2>Descripcion </h2>
+				<p id="divDescriEnferCons" class="descrEnfer">
+                Datos
+				</p>
+			</div>
+
+			<div class="group-enfermedad">
+				<h2>Sintomas</h2>
+				<p id="divSintomas" class="descrEnfer">
+				Datos
+				</p>
+			</div>
+
+			<div class="group-enfermedad">
+				<h2>Diagnostico</h2>
+				<p id="divDiagnostico" class="descrEnfer">
+				Datos
+				</p>
+			</div>
+
+			<div class="group-enfermedad">
+				<h2>Prevencion </h2>
+				<p id="DivPrevencion" class="descrEnfer">
+				Datos
+				</p>
+			</div>
+
+			<div class="group-enfermedad">
+				<h2>Referencias</h2>
+				<p id="DivReferencias" class="descrEnfer">
+				Datos
+				</p>
+			</div>
+
+
+			</div>
+		
+		</div>
+     <!--  crisman cambio el 17/11/2014 11 55 am
+     	<div class="clRow clTexto-cen"  >
 			<h1 id="Nombre_Enfermedad">Nombre de la enfemedad</h1>
 		</div>
         
@@ -77,5 +139,5 @@ Cargando
 
 			</div>
 		
-		</div>
+		</div>-->
 </div>
