@@ -9,11 +9,9 @@ function votar(TipoEvaluacion,idTratamiento,int){
                data:  parametros,
                url:   'paginas/Componentes/votos/votar.php',
                type:  'post',
-               beforeSend: function () {
-                       $("#tmp"+int).html("Espere por favor...");
-               },
                success:  function (response) {
-                       $('#tmp'+int).html(response);
+				   		msgMostrar(response,3);
+                       //$('#tmp'+int).html(response);
 					   nVotos('N',idTratamiento,int);
 					   pVotos('P',idTratamiento,int);
                }

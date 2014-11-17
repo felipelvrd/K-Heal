@@ -16,7 +16,9 @@
    	if(empty($_GET["p"]));
    		//include ("paginas/principal/index.php"); 
    	else
-   		include ("paginas/".$_GET["p"]."/header.html"); 
+   		include ("paginas/".$_GET["p"]."/header.html");
+		 
+	include ("paginas/Componentes/Mensaje/header.html");	
    	?>
     
 </head>
@@ -35,6 +37,10 @@
    ?>
 						
 </div>
+
+<?php
+	include ("paginas/Componentes/Mensaje/index.php");
+?>
 
 </body>
 </html>
