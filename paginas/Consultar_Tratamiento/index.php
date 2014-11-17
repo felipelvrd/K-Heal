@@ -23,8 +23,9 @@ Cargando
 	<div class="clRow"  >
 			<div class="clColum-esc-2 clColum-mov-6"  >
 				<div class="clRow">
-					<div id="divMenuEnferCons" class="clMenuLateral" >
-						<ul>
+					<div id="divMenuEnferCons" class="clMenuLateral group-enfermedad" >
+						<h2>MENU</h2>
+                        <ul>
 						  <li><a href="#divCuerpoConsTrat" >Inicio</a></li>
 						  <li><a href="#divTipo">Tipo</a></li>
 						  <li><a href="#divAplicacion"> Forma de Aplicarlo</a></li>
@@ -36,39 +37,39 @@ Cargando
 				</div>
 			</div>
 			<div class="clColum-esc-3 clColum-mov-6"  >
-				<div>
+				<div class="group-enfermedad">
 					<h2>Descripcion </h2>
 					<div id="divDescriConsTrat" class="descrEnfer">
 					Datos
 					</div>
 				</div>
 
-				<div>
+				<div class="group-enfermedad">
 					<h2>Tipo </h2>
-					<div id="divTipo" class="descrEnfer">
+					<p id="divTipo"p>
 					Datos
-					</div>
+					</p>
 				</div>
 
-				<div>
+				<div class="group-enfermedad">
 					<h2>Forma de Aplicarlo</h2>
-					<div id="divAplicacion" class="descrEnfer">
+					<div id="divAplicacion" >
 					Datos
 					</div>
 				</div>
 
-				<div>
+				<div class="group-enfermedad">
 					<h2>Efectos Segundarios</h2>
-					<div id="DivEfecConsTrat" class="descrEnfer">
+					<p id="DivEfecConsTrat" >
 					Datos
-					</div>
+					</p>
 				</div>
 
-				<div>
+				<div class="group-enfermedad">
 					<h2>Referencias</h2>
-					<div id="DivReferencias" class="descrEnfer">
+					<p id="DivReferencias" >
 					Datos
-					</div>
+					</p>
 				</div>               
 				
                 <div id="mantTrata"></div>
