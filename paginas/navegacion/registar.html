@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Documento sin título</title>    <meta charset="utf-8">
+    <title>k_heal</title>
+    <link rel="stylesheet" type="text/css" href="../../css/KHeal.css">
+    <link rel="stylesheet" type="text/css" href="../../css/PumbleTrap.css">
+    
+	<script src="../../javascript/jquery-2.1.1.min.js"></script>
+    <script src="../../javascript/KHeal.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/cssBuscador.css">
+    <script type="text/javascript" src="../../javascript/jsBuscador.js"></script>
+    
+<script src="navegacion.js"></script>
+<script src="registro.js"></script>
+<script src="login.js"></script>
+<script src="sha256.jquery.debug.js"></script>
+
+<link rel="stylesheet" type="text/css" href="cajaFlotante.css">
+    
+</head>
+
+<body>
+
+  <div id="venModaRegistrar" ><!-- este seria el apartado de la ventana modal de REGISTRO -->
+	<div class="dvTrianguloBorde" id='tbRegistrar'>
+    <div class="dvTriangulo" id="trRegistrar"></div>
+    <div class="dvFlotante" id="dvRegistrar">		
+			<div>
+				 <button id="btnCerrarModal2" type="button">X</button>
+				<h4>
+					REGISTRO
+				</h4>
+			</div>
+			<div>
+				 <form>             
+					<div >
+						 <label for="txtCorreoRegistro">Correo Electronico</label><input type="text"  id="txtCorreoRegistro"/>
+					</div>                        
+					<div >
+						 <label for="txtNombreRegistro">Nombre</label><input type="text"  id="txtNombreRegistro" />
+					</div> 
+					<div >
+						 <label for="txtContrasenaRegistro">Contraseña</label><input type="password"  id="txtContrasenaRegistro" />
+					</div> 
+					<div >
+						 <label for="txtReContrasenaRegistro">Verifique</label><input type="password"  id="txtReContrasenaRegistro" />
+					</div> 
+				</form>
+			</div>
+			<div > 
+                 <button type="button" id="btnAceptarRegistro">ACEPTAR</button>
+			</div>
+			<div > 
+                 <button type="button" id="btnRegistroFace">FACEBOOK</button>
+			</div>
+			<div > 
+                 <button type="button" id="btnRegistroGoogle">GOOGLE</button>
+			</div>
+			<div>
+            <span id="spnMensajeRegistro"></span>
+            </div>	
+        </div>
+    </div>
+						
+</div>
+</body>
+</html>
