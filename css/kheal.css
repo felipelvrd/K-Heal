@@ -136,8 +136,6 @@ background:rgba(0,153,0,0.5);
 }
 
 .clMenuLateral {	
-	border: 1px solid rgba(114,177,255,1);   
-    
 	text-decoration:none;
 }
 .clMenuLateral > ul {	
@@ -158,13 +156,7 @@ background:rgba(0,153,0,0.5);
 }
 
 .clMenuLateral a{
-	text-decoration:none;	
-    -moz-box-shadow: 2px 2px 5px #ccc;
-    -webkit-box-shadow: 2px 2px 5px #ccc;
-    box-shadow: 2px 2px 5px #ccc;
-	
-	text-decoration:none;
-	margin:2px;
+	text-decoration:none;		
 }
 .clMenuLateral > ul >li > a:hover{
 	border: 1px solid #999;
@@ -320,7 +312,7 @@ background-position: center;
 #BarraSuperior{
 	
 width: 96%;
-float: left;
+float: right;
 padding: 0%;
 /*background-image: url(../recursos/texturas/textura1.jpg);*/
 
@@ -344,10 +336,7 @@ list-style: none;
 position: relative;
 display: inline-block;
 text-align: center;
-float: left;
-
-
-
+float: right;
 }
 
 #BarraSuperior ul li a{	
@@ -358,13 +347,15 @@ font-weight:bold;
 text-decoration:none;
 }
 
-#BarraSuperior > img{	
+#imgBarraSuperior{	
 	display:inline-block;
-	float:right;
-	width: 54px;
+	float:left;
+	width: 70px;
 	height: 53px;
 	right:0px;
 	top: 0px;
+	z-index:2;
+	margin-left:15px;
 }
 		
  
