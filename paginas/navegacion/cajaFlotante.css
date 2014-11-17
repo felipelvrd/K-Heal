@@ -18,6 +18,11 @@
 	text-align: left;
 	z-index: 9;
 }
+.dvFlotante input 
+{
+	display: block;
+}
+
 .dvTriangulo {
   border-bottom: 10px solid white;
   border-left: 10px dotted transparent;
@@ -34,29 +39,29 @@
 }
 
 #dvRegistrar{
-	left:-110px;
+	right:-110px;
 	top: 10px;
 }
 #trRegistrar{
   top: -9px;
-  left:-10px;
+  right:-10px;
 }
 #tbRegistrar{
   top: 40px;
-  left:120px;
+  right:120px;
 }
 
 #dvLogin{
-	left:-110px;
+	right:-110px;
 	top: 10px;
 }
 #trLogin{
   top: -9px;
-  left:-10px;
+  right:-10px;
 }
 #tbLogin{
   top: 40px;
-  left:120px;
+  right:180px;
 }
 
 #dvNotif{
