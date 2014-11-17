@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../Consultar_Tratamiento/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="../../css/PumbleTrap.css">
+<link rel="stylesheet" type="text/css" href="../../css/kheal.css">
+<link rel="stylesheet" type="text/css" href="tratamiento.css">
+<script src="../../javascript/jquery-2.1.1.min.js"></script>
+<script src="../Componentes/enriquecedor/jquery-te-1.4.0.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../Componentes/enriquecedor/jquery-te-1.4.0.css">
+
+<meta charset="utf-8">
+<title>Documento sin título</title>
+</head>
+
+<body>
+<div class = 'dvNTratamiento'>
+<div class="clRow clTexto-cen">
+<form action="paginas/NuevoTratamiento/registrarTratamiento.php">
+<h1>Nuevo Tratamiento</h1>
+</div>
+<h2>Nombre</h2>
+<p><input type="text"/> </p>
+<h2>Tipo</h2>
+<p><input type="text" /> </p>
+<h2>Forma de Aplicarlo</h2>
+<p><textarea class="richtext" id="taFormaAplicarlo"></textarea> </p>
+<h2>Efectos Secundarios</h2>
+<p><textarea class="richtext" id="taEfectosSecundarios"></textarea> </p>
+<h2>Referencias</h2>
+<p><textarea class="richtext" id="taReferencias"></textarea> </p>
+<p><input id='btRegistarTratamiento' value="Registrar Tratamiento" type="submit"> </p>
+</div>
+</form>
+<script type="text/javascript">
+
+	$('.richtext').jqte();
+</script>
+
+</body>
+</html>

@@ -39,6 +39,14 @@ Cargando
 				<div id="divListaTrata" class="clListTratamientos">                 
                  <!-- Aca se genera el codigo dinamicamente -->
 				</div>
+                <?php
+					@session_start();
+					if(isset($_SESSION['idUsuario']))
+                		echo '<p><a href="?p=NuevoTratamiento&enf_id='.$_GET["enf_id"].'">Nuevo tratamiento</a></p>';
+					else
+						echo '<p>Inicia sección o regístrate para poder publicar un tratamiento.</p>';
+						
+				?>
 			</div>
 			<div class="clColum-esc-1 clColum-mov-6">
 			</div>
