@@ -4,9 +4,12 @@
  ***********************  universal ******************************************
  *****************************************************************************/
 	body{
-		margin:0px;
-		padding:0px;
-		color:rgba(51,51,51,1);/*gris oscuro*/
+	margin: 0px;
+	padding: 0px;
+	color: rgba(51,51,51,1);/*gris oscuro*/
+	background-image: url(../recursos/madera.jpg);
+	
+	
 		}
 	
 	
