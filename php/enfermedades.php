@@ -74,9 +74,10 @@ else if($Accion==2){
 			$dtRespuesta = new dtRespuesta();
 
 																		
-			if($resultado=mysqli_query($conexion->conect,"Select Id,Nombre,TipoEnfermedad,Estado 
+			if($resultado=mysqli_query($conexion->conect,"Select *
                                                           from khlenfermedades
-														  where Nombre like '%".$dtPeticion->busqueda."%' "))
+														  where Nombre like '%".$dtPeticion->busqueda."%' 
+														  limit $dtPeticion->length"))
 			 {
 		     	$resultTotalRegistros= mysqli_query($conexion->conect,"Select COUNT(*) AS Total
 													             from khlenfermedades");
@@ -87,16 +88,21 @@ else if($Accion==2){
 				if($resultado->num_rows!=0)
 				{
 					$dtRespuesta->recordsFiltered = $resultado->num_rows;
-                    
 
             		while($row=$resultado->fetch_assoc())
 					{
-                       $tdDato = array();
-					   array_push($tdDato,$row["Id"]);
-					   array_push($tdDato,$row["Nombre"]);
-					   array_push($tdDato,$row["TipoEnfermedad"]);
-					   array_push($tdDato,$row["Estado"]);
-					   
+					   $tdDato=new tdDato;
+					   $tdDato->ID=$row["Id"];
+                       $tdDato->Descripcion=$row["Descripcion"];
+					   $tdDato->Diagnostico=$row["Diagnostico"];
+					   $tdDato->Enfermedades_Relacionadas=$row["Enfermedades_Relacionadas"];
+					   $tdDato->Estado=$row["Estado"];
+					   $tdDato->Etiquetas=$row["Etiquetas"];
+					   $tdDato->Sintomas=$row["Sintomas"];
+					   $tdDato->Nombre=$row["Nombre"];
+					   $tdDato->Prevencion=$row["Prevencion"];
+					   $tdDato->Imagen=$row["Imagen"];
+					   $tdDato->TipoEnfermedad=$row["TipoEnfermedad"];
 					   array_push($dtRespuesta->data,$tdDato);
             	    }
 					
