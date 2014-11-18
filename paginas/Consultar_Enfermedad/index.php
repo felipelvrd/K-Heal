@@ -31,8 +31,9 @@ Cargando
 							  <li><a href="#divSintomas "> Sintomas</a></li>
 							  <li><a href="#divDiagnostico ">Prevencion</a></li>
 							  <li><a href="#divReferencias">Referencias</a></li> 
-                              <li><a href="?p=Listar_Tratamientos&enf_id=<?php echo $_GET["enf_id"]; ?>">Tratamientos propuestos por usuarios</a></li>  
-							</ul>
+<<<<<<< .mine                              <li><a  id="link_Tratamientos" href="#">Tratamientos propuestos por usuarios</a></li>  
+=======                              <li><a href="?p=Listar_Tratamientos&enf_id=<?php echo $_GET["enf_id"]; ?>">Tratamientos propuestos por usuarios</a></li>  
+>>>>>>> .theirs							</ul>
 						</div>
 				</div>
 			</div>
