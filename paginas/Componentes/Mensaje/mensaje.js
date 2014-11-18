@@ -3,6 +3,7 @@ $(document).ready(function(e) {
 });
 
 function msgMostrar(msg,tipo){
+	$('#dvMensaje').removeClass();
 	if(tipo == 1)
 		$('#dvMensaje').addClass("dvError");
 	if(tipo == 2)
@@ -12,5 +13,5 @@ function msgMostrar(msg,tipo){
 	$('#spMensaje').html(msg);
 	$('#dvMensaje').slideDown(200);
 	
-	setTimeout(function() { $('#dvMensaje').slideToggle( 1000, function() {$('#dvMensaje').removeClass();}); }, 5000);
+	setTimeout(function() { $('#dvMensaje').slideToggle(1000); }, 5000);
 }

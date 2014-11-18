@@ -18,7 +18,7 @@ $(document).ready(function() {
 			registrar(email,nombre,contrasena);
 		}
 		catch(ex){
-			$("#spnMensajeRegistro").html(ex);
+			msgMostrar(ex,1);
 		}
 		});
 });
@@ -34,11 +34,9 @@ function registrar(email,nombre,contrasena){
                data:  parametros,
                url:   'paginas/navegacion/registro.php',
                type:  'post',
-               beforeSend: function () {
-                       $("#spnMensajeRegistro").html("Espere por favor...");
-               },
+			   dataType:"json",
                success:  function (response) {
-                       $('#spnMensajeRegistro').html(response);
+                      msgMostrar(response.msg, response.tipo);
 					   $("#venModaRegistrar").hide();
                }
        });

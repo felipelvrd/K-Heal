@@ -1,18 +1,13 @@
-<img id="imgBarraSuperior" src="recursos/Logo2.png"  alt="imgKheal"> 
+<a href="#"><img id="imgBarraSuperior" src="recursos/Logo2.png" onClick="$(location).attr('href', '?p=principal');" alt="imgKheal"></a>
 <ul>
 <div id="dvBarraNavegacion"></div>
 </ul>
 
 
-  <div id="venModaRegistrar"><!-- este seria el apartado de la ventana modal de REGISTRO -->
+  <div id="venModaRegistrar" class="Regis"><!-- este seria el apartado de la ventana modal de REGISTRO -->
 	<div class="dvTrianguloBorde" id='tbRegistrar'>
     <div class="dvTriangulo" id="trRegistrar"></div>
-    <div class="dvFlotante" id="dvRegistrar">		
-			<div>
-				<h4>
-					REGISTRO
-				</h4>
-			</div>
+    <div class="dvFlotante" id="dvRegistrar">
 			<div>
 				 <form>             
 					<div >
@@ -29,35 +24,21 @@
 					</div> 
 				</form>
 			</div>
-			<div > 
-                 <button type="button" id="btnAceptarRegistro">ACEPTAR</button>
+			<div style="float:right; margin-top:20px; margin-bottom:10px;"> 
+                 <button type="button" id="btnAceptarRegistro">Registrar</button>
 			</div>
-			<div > 
-                 <button type="button" id="btnRegistroFace">FACEBOOK</button>
-			</div>
-			<div > 
-                 <button type="button" id="btnRegistroGoogle">GOOGLE</button>
-			</div>
-			<div>
-            <span id="spnMensajeRegistro"></span>
-            </div>	
         </div>
     </div>
 						
 </div>
 
 
-<div id="venModaNotif"> <!-- este seria el apartado de la ventana modal de NOTIFICACIONES--> 
+<div id="venModaNotif" class="Notif"> <!-- este seria el apartado de la ventana modal de NOTIFICACIONES--> 
 	<div class="dvTrianguloBorde" id='tbNotif'>
     <div class="dvTriangulo" id="trNotif"></div>
     <div class="dvFlotante" id="dvNotif">	
     
     <div>		
-			<div>
-				<h4>
-					NOTIFICACIONES
-				</h4>
-			</div>
 			<div id="divCuerpoNotif">
 			    <ul>
 				 <div id='dvNotificaciones'></div>
@@ -66,17 +47,12 @@
 	</div>
     </div></div></div>
 
-	<div id="venModaIngresar"><!-- este seria el apartado de la ventana modal de INGRESAR-->
+	<div id="venModaIngresar" class="login"><!-- este seria el apartado de la ventana modal de INGRESAR-->
 		
         <div class="dvTrianguloBorde" id='tbLogin'>
     <div class="dvTriangulo" id="trLogin"></div>
     <div class="dvFlotante" id="dvLogin">	
         <div >
-			<div >
-				<h4 id="myModalLabel">
-					ENTRAR
-				</h4>
-			</div>
 			<div>
 				 <form >                    
 					<div >
@@ -87,11 +63,9 @@
 					</div> 
 				</form>
 			</div>
-			<div  > 
+			<div style="float:right; margin-top:20px; margin-bottom:10px;" > 
                  <button type="button" id="btnAceptarLogin">ACEPTAR</button>
 			</div>
-			<div>
-            <span id="spnMensajeLogin"></span>
-            </div>		</div>						
+			</div>						
 </div>
 </div></div>

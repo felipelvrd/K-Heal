@@ -15,7 +15,7 @@ $conexion= new DBManager();//Instancia de la Conexion a BD
 			if($resultado->num_rows!=0){
 				//Si todavia hay filas del resultado por procesar
 				while($row=$resultado->fetch_assoc()){
-					$salida.= "<li><a href='#' onClick='borrarNoti(".$row['Id'].");' >".$row['Descripcion']."</li></a>";						
+					$salida.= "<li><a href='#' onClick='borrarNoti(".$row['Id'].");' >".$row['Descripcion']."</a></li>";						
 				}
 			}
 			else{

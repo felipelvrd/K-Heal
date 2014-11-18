@@ -17,14 +17,16 @@ if($conexion->Conectar()==true){
 			
 		//Registro el usuario
 		if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlusuarios (Nombre, Correo, Contrasena, Rol, Estado) VALUES ('$nombre', '$email', '$contrasena', 'U', 'A');")){
-			echo "Usuario registrado satisfactoriamente";
+			$msg = array("msg" => "Usuario registrado satisfactoriamente", "tipo"=>2);
+			print json_encode($msg);
 		}
 		else{
 			throw new Exception("Ocurrio un error al intentar registrar al usuario".mysqli_connect_error());
 			exit;
 		}
 	}catch(Exception $ex){
-		echo $ex->getMessage();
+		$msg= array ("msg"=>$ex->getMessage(), "tipo" => 1);
+		print json_encode($msg);
 	}
 	$conexion->CerrarConexion();
 }

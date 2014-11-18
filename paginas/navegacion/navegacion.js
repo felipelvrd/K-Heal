@@ -40,18 +40,44 @@ $(document).ready(function(){
 	$("#venModaRegistrar").hide();
 	$("#venModaIngresar").hide();
 	$("#venModaNotif").hide();
+	
+	
+	
+	$(document).click(function() { 		
+		if ($("#venModaRegistrar").is(":visible"))
+			$("#venModaRegistrar").fadeToggle(500);
+		if ($("#venModaIngresar").is(":visible"))
+			$("#venModaIngresar").fadeToggle(500);
+		if ($("#venModaNotif").is(":visible"))
+			$("#venModaNotif").fadeToggle(500);
 		
-	$("#venModaIngresar").mouseleave(function(){
-		$("#venModaIngresar").fadeToggle(500);
-	});
-	$("#venModaRegistrar").mouseleave(function(){
-		$("#venModaRegistrar").fadeToggle(500);
-	});
-	$("#venModaNotif").mouseleave(function(){
-		$("#venModaNotif").fadeToggle(500);
-	});
+	 }); 
 	cargarBarra(0);
 });
+
+function cargarEventos(){
+	$('.login').click(function(e){ 
+		e.stopPropagation();
+		if ($("#venModaRegistrar").is(":visible"))
+			$("#venModaRegistrar").fadeToggle(500);
+		if ($("#venModaNotif").is(":visible"))
+			$("#venModaNotif").fadeToggle(500);
+ 	});
+	$('.Notif').click(function(e){ 
+		e.stopPropagation(); 
+		if ($("#venModaRegistrar").is(":visible"))
+			$("#venModaRegistrar").fadeToggle(500);
+		if ($("#venModaIngresar").is(":visible"))
+			$("#venModaIngresar").fadeToggle(500);
+ 	});
+	$('.Regis').click(function(e){ 
+		e.stopPropagation();
+		if ($("#venModaIngresar").is(":visible"))
+			$("#venModaIngresar").fadeToggle(500); 
+		if ($("#venModaNotif").is(":visible"))
+			$("#venModaNotif").fadeToggle(500);
+ 	});
+}
 
 function NotiPen(){
  		var parametros = {
@@ -95,6 +121,7 @@ function cargarBarra(funcion){
                success:  function (response) {
                        $('#dvBarraNavegacion').html(response);
 					   NotiPen();
+					   cargarEventos();
                }
        });
 }

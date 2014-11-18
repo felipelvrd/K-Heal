@@ -21,7 +21,8 @@ if($conexion->Conectar()==true){
 					session_start();
 					$_SESSION['idUsuario']=$row['id'];
 					$_SESSION['Rol']=$row['Rol'];
-					echo "Login exitoso";
+					$msg=array("msg" => "Login exitoso", "tipo"=>2);
+					print json_encode($msg);
 				}
 				else{
 					throw new Exception("El usuario esta baneado");
@@ -34,7 +35,8 @@ if($conexion->Conectar()==true){
 			exit;
 		}
 	}catch(Exception $ex){
-		echo utf8_decode ($ex->getMessage());
+		$msg=array("msg" => $ex->getMessage(), "tipo"=>1);
+		print json_encode($msg);
 	}
 	$conexion->CerrarConexion();
 }

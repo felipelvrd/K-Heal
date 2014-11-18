@@ -14,7 +14,7 @@ $(document).ready(function() {
 			logear(email,contrasena);
 		}
 		catch(ex){
-			$("#spnMensajeLogin").html(ex);
+			msgMostrar(ex,1);
 		}
 		});
 });
@@ -29,11 +29,9 @@ function logear(email,contrasena){
                data:  parametros,
                url:   'paginas/navegacion/login.php',
                type:  'post',
-               beforeSend: function () {
-                       $("#spnMensajeLogin").html("Espere por favor...");
-               },
+			   dataType:'json',
                success:  function (response) {
-                       $('#spnMensajeLogin').html(response);
+                       msgMostrar(response.msg,response.tipo);
 					   cargarBarra(0);
 					   $("#venModaIngresar").hide();
                }

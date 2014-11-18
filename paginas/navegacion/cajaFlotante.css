@@ -65,7 +65,7 @@
 }
 
 #dvNotif{
-	right:-110px;
+	right:-150px;
 	top: 10px;
 }
 #trNotif{
@@ -75,5 +75,13 @@
 #tbNotif{
   top: 50px;
   right:150px;
+}
+
+#divCuerpoNotif {
+	width: 250px;
+}
+
+#divCuerpoNotif a{
+	text-decoration:none;
 }
 
