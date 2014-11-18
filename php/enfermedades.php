@@ -15,6 +15,7 @@ $Referencias = isset($_POST['referencias']) ? $_POST['referencias'] : -1;
 $Estado = isset($_POST['estado']) ? $_POST['estado'] : -1;
 $Sintomas = isset($_POST['sintomas']) ? $_POST['sintomas'] : -1;
 $Etiquetas = isset($_POST['etiquetas']) ? $_POST['etiquetas'] : -1;
+$Enfermedades_Relacionadas = isset($_POST['enfermedades_relacionadas']) ? $_POST['enfermedades_relacionadas'] : -1;
 $Accion = $_POST['accion']; // 0 = Registrar, 1 = Editar, 2 = Listar, 3 = Consultar,;4 = Eliminar,;
 
 $conexion= new DBManager();//Instancia de la Conexion a BD
@@ -23,12 +24,13 @@ if($Accion==0){
 	if($conexion->Conectar()==true){
 		try{	
 			//Registro la enfermedad
-			if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlenfermedades (Nombre,TipoEnfermedad,Descripcion,Diagnostico,Prevencion,Familia,Estado,Sintomas,Etiquetas) 
-															VALUES ('$Nombre','$TipoEnfermedad','$Descripcion','$Diagnostico','$Prevencion','$Referencias','$Estado','$Sintomas','$Etiquetas');")){
-				echo "Enfermedad registrada satisfactoriamente";
+			if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlenfermedades (Nombre,TipoEnfermedad,Descripcion,Diagnostico,Prevencion,Enfermedades_Relacionadas, Referencias,Estado,Sintomas,Etiquetas) 
+															VALUES ('$Nombre','$TipoEnfermedad','$Descripcion','$Diagnostico','$Prevencion','$Enfermedades_Relacionadas','$Referencias','$Estado','$Sintomas','$Etiquetas');")){
+				
+				echo json_encode("Enfermedad se agrego satisfactoriamente");
 			}
 			else{
-				throw new Exception("Ocurrio un error al intentar registrar la enfermedad".mysqli_connect_error());
+				throw new Exception("Ocurrio un error al intentar registrar la enfermedad".mysql_error());
 				exit;
 			}
 		}catch(Exception $ex){
@@ -41,9 +43,14 @@ if($Accion==0){
 else if($Accion==1){
 	if($conexion->Conectar()==true){
 		try{	
-			//Edito el tratamiento
-			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion', Diagnostico='$Diagnostico', Prevencion='$Prevencion', Familia='$Familia', Estado='$Estado', Sintomas='$Sintomas', Etiquetas='$Etiquetas' where Id = $Id")){
-				echo "Tratamiento se modifico satisfactoriamente";
+		
+			//Edito la enfermedad
+			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion',Diagnostico='$Diagnostico',Prevencion='$Prevencion', Enfermedades_Relacionadas='$Enfermedades_Relacionadas',Referencias=$Referencias,Estado='$Estado',Sintomas='$Sintomas', Etiquetas='$Etiquetas' where Id = $Id")){
+				
+				if($resultado==false)
+				echo "Ocurrio un error en la consulta ".mysql_error();
+				
+				echo json_encode('Enfermedad se modifico satisfactoriamente');
 			}
 			else{
 				throw new Exception("Ocurrio un error al intentar modificar la enfermedad".mysqli_connect_error());
@@ -60,10 +67,6 @@ else if($Accion==2){
 	if($conexion->Conectar()==true){
 		try
 		{	
-																				 /*SELECT * 
-																		FROM khlenfermedades
-																		LIMIT 0 , 1*/
-			
 			include_once("../paginas/Mant_Enfermedad/cldataTable.php");															
 		    $dtPeticion = new dtPeticion();	
 			$dtPeticion->length = $_POST["length"];
@@ -71,13 +74,16 @@ else if($Accion==2){
 			$dtPeticion->busqueda = $_POST["search"];
 			$dtPeticion->busqueda = $dtPeticion->busqueda["value"]==""? "%":$dtPeticion->busqueda["value"]; 											
 			
+			$LIMIT_STRING = $dtPeticion->star  . "," . ($dtPeticion->star + $dtPeticion->length);
+
+
 			$dtRespuesta = new dtRespuesta();
 
 																		
 			if($resultado=mysqli_query($conexion->conect,"Select *
                                                           from khlenfermedades
 														  where Nombre like '%".$dtPeticion->busqueda."%' 
-														  limit $dtPeticion->length"))
+														  LIMIT ".$LIMIT_STRING))
 			 {
 		     	$resultTotalRegistros= mysqli_query($conexion->conect,"Select COUNT(*) AS Total
 													             from khlenfermedades");
@@ -86,8 +92,12 @@ else if($Accion==2){
 				$dtRespuesta->recordsTotal=$TotalRegistros["Total"];
 				
 				if($resultado->num_rows!=0)
-				{
+				{ 
+				    if($dtPeticion->busqueda!="%")
 					$dtRespuesta->recordsFiltered = $resultado->num_rows;
+					else
+					$dtRespuesta->recordsFiltered = $dtRespuesta->recordsTotal;
+					
 
             		while($row=$resultado->fetch_assoc())
 					{
@@ -103,6 +113,7 @@ else if($Accion==2){
 					   $tdDato->Prevencion=$row["Prevencion"];
 					   $tdDato->Imagen=$row["Imagen"];
 					   $tdDato->TipoEnfermedad=$row["TipoEnfermedad"];
+					   $tdDato->Referencias=$row["Referencias"];
 					   array_push($dtRespuesta->data,$tdDato);
             	    }
 					
@@ -170,10 +181,10 @@ else if($Accion==4){
 		try{	
 			//Elimino el tratamiento
 			if($resultado=mysqli_query($conexion->conect,"Delete from khlenfermedades where Id = $Id")){
-				echo "La enfermedad se elimino satisfactoriamente";
+				echo json_encode("La enfermedad se elimino satisfactoriamente");
 			}
 			else{
-				throw new Exception("Ocurrio un error al intentar eliminar la enfermedad".mysqli_connect_error());
+				throw new Exception("Ocurrio un error al intentar eliminar la enfermedad".mysqli_error());
 				exit;
 			}
 		}catch(Exception $ex){

@@ -11,6 +11,7 @@ class tdDato
 	public $Prevencion;
 	public $Descripcion;
 	public $Enfermedades_Relacionadas;
+	public $Referencias;
 	public $Sintomas;
 	public $Etiquetas;
 	public $Estado;

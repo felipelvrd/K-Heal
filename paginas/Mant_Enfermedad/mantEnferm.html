@@ -10,7 +10,7 @@
 <script src="../../javascript/jquery-2.1.1.min.js"></script>
 
 <link rel="stylesheet" type="text/css" href="../../css/dropzone.css">
-<script src="../../javascript/dropzone.js"></script>
+<script src="../../javascript/dropzone.js" type="text/javascript"></script>
 
 <script src="../Componentes/enriquecedor/jquery-te-1.4.0.min.js"> </script>
 
@@ -20,6 +20,9 @@
 
 <script src="jquery.dataTables.js"></script>
 <script src="dataTables.responsive.js"></script>
+
+
+
 <link rel="stylesheet" type="text/css" href="jquery.dataTables.css">
 
 
@@ -31,14 +34,17 @@
 <script>
 
 var table;
+var Seleccionado=null;
+var Accion="---";
 
 $(document).ready(function() {
    
   $("#btnAgregarEnfer").click(function() { return false; });
   $("#btnModificarEnfer").click(function() { return false; });
   $("#btnEliminarEnfer").click(function() { return false; });
-   
-   
+  
+  //Dropzone.options.dzEnfermedad = {maxFiles:1};
+  
    Accion = {"accion":2};
    
     table = $('#example').DataTable ({
@@ -50,7 +56,10 @@ $(document).ready(function() {
           },
 		
 		columns: [
-			{ data: 'ID' }
+		    { data: 'ID' },
+			{ data: 'Nombre' },
+			{ data: 'TipoEnfermedad' },
+			{ data: 'Estado' }
 	      ],
 
 		ordering: false,
@@ -59,7 +68,7 @@ $(document).ready(function() {
 					"zeroRecords": "No se encontraron resultados",
 					"info": "Mostrando pagina  _PAGE_ de _PAGES_",
 					"infoEmpty": "Dato no disponible",
-					"infoFiltered": "(filtered from _MAX_ total records)",
+					"infoFiltered": "(Filtrando de un total de registros = _MAX_)",
 					"loadingRecords": "Cargando..",
 					"processing":     "Procesando...",
 					"search":         "Buscar:",
@@ -80,20 +89,191 @@ $(document).ready(function() {
             $(this).removeClass('selected');
         }
         else {
-            table.$('tr.selected').removeClass('selected');
-            $(this).addClass('selected');
+               table.$('tr.selected').removeClass('selected');
+			   $(this).addClass('selected');
+			   var data = table.row('.selected').data();
+			   CargarDatos(data);
+			   Seleccionado=data;
+			   Consultando();
         }
     } );
  
 	$.fn.dataTable.ext.errMode = 'throw';
 }); 
 
-function Modificar_Enfermedad()
+
+function Agregar()
 {
-  var data=table.row('.selected').data();
-  alert(data.ID);
+	$("#h3_Accion").html("Agregando");
+	LimpiarCampos();	
+	Accion="Agregar";
+	$("#dzEnfermedad").css("display","inherit");
+	$("#divImg").css("display","none");
+	$("#divImgPilar1").css("display","inherit");
+	$("#divImgPilar2").css("display","inherit");
+	$("#divdzEnfermedad").removeClass("clColum-esc-3");
+	$("#divImg").removeClass("clColum-esc-3");
+	$("#divdzEnfermedad").addClass("clColum-esc-4");
+
 }
 
+function Modificar()
+{
+	$("#h3_Accion").html("Modificando");	
+	Accion="Modificar";
+	$("#divImg").css("display","inherit");
+	$("#dzEnfermedad").css("display","inherit");
+	$("#divImgPilar1").css("display","none");
+	$("#divImgPilar2").css("display","none");
+	$("#divdzEnfermedad").removeClass("clColum-esc-4");
+	$("#divdzEnfermedad").addClass("clColum-esc-3");
+	$("#divImg").removeClass("clColum-esc-4");
+	$("#divImg").addClass("clColum-esc-3");
+}
+
+function Consultando()
+{
+   //$("")
+   $("#h3_Accion").html("Consultando");
+    Accion="Consulta";
+    $("#dzEnfermedad").css("display","none");
+	$("#divImgPilar1").css("display","inherit");
+	$("#divImgPilar2").css("display","inherit");
+	$("#divImg").css("display","inherit");
+	$("#divImg").addClass("clColum-esc-4");
+}
+
+function Modificar_Enfermedad()
+{
+	if(Seleccionado==null)
+	{
+	   msgMostrar("Aviso ->  Seleccione el registro en la tabla que desea modificar",3);
+	   return;
+    }
+	
+		var json = {"descripcion":$('#jqte-Descripcion').val(),
+	            "diagnostico":$('#jqte-Diagnostico').val(),
+				"sintomas":$('#jqte-Sintomas').val(),
+				"prevencion":$('#jqte-Prevencion').val(),
+				"referencias":$('#jqte-Referencias').val(),
+				"nombre":$('#txtNombEnfer').val(),
+				"tipoenfermedad":$("#txtTipoEnfermedad").val(),
+				"etiquetas":$("#txtEtiquetas").val(),
+				"estado":$("#cbEstaEnfer").val()=="Activo"?"A":"I",
+				"enfermedades_relacionadas":$("#jqte-Enfermedades_Relacionadas").val(),
+				"accion":1,
+				"id":Seleccionado.ID  
+			   }
+			   
+
+			   
+			   
+	 $.ajax({url:"../../php/enfermedades.php",
+	        data:json,
+			type:"POST",
+			dataType:"text",
+			success: function(response)
+			{
+				 msgMostrar(response,2);
+				 table.ajax.reload(); 
+				 LimpiarCampos();
+			},
+			error: function(response){msgMostrar(response.responseText,1);}
+	       	
+	      });
+			   
+	
+ 
+}
+
+function Eliminar_Enfermedad()
+{
+	if(Seleccionado==null)
+	{
+	   msgMostrar("Aviso ->  Seleccione el registro en la tabla que desea eliminar",3);
+	   return;
+    }
+	
+	if(confirm("Esta seguro que desea eliminar la enfermedad" +Seleccionado.Nombre)==false)
+	return;
+	
+		var json = {
+				"accion":4,
+				"id":Seleccionado.ID  
+			   }
+			   
+			   
+	 $.ajax({url:"../../php/enfermedades.php",
+	        data:json,
+			type:"POST",
+			dataType:"text",
+			success: function(response)
+			{
+				 msgMostrar(response,2);
+				 table.ajax.reload(); 
+				 LimpiarCampos();
+			},
+			error: function(response){msgMostrar(response.responseText,1);}
+	       	
+	      });
+
+}
+
+
+
+
+
+function CargarDatos(data)
+{
+	$('#imgConsulta').css("display","inherit");
+	$('#dzEnfermedad').css("display","none");
+	
+	
+	$('#imgConsulta').attr("href",data.Imagen);
+	$('#jqte-Descripcion').jqteVal(data.Descripcion);
+	$('#jqte-Diagnostico').jqteVal(data.Diagnostico);
+	$('#jqte-Sintomas').jqteVal(data.Sintomas);
+	$('#jqte-Prevencion').jqteVal(data.Prevencion);
+	$('#jqte-Referencias').jqteVal(data.Referencias);
+	$('#txtNombEnfer').val(data.Nombre);
+	$("#txtTipoEnfermedad").val(data.TipoEnfermedad);
+	$("#txtEtiquetas").val(data.Etiquetas);
+	$("#jqte-Enfermedades_Relacionadas").jqteVal(data.Enfermedades_Relacionadas);
+	
+	if(data.Estado=="A")
+	$('#cbEstaEnfer > option[value="Activo"]').attr('selected', 'selected');
+	else
+	$('#cbEstaEnfer > option[value="Inactivo"]').attr('selected', 'selected');
+	
+}
+
+function LimpiarCampos()
+{
+	$('#jqte-Descripcion').jqteVal("")
+	$('#jqte-Diagnostico').jqteVal(""),
+	$('#jqte-Sintomas').jqteVal(""),
+	$('#jqte-Prevencion').jqteVal(""),
+	$('#jqte-Referencias').jqteVal(""),
+	$('#txtNombEnfer').val(""),
+	$("#txtTipoEnfermedad").val(""),
+	$("#txtEtiquetas").val(""),
+	$('#cbEstaEnfer > option[value="Activo"]').attr('selected', 'selected');
+	$("#jqte-Enfermedades_Relacionadas").jqteVal("");
+}
+
+function Guardar()
+{
+	if(Accion=="Agregar")
+	{
+		Agregar_Enfermedad();
+	}
+	
+	if(Accion=="Modificar")
+	{
+		Modificar_Enfermedad();
+	}
+	
+}
 
 function Agregar_Enfermedad()
 {        
@@ -110,10 +290,8 @@ function Agregar_Enfermedad()
 		   msgMostrar("Faltan campos por rellenar",3);
 		   return;
 	   }
-	   
-	   
 
-
+    $("#h3_Accion").html("Agregando");
 
 	var json = {"descripcion":$('#jqte-Descripcion').val(),
 	            "diagnostico":$('#jqte-Diagnostico').val(),
@@ -123,7 +301,8 @@ function Agregar_Enfermedad()
 				"nombre":$('#txtNombEnfer').val(),
 				"tipoenfermedad":$("#txtTipoEnfermedad").val(),
 				"etiquetas":$("#txtEtiquetas").val(),
-				"estado":$("#cbEstaEnfer").val(),
+				"estado":$("#cbEstaEnfer").val()=="Activo"?"A":"I",
+				"enfermedades_relacionadas":$("#jqte-Enfermedades_Relacionadas").val(),
 				"accion":0       
 			   }
 			   
@@ -131,12 +310,14 @@ function Agregar_Enfermedad()
 	$.ajax({url:"../../php/enfermedades.php",
 	        data:json,
 			type:"POST",
-			dataType:"text",
+			dataType:"json",
 			success: function(response)
 			{
 				 msgMostrar(response,2);
+				 table.ajax.reload();
+				 LimpiarCampos();
 			},
-			error: function(response){alert(response)}
+			error: function(response){msgMostrar(response.responseText,1);}
 	       	
 	      });
 			   
@@ -158,32 +339,35 @@ function Agregar_Enfermedad()
 				
                 <div class="clRow">
 					<p class="clTexto-cen">    
-                       <table id="example" class="display" cellspacing="0" width="100%">
+                       <table id="example" class="display" cellspacing="" width="100%">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <!--<th>Nombre</th>
+                                <th>Nombre</th>
                                 <th>TipoEnfermedad</th>
-                                <th>Estado</th> -->
+                                <th>Estado</th>
                             </tr>
                         </thead>
                     </table>
 					</p>
 				</div>
+       
+			</div>
+            
+			<div class="clColum-esc-3 clColum-mov-6" style="background-color:#EBE4F1" >
                 
-             <form>
-                <div class="clRow">
+                 <div class="clRow">
                   
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button type="submit"  id="btnAgregarEnfer" onClick="Agregar_Enfermedad()">Agregar</button>
+                     <button type="submit"  id="btnAgregarEnfer" onClick="Agregar()">Agregar</button>
                     </div>
                    
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button  type="submit" id="btnModificarEnfer" onClick="Modificar_Enfermedad()">Modificar</button>	
+                     <button  type="submit" id="btnModificarEnfer" onClick="Modificar()">Modificar</button>	
                     </div>
                    
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button  type="submit" id="btnEliminarEnfer">Eliminar</button>
+                     <button  type="submit" id="btnEliminarEnfer" onClick="Eliminar_Enfermedad()">Eliminar</button>
                     </div>
                     
                     <div class="clColum-esc-1 clColum-mov-2"   >
@@ -191,23 +375,32 @@ function Agregar_Enfermedad()
                     </div>
                
                 </div> 
-
                 
+                <div class="clRow" style="background-color:#CCC; margin:0.1px; width:100%;">
+                     <h3 id="h3_Accion" class="clTexto-cen" style="">Agregando</h3>  
+                </div>
                 
-			</div>
-            
-			<div class="clColum-esc-3 clColum-mov-6" >
-                  
                    <div style="margin-left:10%">
-
-                    <div class="clRow">
-                        <h3>Imagen de Enfermedad</h3> 
-                    </div>
-                    <div class="clRow"   >
-                        <div id="divImagenEnfer">
-                            <img id="imgPerfil"  alt="Imagen no disponible" src="" />
-                            <h5> <a href="#">Cambiar Imagen</a></h5>              	 
+                    <div class="clRow" >
+                    <div id="divImgPilar1" class="clColum-esc-1"></div>
+                     <div id="divImg" class="clColum-esc-3 form-control" style="display:none;">
+                      <label>Imagen de la enfermedad</label> 
+                      <img id="imgConsulta" class="dz_small" style="width:95%;">
+                     </div>
+                    <div id="divdzEnfermedad" class="clColum-esc-4">
+                        <div class="form-control">
+                         <label id="label_dzEnfermedad">Imagen de la enfermedad</label> 
+                         <form id="dzEnfermedad" action="../../php/subir1.php" class="dropzone dz_small" 
+                                                                         method="post" 
+                                                                         enctype="multipart/form-data"> 
+                             <input id="" name="data" type="hidden" value="">  
+                             <div class="fallback">
+                             <input name="file" type="file" multiple />
+                             </div>
+                         </form>
                         </div>
+                     </div>
+                     <div id="divImgPilar2" class="clColum-esc-1"></div>
                     </div>
                   
                     <div class="clRow"   >
@@ -265,6 +458,7 @@ function Agregar_Enfermedad()
                             </script>
                         </div>
                         </div>
+                       
                         <div class="clColum-esc-6 clColum-mov-6" >
                             <div id="divEnfeEnlaces" class="form-control">
                                 <label>Referencias</label>
@@ -274,6 +468,17 @@ function Agregar_Enfermedad()
                                 </script>
                             </div>
                         </div>
+                        
+                        <div class="clColum-esc-6 clColum-mov-6" >
+                            <div id="divEnfeEnlaces" class="form-control">
+                                <label>Enfermedades_Relacionadas</label>
+                                <textarea name="textarea" class="jqte-Enfermedades_Relacionadas" id="jqte-Enfermedades_Relacionadas"></textarea>	
+								<script>
+                                  $('.jqte-Enfermedades_Relacionadas').jqte();
+                                </script>
+                            </div>
+                        </div>
+                        
                     </div>
                     <div class="clRow" >
                         <div class="clColum-esc-3 clColum-mov-6"   >
@@ -287,17 +492,18 @@ function Agregar_Enfermedad()
                             <div id="divEnfeEstado" class="form-control">
                                 <label>Estado</label>     
                                 <SELECT id="cbEstaEnfer" SIZE=1> 
-                                    <OPTION  class="form-control" >Activo</OPTION>
-                                    <OPTION  class="form-control" >Bloqueado</OPTION>
+                                    <OPTION  value="Activo" class="form-control" >Activo</OPTION>
+                                    <OPTION  value="Inactivo" class="form-control" >Inactivo</OPTION>
                                 </SELECT> 
                             </div>
-                        </div>   
+                        </div>
+                  
                     </div>
                     
                
                 </div>
                
-               </form>
+  
                    
 			</div>
           
