@@ -12,7 +12,7 @@ $funcion = $_POST['funcion'];
 		echo '<li><a href="#" onClick="Salir();">Salir</a></li>';
 		echo '<li><a id="aNotificaciones" href="#" class="Notif" onClick="Notificaciones();">Notificaciones</a></li>';
 		if($_SESSION['Rol'] == "A")
-			echo '<li><a href="?p=Administracion">Administración</a></li>';
+			echo '<li><a href="?p=Mant_Enfermedad">Administración</a></li>';
 		echo '<li><a href="#"  onClick="Navegar("buscador.html");">Inicio</a></li>';
 	}
 	else{

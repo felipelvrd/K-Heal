@@ -1,7 +1,7 @@
 
 <div class="clContenedor">
     	<div class="clRow"   >
-		<h1 class="clTexto-cen">MANTENIMIENTO ENFERMEDADES</h1>								
+		<h1 class="clTexto-cen">Administracion</h1>								
 		</div>
 		<div class="clRow">
 			<div class="clColum-esc-3 clColum-mov-6">
