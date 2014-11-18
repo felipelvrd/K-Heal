@@ -4,12 +4,11 @@
 </ul>
 
 
-  <div id="venModaRegistrar" class="Oculto"><!-- este seria el apartado de la ventana modal de REGISTRO -->
+  <div id="venModaRegistrar"><!-- este seria el apartado de la ventana modal de REGISTRO -->
 	<div class="dvTrianguloBorde" id='tbRegistrar'>
     <div class="dvTriangulo" id="trRegistrar"></div>
     <div class="dvFlotante" id="dvRegistrar">		
 			<div>
-				 <button id="btnCerrarModal2" type="button">X</button>
 				<h4>
 					REGISTRO
 				</h4>
@@ -48,14 +47,13 @@
 </div>
 
 
-<div id="venModaNotif" class="Oculto"> <!-- este seria el apartado de la ventana modal de NOTIFICACIONES--> 
+<div id="venModaNotif"> <!-- este seria el apartado de la ventana modal de NOTIFICACIONES--> 
 	<div class="dvTrianguloBorde" id='tbNotif'>
     <div class="dvTriangulo" id="trNotif"></div>
     <div class="dvFlotante" id="dvNotif">	
     
     <div>		
 			<div>
-				 <button id="btnCerrarNotif" type="button">X</button>
 				<h4>
 					NOTIFICACIONES
 				</h4>
@@ -68,14 +66,13 @@
 	</div>
     </div></div></div>
 
-	<div id="venModaIngresar" class="Oculto"><!-- este seria el apartado de la ventana modal de INGRESAR-->
+	<div id="venModaIngresar"><!-- este seria el apartado de la ventana modal de INGRESAR-->
 		
         <div class="dvTrianguloBorde" id='tbLogin'>
     <div class="dvTriangulo" id="trLogin"></div>
     <div class="dvFlotante" id="dvLogin">	
         <div >
 			<div >
-				 <button id="btnCerrarModal" type="button">X</button>
 				<h4 id="myModalLabel">
 					ENTRAR
 				</h4>

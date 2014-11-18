@@ -313,7 +313,6 @@ background-position: center;
 }
  
 #BarraSuperior{
-	
 width: 96%;
 float: right;
 padding: 0%;
@@ -327,8 +326,6 @@ padding: 0%;
     -moz-box-shadow: 2px 2px 5px #ccc;
     -webkit-box-shadow: 2px 2px 5px #ccc;
     box-shadow: 2px 2px 5px #ccc;
-    margin-bottom: 1em;
-    padding-bottom: 1em;
 	margin:2%;
 	margin-top:10px;
 	margin-bottom:10px;
@@ -343,6 +340,7 @@ float: right;
 }
 
 #BarraSuperior ul li a{	
+line-height: 38px;
 padding-right:15px;
 font-family:"Century Gothic";
 font-size:18px;
@@ -355,10 +353,10 @@ text-decoration:none;
 	float:left;
 	width: 70px;
 	height: 53px;
-	right:0px;
-	top: 0px;
+
 	z-index:2;
-	margin-left:15px;
+	margin:11px;
+	padding:0px;
 }
 		
  

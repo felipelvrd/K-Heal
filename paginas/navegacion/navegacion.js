@@ -1,19 +1,19 @@
 // JavaScript Document
 function Ingresar()
 {
-	$("#venModaIngresar").removeClass("Oculto");
+	$("#venModaIngresar").fadeToggle(200);
 }
 
 function Registrar()
 {
-	$("#venModaRegistrar").removeClass("Oculto");
+	$("#venModaRegistrar").fadeToggle(200);
 }
 function Notificaciones()
 {
-	$("#venModaNotif").removeClass("Oculto");
+	$("#venModaNotif").fadeToggle(200);
 	cargarNotificaciones();
-	
 }
+
 
 function Salir()
 {
@@ -36,28 +36,20 @@ function borrarNoti(idNotifi){
 }
 
 $(document).ready(function(){ 
-	$("#btnAceptarIngreso").click(function (){		
-		//$("#venModaIngresar").addClass("Oculto");
-		});
+
+	$("#venModaRegistrar").hide();
+	$("#venModaIngresar").hide();
+	$("#venModaNotif").hide();
 		
-	$("#btnAceptarRegistro").click(function (){			
-		//$("#venModaRegistrar").addClass("Oculto");
-		});
-	$("#btnRegistroFace").click(function (){			
-		$("#venModaRegistrar").addClass("Oculto");
-		});
-	$("#btnRegistroGoogle").click(function (){			
-		$("#venModaRegistrar").addClass("Oculto");
-		});
-	$("#btnCerrarModal").click(function (){				
-		$("#venModaIngresar").addClass("Oculto");
-		});
-	$("#btnCerrarModal2").click(function (){			
-		$("#venModaRegistrar").addClass("Oculto");
-		});
-	$("#btnCerrarNotif").click(function (){			
-		$("#venModaNotif").addClass("Oculto");
-		});
+	$("#venModaIngresar").mouseleave(function(){
+		$("#venModaIngresar").fadeToggle(500);
+	});
+	$("#venModaRegistrar").mouseleave(function(){
+		$("#venModaRegistrar").fadeToggle(500);
+	});
+	$("#venModaNotif").mouseleave(function(){
+		$("#venModaNotif").fadeToggle(500);
+	});
 	cargarBarra(0);
 });
 

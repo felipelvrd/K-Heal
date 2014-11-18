@@ -35,7 +35,7 @@ function logear(email,contrasena){
                success:  function (response) {
                        $('#spnMensajeLogin').html(response);
 					   cargarBarra(0);
-					   $("#venModaIngresar").addClass("Oculto");
+					   $("#venModaIngresar").hide();
                }
        });
 }

@@ -39,6 +39,7 @@ function registrar(email,nombre,contrasena){
                },
                success:  function (response) {
                        $('#spnMensajeRegistro').html(response);
+					   $("#venModaRegistrar").hide();
                }
        });
 }
