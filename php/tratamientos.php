@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset = latin1_swedish_ci');
 
 
 
-$Id = isset($_POST['id'])?$_POST['id']:-1;
+$Id = isset($_POST['Id'])?$_POST['Id']:-1;
 $IdUsuario = isset($_SESSION['idUsuario'])?$_SESSION['idUsuario']:-1;
 $IdEnfermedad = isset($_POST['idEnfermedad'])? $_POST['idEnfermedad']:-1;
 $Descripcion = isset($_POST['descripcion'])? $_POST["descripcion"]:-1;
@@ -69,6 +69,8 @@ else if($Accion==2){
 						$Tratamiento->id = $row["Id"];
 						$Tratamiento->descripcion = $row["Descripcion"];
 						$Tratamiento->nombre=$row["Nombre"];
+						$Tratamiento->idUsu =$row["IdUsuario"];
+						$Tratamiento->idEnf = $row["IdEnfermedad"];
 						array_push($arrayTratamientos,$Tratamiento);
             	}
 				 
@@ -93,7 +95,7 @@ else if($Accion==3){
 	if($conexion->Conectar()==true){
 		try{	
 			//Listo los tratamientos
-			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where id = $Id")){
+			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where Id = $Id;")){
 				//Si el resultado tiene mas de 0 columnas
 				
 				include_once("clTratamiento.php");
@@ -109,6 +111,8 @@ else if($Accion==3){
 					$Tratamiento->indicaciones=$row["Indicaciones"];
 					$Tratamiento->efectos_segundarios=$row["Efectos_Segundarios"];
 					$Tratamiento->refencias=$row["Referencias"];
+					$Tratamiento->idUsu =$row["IdUsuario"];
+					$Tratamiento->idEnf = $row["IdEnfermedad"];
             	}
 				 
 				 echo json_encode($Tratamiento);

@@ -121,7 +121,14 @@ background:rgba(0,153,0,0.5);
 }
 
 .clListTratamientos > div{
-	border: thin solid rgba(153,153,153,1);
+	border: 1px solid #999;
+   background-color:white;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
 	margin: 6px;
 	padding: 2px;
 	

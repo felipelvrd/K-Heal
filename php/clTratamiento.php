@@ -9,6 +9,8 @@ class Tratamiento
    public $efectos_segundarios;
    public $refencias;
    public $fecha;
+   public $idUsu;
+   public $idEnf;
 
 }
 ?>   

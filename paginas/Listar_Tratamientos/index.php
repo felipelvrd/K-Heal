@@ -34,9 +34,9 @@ Cargando
 		<div class="clRow">
 			<div class="clColum-esc-2 clColum-mov-6" >
 			</div>
-			<div class="clColum-esc-2 clColum-mov-6">
+			<div style="width:80%; margin:auto; ">
 				<h2>Lista de Tratamientos</h2>
-				<div id="divListaTrata" class="clListTratamientos">                 
+				<div id="divListaTrata" >                 
                  <!-- Aca se genera el codigo dinamicamente -->
 				</div>
                 

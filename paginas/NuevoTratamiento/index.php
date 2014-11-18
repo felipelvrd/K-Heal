@@ -1,6 +1,6 @@
 <div class = 'dvNTratamiento clCaja' >
 <div class="clRow clTexto-cen">
-<h1>Nuevo Tratamiento</h1>
+<h1 id='hTitulo'>Nuevo Tratamiento</h1>
 </div>
 <h2>Nombre</h2>
 <p><input type="text" id='txNombre' required/> </p>
@@ -12,7 +12,7 @@
 <p><textarea class="richtext"  id="taEfectosSecundarios"></textarea> </p>
 <h2>Referencias</h2>
 <p><textarea class="richtext" id="taReferencias"></textarea> </p>
-<p><button id='btRegistarTratamiento' type="button" onClick="registrarTratamiento($_GET('enf_id'));">Registrar <br>Tratamiento</button> </p>
+<p><button id='btRegistarTratamiento' type="button" >Registrar <br>Tratamiento</button> </p>
 <div id="dvMsg"></div>
 </div>
 

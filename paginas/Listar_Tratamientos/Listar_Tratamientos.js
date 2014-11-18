@@ -19,7 +19,7 @@ function Listar_Tratamientos(id){
 					   for(i=0;i<response.length;i++)
 					   { 
 					     $("#divListaTrata").append("<div id='Resul"+i+"'style='margin-top:20px'></div>"); 
-					     $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_Tratamiento',{d:response[i].descripcion,n:response[i].nombre,id:response[i].id});  
+					     $("#Resul"+i).load('paginas/Componentes/Componentes.php #cmp_Tratamiento',{d:response[i].descripcion,n:response[i].nombre,id:response[i].id, idUsu:response[i].idUsu, idEnf:response[i].idEnf});  
 					   }
 					   
                }
