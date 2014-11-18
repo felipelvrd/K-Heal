@@ -66,7 +66,7 @@ $(document).ready(function(e) {
 
 function cargarTratamiento(id_trat){
 	var parametros = {
-		   "Id" : id_trat,
+		   "id" : id_trat,
 		   "accion" : 3
        };
        $.ajax({

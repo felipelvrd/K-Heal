@@ -6,7 +6,7 @@ header('Content-Type: application/json; charset = latin1_swedish_ci');
 
 
 
-$Id = isset($_POST['Id'])?$_POST['Id']:-1;
+$Id = isset($_POST['id'])?$_POST['id']:-1;
 $IdUsuario = isset($_SESSION['idUsuario'])?$_SESSION['idUsuario']:-1;
 $IdEnfermedad = isset($_POST['idEnfermedad'])? $_POST['idEnfermedad']:-1;
 $Descripcion = isset($_POST['descripcion'])? $_POST["descripcion"]:-1;
