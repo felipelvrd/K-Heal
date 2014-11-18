@@ -122,6 +122,8 @@ function cargarBarra(funcion){
                        $('#dvBarraNavegacion').html(response);
 					   NotiPen();
 					   cargarEventos();
+					   if(funcion==1)
+					   	location.reload();
                }
        });
 }

@@ -34,6 +34,7 @@ function logear(email,contrasena){
                        msgMostrar(response.msg,response.tipo);
 					   cargarBarra(0);
 					   $("#venModaIngresar").hide();
+					   location.reload();
                }
        });
 }
