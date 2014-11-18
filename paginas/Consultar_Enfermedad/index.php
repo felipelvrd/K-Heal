@@ -31,7 +31,7 @@ Cargando
 							  <li><a href="#divSintomas "> Sintomas</a></li>
 							  <li><a href="#divDiagnostico ">Prevencion</a></li>
 							  <li><a href="#divReferencias">Referencias</a></li> 
-                              <li><a href="#">Tratamientos propuestos por usuarios</a></li>  
+                              <li><a href="?p=Listar_Tratamientos&enf_id=<?php echo $_GET["enf_id"]; ?>">Tratamientos propuestos por usuarios</a></li>  
 							</ul>
 						</div>
 				</div>
