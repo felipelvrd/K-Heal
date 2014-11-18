@@ -14,26 +14,32 @@ Cargando
     
 
 <div class="clContenedor" id="main">
-	<div class="clRow clTexto-cen"  >
-		<h1>Nombre del Tratamiento</h1>
-	</div>
-	<div class="clRow clTexto-cen"  >
-		<div id="divFichaTrataCons">&nbsp;Datos en ficha tecnica del tratamiento</div>
-	</div>
-	<div class="clRow"  >
+			
+    <div class="clRow clTexto-cen"  >
+			<img class="clIMG-responsive"  src="recursos/Logo2.png" width="426" height="118" alt="alt 500X300">
+    </div>
+        
+	<div class="clRow clTexto-cen group-enfermedad">
+        
+        <h2 id="Nombre_Tratamiento">Nombre del tratamiento</h2>
+    
 			<div class="clColum-esc-2 clColum-mov-6"  >
 				<div class="clRow">
-					<div id="divMenuEnferCons" class="clMenuLateral group-enfermedad" >
-						<h2>MENU</h2>
-                        <ul>
-						  <li><a href="#divCuerpoConsTrat" >Inicio</a></li>
-						  <li><a href="#divTipo">Tipo</a></li>
-						  <li><a href="#divAplicacion"> Forma de Aplicarlo</a></li>
-						  <li><a href="#DivEfecConsTrat"> Efectos Adversos</a></li>  
-						  <li><a href="#DivEnlacesConsTrat"> Enlaces Externos</a></li>  
-						  <li><a href="#DivOtrosConsTrat"> Otros</a></li> 
-						</ul>
-					</div>
+                     <div class="clColum-esc-1"></div>
+                     <div class="clColum-esc-4">
+                          <div id="divMenuEnferCons" class="clMenuLateral group-enfermedad" >
+                            <h2>MENU</h2>
+                            <ul>
+                              <li><a href="#divCuerpoConsTrat" >Inicio</a></li>
+                              <li><a href="#divTipo">Tipo</a></li>
+                              <li><a href="#divAplicacion"> Forma de Aplicarlo</a></li>
+                              <li><a href="#DivEfecConsTrat"> Efectos Adversos</a></li>  
+                              <li><a href="#DivEnlacesConsTrat"> Enlaces Externos</a></li>  
+                              <li><a href="#DivOtrosConsTrat"> Otros</a></li> 
+                            </ul>
+                        </div>
+                     </div>
+                     <div class="clColum-esc-1"></div>
 				</div>
 			</div>
 			<div class="clColum-esc-3 clColum-mov-6"  >
@@ -76,6 +82,8 @@ Cargando
 				
 			</div>
 	</div>
+<div class="clRow clTexto-cen group-enfermedad">
 <?php include 'paginas/Componentes/comentarios/index.php'; ?>
+</div>
 </body>
 </html>
