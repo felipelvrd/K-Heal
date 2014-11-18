@@ -53,7 +53,7 @@ else if($Accion==1){
 		try{	
 		
 			//Edito la enfermedad
-			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion',Diagnostico='$Diagnostico',Prevencion='$Prevencion', Enfermedades_Relacionadas='$Enfermedades_Relacionadas',Referencias=$Referencias,Estado='$Estado',Sintomas='$Sintomas', Etiquetas='$Etiquetas',Imagen='$Imagen'  where Id = $Id")){
+			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion',Diagnostico='$Diagnostico',Prevencion='$Prevencion', Enfermedades_Relacionadas='$Enfermedades_Relacionadas',Referencias='$Referencias',Estado='$Estado',Sintomas='$Sintomas', Etiquetas='$Etiquetas'  where Id = $Id")){
 				
 				if($resultado==false)
 				echo "Ocurrio un error en la consulta ".mysql_error();
