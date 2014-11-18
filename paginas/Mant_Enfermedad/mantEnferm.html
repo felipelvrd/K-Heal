@@ -39,11 +39,21 @@ var Accion="---";
 
 $(document).ready(function() {
    
-  $("#btnAgregarEnfer").click(function() { return false; });
-  $("#btnModificarEnfer").click(function() { return false; });
-  $("#btnEliminarEnfer").click(function() { return false; });
   
-  //Dropzone.options.dzEnfermedad = {maxFiles:1};
+  Dropzone.options.dzEnfermedad = {
+	  maxFiles:1,
+	  init: function() {
+       this.on("success", function(file, responseText) {
+       $("#input_url").val(responseText);
+    });
+  },
+	  sending:function(e)
+	  {	
+		  if(Accion=="Modificar")
+		  $("#input_dzEnfermedad").val(Seleccionado.ID);
+	  }
+
+	  };
   
    Accion = {"accion":2};
    
@@ -104,10 +114,12 @@ $(document).ready(function() {
 
 function Agregar()
 {
+	$("#divCampos").css("display","inherit");
 	$("#h3_Accion").html("Agregando");
+	$("#btnGuardar").css("display","inherit");
 	LimpiarCampos();	
 	Accion="Agregar";
-	$("#dzEnfermedad").css("display","inherit");
+	//$("#dzEnfermedad").css("display","inherit");
 	$("#divImg").css("display","none");
 	$("#divImgPilar1").css("display","inherit");
 	$("#divImgPilar2").css("display","inherit");
@@ -119,9 +131,19 @@ function Agregar()
 
 function Modificar()
 {
+	if(Seleccionado==null)
+	{
+	   msgMostrar("Aviso ->  Seleccione el registro en la tabla que desea modificar",3);
+	   return;
+    }
+	
+	$("#divCampos").css("display","inherit");
+	$("#btnGuardar").css("display","inherit");
 	$("#h3_Accion").html("Modificando");	
+	$("#label_dzEnfermedad").html("Nueva Imagen");
 	Accion="Modificar";
 	$("#divImg").css("display","inherit");
+	$("#divdzEnfermedad").css("display","inherit");
 	$("#dzEnfermedad").css("display","inherit");
 	$("#divImgPilar1").css("display","none");
 	$("#divImgPilar2").css("display","none");
@@ -133,23 +155,21 @@ function Modificar()
 
 function Consultando()
 {
-   //$("")
+   $("#divCampos").css("display","inherit");
+   $("#btnGuardar").css("display","none");
    $("#h3_Accion").html("Consultando");
-    Accion="Consulta";
-    $("#dzEnfermedad").css("display","none");
-	$("#divImgPilar1").css("display","inherit");
-	$("#divImgPilar2").css("display","inherit");
-	$("#divImg").css("display","inherit");
-	$("#divImg").addClass("clColum-esc-4");
+   $("#imgConsulta").attr("src",Seleccionado.Imagen);
+   Accion="Consulta";
+   $("#dzEnfermedad").css("display","none");
+   $("#divImgPilar1").css("display","inherit");
+   $("#divImgPilar2").css("display","inherit");
+   $("#divImg").css("display","inherit");
+   $("#divImg").addClass("clColum-esc-4");
 }
 
 function Modificar_Enfermedad()
 {
-	if(Seleccionado==null)
-	{
-	   msgMostrar("Aviso ->  Seleccione el registro en la tabla que desea modificar",3);
-	   return;
-    }
+
 	
 		var json = {"descripcion":$('#jqte-Descripcion').val(),
 	            "diagnostico":$('#jqte-Diagnostico').val(),
@@ -161,6 +181,7 @@ function Modificar_Enfermedad()
 				"etiquetas":$("#txtEtiquetas").val(),
 				"estado":$("#cbEstaEnfer").val()=="Activo"?"A":"I",
 				"enfermedades_relacionadas":$("#jqte-Enfermedades_Relacionadas").val(),
+				"imagen":$("#input_url").val(),
 				"accion":1,
 				"id":Seleccionado.ID  
 			   }
@@ -229,7 +250,7 @@ function CargarDatos(data)
 	$('#dzEnfermedad').css("display","none");
 	
 	
-	$('#imgConsulta').attr("href",data.Imagen);
+	//$('#imgConsulta').attr("href",data.Imagen);
 	$('#jqte-Descripcion').jqteVal(data.Descripcion);
 	$('#jqte-Diagnostico').jqteVal(data.Diagnostico);
 	$('#jqte-Sintomas').jqteVal(data.Sintomas);
@@ -359,41 +380,40 @@ function Agregar_Enfermedad()
                  <div class="clRow">
                   
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button type="submit"  id="btnAgregarEnfer" onClick="Agregar()">Agregar</button>
+                     <button type="button"
+                       id="btnAgregarEnfer" onClick="Agregar()">Agregar</button>
                     </div>
                    
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button  type="submit" id="btnModificarEnfer" onClick="Modificar()">Modificar</button>	
+                     <button  type="button" id="btnModificarEnfer" onClick="Modificar()">Modificar</button>	
                     </div>
                    
                     <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button  type="submit" id="btnEliminarEnfer" onClick="Eliminar_Enfermedad()">Eliminar</button>
+                     <button  type="button" id="btnEliminarEnfer" onClick="Eliminar_Enfermedad()">Eliminar</button>
                     </div>
                     
-                    <div class="clColum-esc-1 clColum-mov-2"   >
-                     <button type="button" id="btnCancelarEnfer">Cancelar</button>
-                    </div>
-               
                 </div> 
                 
                 <div class="clRow" style="background-color:#CCC; margin:0.1px; width:100%;">
-                     <h3 id="h3_Accion" class="clTexto-cen" style="">Agregando</h3>  
+                     <h3 id="h3_Accion" class="clTexto-cen" style="">-----</h3>  
                 </div>
                 
-                   <div style="margin-left:10%">
+                   <div id="divCampos" style="margin-left:10%; display:none;">
                     <div class="clRow" >
                     <div id="divImgPilar1" class="clColum-esc-1"></div>
                      <div id="divImg" class="clColum-esc-3 form-control" style="display:none;">
                       <label>Imagen de la enfermedad</label> 
-                      <img id="imgConsulta" class="dz_small" style="width:95%;">
+                      <img id="imgConsulta"  class="dz_small" style="width:95%;">
                      </div>
-                    <div id="divdzEnfermedad" class="clColum-esc-4">
+                    <div id="divdzEnfermedad" class="clColum-esc-4" style="display:none;">
                         <div class="form-control">
                          <label id="label_dzEnfermedad">Imagen de la enfermedad</label> 
                          <form id="dzEnfermedad" action="../../php/subir1.php" class="dropzone dz_small" 
                                                                          method="post" 
                                                                          enctype="multipart/form-data"> 
-                             <input id="" name="data" type="hidden" value="">  
+                             <input id="input_dzEnfermedad" name="data" type="hidden" value="">
+                             <input id="input_url" name="url" type="hidden" value="">
+                             <input id="dzAccion" name="accion" type="hidden" value="Enfermedades">  
                              <div class="fallback">
                              <input name="file" type="file" multiple />
                              </div>
@@ -497,6 +517,11 @@ function Agregar_Enfermedad()
                                 </SELECT> 
                             </div>
                         </div>
+                        
+                        <div class="clColum-esc-6 clColum-mov-6" style="text-align:center; margin-top:25px;">
+                         <button type="button" id="btnGuardar" onClick="Guardar()">Guardar</button>
+                       </div>
+               
                   
                     </div>
                     

@@ -13,6 +13,7 @@ $Diagnostico = isset($_POST['diagnostico']) ? $_POST['diagnostico'] : -1;
 $Prevencion = isset($_POST['prevencion']) ? $_POST['prevencion'] : -1;
 $Referencias = isset($_POST['referencias']) ? $_POST['referencias'] : -1;
 $Estado = isset($_POST['estado']) ? $_POST['estado'] : -1;
+$Imagen=isset($_POST['imagen']) ? $_POST['imagen'] : -1;
 $Sintomas = isset($_POST['sintomas']) ? $_POST['sintomas'] : -1;
 $Etiquetas = isset($_POST['etiquetas']) ? $_POST['etiquetas'] : -1;
 $Enfermedades_Relacionadas = isset($_POST['enfermedades_relacionadas']) ? $_POST['enfermedades_relacionadas'] : -1;
@@ -27,6 +28,13 @@ if($Accion==0){
 			if($resultado=mysqli_query($conexion->conect,"INSERT INTO khlenfermedades (Nombre,TipoEnfermedad,Descripcion,Diagnostico,Prevencion,Enfermedades_Relacionadas, Referencias,Estado,Sintomas,Etiquetas) 
 															VALUES ('$Nombre','$TipoEnfermedad','$Descripcion','$Diagnostico','$Prevencion','$Enfermedades_Relacionadas','$Referencias','$Estado','$Sintomas','$Etiquetas');")){
 				
+				if($resultado==false)
+				echo "Verifique que el nombre no exita previamente";
+				
+				/*$resultado = mysqli_query($conexion->conect,"SELECT Id FROM khlenfermedades where Nombre=$Nombre");
+				$Id=$resultado->fetch_assoc();
+				$ds  = DIRECTORY_SEPARATOR;  
+				rename("C:\xampp\htdocs\PROYECTO INTERFACES\recursos\Enfermedades\nuevo.jpge","C:\xampp\htdocs\PROYECTO INTERFACES\recursos\Enfermedades".$ds.$Id.".jpge");*/
 				echo json_encode("Enfermedad se agrego satisfactoriamente");
 			}
 			else{
@@ -45,7 +53,7 @@ else if($Accion==1){
 		try{	
 		
 			//Edito la enfermedad
-			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion',Diagnostico='$Diagnostico',Prevencion='$Prevencion', Enfermedades_Relacionadas='$Enfermedades_Relacionadas',Referencias=$Referencias,Estado='$Estado',Sintomas='$Sintomas', Etiquetas='$Etiquetas' where Id = $Id")){
+			if($resultado=mysqli_query($conexion->conect,"UPDATE  khlenfermedades set Nombre='$Nombre', TipoEnfermedad='$TipoEnfermedad', Descripcion='$Descripcion',Diagnostico='$Diagnostico',Prevencion='$Prevencion', Enfermedades_Relacionadas='$Enfermedades_Relacionadas',Referencias=$Referencias,Estado='$Estado',Sintomas='$Sintomas', Etiquetas='$Etiquetas',Imagen='$Imagen'  where Id = $Id")){
 				
 				if($resultado==false)
 				echo "Ocurrio un error en la consulta ".mysql_error();

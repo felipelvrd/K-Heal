@@ -1,18 +1,29 @@
 <?php
 
-//if(mkdir("../recursos/Usuarios/test", 0700));//Esta se crea cuando se hace un usuario
-
 header('Content-Type: application/json');
+$Datos = $_POST["data"];
+$Accion =$_POST["accion"];
+//$ID=$_POST["Id"];
 
 $ds          = DIRECTORY_SEPARATOR;  
 
-$storeFolder = 'Usuarios';   
-$Nombre_Usuario='Nombre_Usuario';
+
+if($Accion == "Usuarios")
+{
+$storeFolder = 'Usuarios'; 
+//if(mkdir("../recursos/Usuarios/".$ID, 0700));//Esta se crea cuando se hace un usuario  
+
+}
+
+if($Accion == "Enfermedades")
+{
+$storeFolder = 'Enfermedades';   
+}
+
 
 //print_r($_FILES);
 //echo $_POST["data"]; // validar que venga data
  
-$Datos = $_POST["data"];
  
 //print_r($_FILES);
 
@@ -38,15 +49,18 @@ if (!empty($_FILES)) {
 	    
     $tempFile = $_FILES['file']['tmp_name'];           
       
-    $targetPath = dirname('C:\xampp\htdocs\PROYECTO INTERFACES DE USUARIO\recursos\Usuarios').$ds. $storeFolder.$ds.  $Nombre_Usuario.$ds; 
-     
+    $targetPath = 'C:\xampp\htdocs\PROYECTO INTERFACES\recursos'.$ds.$storeFolder.$ds;
 
     $targetFile =  $targetPath. $Datos;
+	
+	//echo $targetFile;
+	
+	
  
-    if(@move_uploaded_file($tempFile,$targetFile))
+    if(move_uploaded_file($tempFile,$targetFile))
 	{
 		header("HTTP/1.0 200");
-		//echo '{"Imagen subida satisfactoriamente"}';
+		echo json_encode($targetFile);
 	}
 	else
 	{
