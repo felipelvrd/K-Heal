@@ -131,8 +131,11 @@ function ConstruirElementos(itemsFound)
                                     <div class="alert">\
                                         No se han encontrado resultados. Por favor inserte una nueva palabra\
                                     </div>\
+									<div id="Sugerir"></div>\
                                     ');
             $("#found").append($.error);
+			$("#Sugerir").load('paginas/Componentes/cmp_Sugerir.php');
+			
             addClass(document.getElementById("found"), "initWeb");
         }
 		
@@ -259,3 +262,26 @@ function ObtenerDatos(pBusqueda)
 	});
  
 }
+
+
+
+function MandarSugerencia()
+{
+
+  Sugerencia = $("#txtSugerencia").val();
+  B = {"sugerencia" : Sugerencia , "accion": 0 };
+	
+	
+  $.ajax({
+		type:'POST',
+		data:B,
+		url:'php/Sugerir.php',
+		dataType:'json',
+		success:function(response)
+		{
+           msgMostrar(response.msg, response.tipo);
+		},
+		error:function(response){alert(response.responseText);}
+	});
+}
+
