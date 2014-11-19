@@ -23,7 +23,7 @@
        
 			</div>
             
-			<div class="clColum-esc-3 clColum-mov-6" style="background-color:#EBE4F1" >
+			<div class="clColum-esc-3 clColum-mov-6"  >
                 
                  <div class="clRow">
                   
