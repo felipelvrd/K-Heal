@@ -28,13 +28,15 @@ Cargando
                   <div class="clColum-esc-1"></div>
                      <div class="clColum-esc-4">
 						<div id="divMenuEnferCons" class="clMenuLateral group-enfermedad" >
-                        	<h2>MENU</h2>
+                        	<h2>Menu</h2>
 							<ul>                              
-							  <li><a href="#divDescriEnferCons" >Descripcion</a></li>
-							  <li><a href="#divSintomas "> Sintomas</a></li>
-							  <li><a href="#divDiagnostico ">Prevencion</a></li>
-							  <li><a href="#divReferencias">Referencias</a></li> 
-                              <li><a  id="link_Tratamientos" href="#">Tratamientos propuestos por usuarios</a></li>  
+							  <li><a href="#Descr" >Descripcion</a></li>
+							  <li><a href="#Sinto"> Sintomas</a></li>
+							  <li><a href="#Diagn">Diagnostico</a></li>
+							  <li><a href="#Preve">Prevencion</a></li>
+							  <li><a href="#Refer">Referencias</a></li>
+							  <li><a href="#EnfRe">Enfermedades Relacionadas</a></li> 
+                              <li><a  id="link_Tratamientos" href="#Trata">Tratamientos</a></li>  
 						</div>
                      <div class="clColum-esc-1"></div>
                        </div>
@@ -43,42 +45,42 @@ Cargando
             
             
 			<div class="clColum-esc-3 clColum-mov-6" style="margin-top:5px">
-			<div class="group-enfermedad">
+			<div id="Descr" class="group-enfermedad">
 				<h2>Descripcion </h2>
 				<p id="divDescriEnferCons" class="descrEnfer">
                 Datos
 				</p>
 			</div>
 
-			<div class="group-enfermedad">
+			<div id="Sinto"  class="group-enfermedad">
 				<h2>Sintomas</h2>
 				<p id="divSintomas" class="descrEnfer">
 				Datos
 				</p>
 			</div>
 
-			<div class="group-enfermedad">
+			<div id="Diagn"  class="group-enfermedad">
 				<h2>Diagnostico</h2>
 				<p id="divDiagnostico" class="descrEnfer">
 				Datos
 				</p>
 			</div>
 
-			<div class="group-enfermedad">
+			<div id="Preve"  class="group-enfermedad">
 				<h2>Prevencion </h2>
 				<p id="divPrevencion" class="descrEnfer">
 				Datos
 				</p>
 			</div>
 
-             <div class="group-enfermedad">
+             <div id="EnfRe"  class="group-enfermedad">
 				<h2>Enfermedades Relacionadas</h2>
 				<p id="divEnferm_Relacionadas" class="descrEnfer">
 				   Sin enfermedades relacionadas
 				</p>
 			</div>
               
-			<div class="group-enfermedad">
+			<div id="Refer"  class="group-enfermedad">
 				<h2>Referencias</h2>
 				<p id="divReferencias" class="descrEnfer">
 				   Sin referencias 
