@@ -73,8 +73,51 @@ $(document).ready(function() {
         }
     } );
  
+ 
+    tableSugerencias = $('#Sugerencias').DataTable ({
+		serverSide:true,
+		ajax: {
+				url: 'php/Sugerir.php',
+				type: 'POST',
+				data: Accion 
+          },
+		
+		"paging":   false,
+        "ordering": false,
+        "info":     false,
+		"bFilter":false,
+		
+		columns: [
+		    { data: 'ID' },
+			{ data: 'Descripcion' },
+	      ],
+
+		language: {
+					"lengthMenu": "Mostrando _MENU_ registros",
+					"zeroRecords": "No se encontraron resultados",
+					"info": "Mostrando pagina  _PAGE_ de _PAGES_",
+					"infoEmpty": "Dato no disponible",
+					"infoFiltered": "(Filtrando de un total de registros = _MAX_)",
+					"loadingRecords": "Cargando..",
+					"processing":     "Procesando...",
+					"search":         "Buscar:",
+					paginate: {
+					"first":      "Primero",
+					"last":       "Ultimo",
+					"next":       "Siguiente",
+					"previous":   "Anterior"
+                     }
+		  
+                   },
+	     responsive:true
+      });
+	  
+ 
 	$.fn.dataTable.ext.errMode = 'throw';
 }); 
+
+
+
 
 
 function Agregar()

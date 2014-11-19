@@ -1,33 +1,48 @@
 
 <div class="clContenedor">
-    	<div class="clRow"   >
+    	<div class="clRow group" >
 		<h1 class="clTexto-cen">Administracion</h1>								
 		</div>
-		<div class="clRow">
-			<div class="clColum-esc-3 clColum-mov-6">
-				
-                <div class="clRow">
-					<p class="clTexto-cen">    
-                       <table id="example" class="display" cellspacing="" width="100%">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Nombre</th>
-                                <th>TipoEnfermedad</th>
-                                <th>Estado</th>
-                            </tr>
-                        </thead>
-                    </table>
-					</p>
-				</div>
+		
+       <div class="clRow group">
+         <h2>Sugerencias</h2>
+         <div class="clColum-esc-1"></div>
+           <div class="clColum-esc-4" style="min-height:200px;">
+             <table id="Sugerencias" class="display" cellspacing="" width="98%">
+                    <thead>
+                        <tr>
+                            <th>Usuario</th>
+                            <th>Descripcion</th>
+                        </tr>
+                    </thead>
+             </table>
+           </div>
+          <div class="clColum-esc-1"></div>
+       </div>
+        <div class="clRow group">
+        <h2>Mantenimiento de enfermedades</h2>		
+        
+			<div class="clColum-esc-3 clColum-mov-6">	
+                <div class="clRow group" style="padding:3%; width:90%;">
+                       <table id="example" class="display" cellspacing="" width="98%">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>TipoEnfermedad</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                        </table>
+                </div>
        
 			</div>
             
-			<div class="clColum-esc-3 clColum-mov-6"  >
+			<div class="clColum-esc-3 clColum-mov-6">
                 
                  <div class="clRow">
                   
-                    <div class="clColum-esc-1 clColum-mov-2"   >
+                    <div class="clColum-esc-1 clColum-mov-2">
                      <button type="button"
                        id="btnAgregarEnfer" onClick="Agregar()">Agregar</button>
                     </div>
@@ -42,11 +57,11 @@
                     
                 </div> 
                 
-                <div class="clRow" style="background-color:#CCC; margin:0.1px; width:100%;">
-                     <h3 id="h3_Accion" class="clTexto-cen" style="">-----</h3>  
-                </div>
-                
-                   <div id="divCampos" style="margin-left:10%; display:none;">
+                <div class="clRow group">
+                 <h2 id="h3_Accion" class="clTexto-cen" style="">-----</h2> 
+                      
+                   <div id="divCampos" style="display:none;">
+   
                     <div class="clRow" >
                     <div id="divImgPilar1" class="clColum-esc-1"></div>
                      <div id="divImg" class="clColum-esc-3 form-control" style="display:none;">
@@ -176,7 +191,7 @@
                
                 </div>
                
-  
+              </div>
                    
 			</div>
           

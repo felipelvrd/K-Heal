@@ -19,17 +19,19 @@ catch(Exception $ex)
 	exit;	
 }
 
-if($_POST['sugerencia']=="")
+if(isset($_POST['sugerencia']))
 {
-	$msg=array("msg" => "El campo para sugerir no puede ir vacio", "tipo"=>3);
-	echo json_encode($msg);
-	exit;
+	$Sugerencia = $_POST['sugerencia'];
+	if($_POST['sugerencia']=="")
+	{
+		$msg=array("msg" => "El campo para sugerir no puede ir vacio", "tipo"=>3);
+		echo json_encode($msg);
+		exit;
+	}
 }
 
-
-
 $Usuario=$_SESSION['idUsuario'];
-$Sugerencia = $_POST['sugerencia'];
+
 $Accion=$_POST['accion'];
 
 
@@ -66,6 +68,54 @@ else if($Accion==1){
 			}
 			else{
 				throw new Exception("Ocurrio un error al intentar modificar el tratamiento".mysqli_connect_error());
+				exit;
+			}
+		}catch(Exception $ex){
+			echo $ex->getMessage();
+		}
+		$conexion->CerrarConexion();
+	}
+}
+
+
+else if($Accion==2){
+	if($conexion->Conectar()==true){
+		try
+		{	
+			include_once("../paginas/Mant_Enfermedad/cldataTable.php");															
+		    $dtPeticion = new dtPeticion();	
+			$dtPeticion->length = $_POST["length"];
+			$dtPeticion->star = $_POST["start"];	
+			$dtPeticion->busqueda = $_POST["search"];
+			$dtPeticion->busqueda = $dtPeticion->busqueda["value"]==""? "%":$dtPeticion->busqueda["value"]; 											
+			
+
+			$dtRespuesta = new dtRespuesta();
+
+																		
+			if($resultado=mysqli_query($conexion->conect,"Select *
+                                                          from khlsugerencias"))
+			 {
+				if($resultado->num_rows!=0)
+				{ 
+                 	while($row=$resultado->fetch_assoc())
+					{
+					   $tdDato=new tdDato;
+					   $tdDato->ID=$row["Id_Usuario"];
+                       $tdDato->Descripcion=$row["Descripcion"];
+					   array_push($dtRespuesta->data,$tdDato);
+            	    }
+					
+					echo json_encode($dtRespuesta);
+                 }
+			    else
+			    {
+				 $salida="<li>No hay enfermedades<li>";
+			    }
+			}
+			
+			else{
+				throw new Exception("Ocurrio un error al listar las sugerencias".mysqli_connect_error());
 				exit;
 			}
 		}catch(Exception $ex){
