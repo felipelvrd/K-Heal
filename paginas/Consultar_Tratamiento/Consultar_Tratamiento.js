@@ -20,6 +20,7 @@ function CargarDatos_Tratamiento(id){
 					   $("#divAplicacion").html(response.indicaciones);
 					   $("#DivEfecConsTrat").html(response.efectos_segundarios);
 					   $("#DivReferencias").html(response.referencias);	   
+					   $("#Nombre_Tratamiento").html(response.nombre);
                }
        });
 }
