@@ -16,4 +16,7 @@
 <file name="enfermedades.php" server="C:/xampp/htdocs/k-heal/" local="130604804261356945" remote="130604804260000000" Dst="0" />
 <file name="clEnfermedad.php" server="C:/xampp/htdocs/k-heal/" local="130604721232435597" remote="130604721230000000" Dst="0" />
 <file name="clTratamiento.php" server="C:/xampp/htdocs/k-heal/" local="130605714739190516" remote="130605714730000000" Dst="0" />
+<file name="configuracion.php" server="C:/xampp/htdocs/K-Heal/" local="130608234945877015" remote="130608234940000000" Dst="0" />
+<file name="phpClassConexion.php" server="C:/xampp/htdocs/K-Heal/" local="130608234946033084" remote="130608234940000000" Dst="0" />
+<file name="Consulta.php" server="C:/xampp/htdocs/K-Heal/" local="130608234944004187" remote="130608234940000000" Dst="0" />
 </dwsync>
