@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 18-11-2014 a las 18:05:11
+-- Tiempo de generación: 19-11-2014 a las 18:43:47
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.4.4-14+deb7u14
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `hklcomentarios` (
   PRIMARY KEY (`Id`),
   KEY `FK_hklcomentarios_1` (`IdTratamientos`),
   KEY `FK_hklcomentarios_2` (`IdUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con los comentarios de los tratamientos publicados.' AUTO_INCREMENT=31 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con los comentarios de los tratamientos publicados.' AUTO_INCREMENT=34 ;
 
 --
 -- Volcado de datos para la tabla `hklcomentarios`
@@ -61,7 +61,7 @@ INSERT INTO `hklcomentarios` (`Id`, `Descripcion`, `IdTratamientos`, `IdUsuario`
 (17, 'notificaciÃ³n', 2, 25, '2014-11-16 22:41:43'),
 (18, '<ul><li>Primero&nbsp;</li><li>Segundo&nbsp;</li><li>Tercero</li></ul>', 2, 1, '2014-11-16 23:41:19'),
 (19, 'bien', 2, 25, '2014-11-17 17:15:23'),
-(20, 'Si pero no es dejar pasar nada mas, sino permanecer en cama y reposar, beber mucho líquido (zumos y caldos) ', 12, 28, '2014-11-17 00:00:00'),
+(20, 'Si pero no es dejar pasar nada mas, sino permanecer en cama y reposar, beber mucho liquido (zumos y caldos) ', 12, 28, '2014-11-17 00:00:00'),
 (21, 'Es cierto, tambien en pacientes con diabetes tipo II no es necesaro la medicacion si se controlase el exceso de peso y se llevase a cabo un programa de ejercicio fisico regularmente. ', 13, 27, '2014-11-17 11:31:33'),
 (22, ' Pero para eso es necesario con frecuencia una terapia sustitutiva con insulina o la toma de farmacos hipoglucemiantes por via oral.', 13, 29, '2014-11-17 11:35:12'),
 (23, 'Que son Farmacos hipoglucemiantes orales.', 13, 35, '2014-11-17 11:49:37'),
@@ -69,7 +69,10 @@ INSERT INTO `hklcomentarios` (`Id`, `Descripcion`, `IdTratamientos`, `IdUsuario`
 (26, 'Eso es cierto muy bueno me funciono.', 9, 29, '2014-11-17 09:07:06'),
 (28, 'Tienes razon, pero ayuda mucho cuando la persona toma los antidepresivos inhibidores de la serotonina son eficaces para reducir la frecuencia de los episodios en los que el paciente come desenfrenadamente durante cortos periodos de tiempo, y los vómitos autoinducidos, influyendo en la mejoría de la ansiedad, la depresión', 16, 26, '2014-11-18 00:00:00'),
 (29, 'Talvez funcione para los que tienen un nivel bajo de acne, pero si no es asi lo veo poco eficaz.', 17, 28, '2014-11-18 00:00:00'),
-(30, ' Los jabones antibacterianos no resultan particularmente beneficiosos y si bien los jabones abrasivos pueden secar mejor las lesiones pueden también irritar la piel. ', 17, 25, '2014-11-18 00:00:00');
+(30, ' Los jabones antibacterianos no resultan particularmente beneficiosos y si bien los jabones abrasivos pueden secar mejor las lesiones pueden tambien irritar la piel. ', 17, 25, '2014-11-18 00:00:00'),
+(31, 'tÃ­lde Ã±', 12, 31, '2014-11-19 22:53:56'),
+(32, 'asdf asdf asdf asdf', 10, 40, '2014-11-19 23:55:15'),
+(33, '', 10, 31, '2014-11-20 00:16:09');
 
 --
 -- Disparadores `hklcomentarios`
@@ -113,14 +116,14 @@ CREATE TABLE IF NOT EXISTS `khlenfermedades` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Index_1` (`Nombre`) USING BTREE,
   KEY `Etiquetas` (`Etiquetas`(767))
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=COMPACT COMMENT='Tabla con la lista de enfermedades.' AUTO_INCREMENT=70 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci ROW_FORMAT=COMPACT COMMENT='Tabla con la lista de enfermedades.' AUTO_INCREMENT=72 ;
 
 --
 -- Volcado de datos para la tabla `khlenfermedades`
 --
 
 INSERT INTO `khlenfermedades` (`Id`, `Nombre`, `TipoEnfermedad`, `Descripcion`, `Diagnostico`, `Prevencion`, `Enfermedades_Relacionadas`, `Referencias`, `Estado`, `Sintomas`, `Etiquetas`, `Imagen`) VALUES
-(1, 'Gripe', 'Viral', '<p style="margin: 0 0 0 40px; border: none; padding: 0px;"><i style="margin: 0 0 0 40px; border: none; padding: 0px;">La gripe es una infeccion virica que afecta el sistema respiratorio y se contagia facilmente. Generalmente ocurre una epidemia estacional invernal cada doce meses.</i></p>', 'Se basa en los sintomas y la exploracion fisica. En este caso, el medico debera determinar en primer lugar si se trata de un resfriado comun (infeccion gripal). La gripe se manifiesta de repente, con mas sintomas ocurriendo de forma simultanea y mas intensa que en un resfriado. ', 'Extremar la higiene.Desterrar el habito de tocarse la boca, la nariz o los ojos.Ventilar el hogar.Taparse la boca al estornudar o toser.Vacunarse.', 'Gripe seca', '<ul><li>Articulo 1<br></li><li>Articulo 2<br></li>', 'A', 'tos, fiebre, dolor de cabeza, dolor de garganta y mucosidades nasales', 'gripe, tos, aviar, mocos,frio', '0'),
+(1, 'Gripe', 'Viral', 'La gripe es una infeccion virica que afecta el sistema respiratorio y se contagia facilmente. Generalmente ocurre una epidemia estacional invernal cada doce meses.', 'Se basa en los sintomas y la exploracion fisica. En este caso, el medico debera determinar en primer lugar si se trata de un resfriado comun (infeccion gripal). La gripe se manifiesta de repente, con mas sintomas ocurriendo de forma simultanea y mas intensa que en un resfriado. ', 'Extremar la higiene.Desterrar el habito de tocarse la boca, la nariz o los ojos.Ventilar el hogar.Taparse la boca al estornudar o toser.Vacunarse.', 'Gripe seca', '<ul><li>Articulo 1<br></li><li>Articulo 2<br></li>', 'A', 'tos, fiebre, dolor de cabeza, dolor de garganta y mucosidades nasales', 'gripe, tos, aviar, mocos,frio', '0'),
 (4, 'acne', 'Dermatologica', 'El acne es una enfermedad que se caracteriza por la aparicion de lesiones en la piel como consecuencia de una foliculitis, una inflamacion y posterior infeccion del poro folicular (orificio de salida del pelo). Este trastorno puede llegar a tener implicaciones psicologicas y sociales, especialmente entre las personas que trabajan de cara al publico que, en ocasiones, tienen problemas en su entorno laboral porque no alcanzan el grado de presencia fisica exigido. Esto hace que aumente el grado de tension emocional y, en consecuencia, empeore el acne.', 'El diagnostico se realiza clinicamente por la presencia de una o varias lesiones elementales. En algunas pacientes en las que el acne se asocia a otras alteraciones como trastornos menstruales, caida de cabello, seborrea o aumento de vello, es necesario realizar una analitica hormonal complementaria que permitira descartar la presencia de alteraciones hormonales y orientar mejor el tratamiento.', 'Limpiar la cara dos veces al dia.\r\nEvitar frotar la zona al secar.\r\nNo asustarse si aparece una ligera irritacion.\r\nAunque los alimentos no son la causa del acne, no se debe abusar de: cerdo, grasas, bolleria, mariscos y alcohol. Alimentos con chocolate o derivados del alcohol. Frutos secos. Quesos fuertes.\r\nEvitar el uso de cosmeticos que contengan aceites o grasas en su composicion.\r\nNo tocar los granos ya que suele ser una de las causas frecuentes de complicaciones.', NULL, '0', 'A', 'El acne se manifiesta clinicamente con varios tipos de lesiones, pudiendo presentarse varias de ellas en un mismo paciente. Estas lesiones pueden ser inflamatorias y no inflamatorias. Dentro de las no inflamatorias se incluyen los comedones cerrados y abiertos "puntos negros" y entre las inflamatorias estan las papulas rojizas, pustulas, nodulos y quistes. Estas dos ultimas son las mas importantes, pues en su evolución pueden dejar cicatrices residuales, que son la secuela mas importante del acne.', 'Acne', '0'),
 (5, 'Anemia', NULL, 'La anemia es una enfermedad en la que la sangre tiene menos globulos rojos de lo normal. Se presenta anemia cuando los globulos rojos no contienen suficiente hemoglobina. La hemoglobina es una proteina rica en hierro que le da a la sangre el color rojo. Esta proteina les permite a los globulos rojos transportar el oxigeno de los pulmones al resto del cuerpo.', 'La realizacion de la historia clinica y la exploracion fisica, constituyen siempre el primer paso en el estudio de una anemia. Descartada una hemorragia o enfermedad subyacente que justifique la anemia, su estudio debe iniciarse con la consideracion del sexo, la edad y el origen etnico del paciente, asi como su forma de presentacion (aguda o cronica, tiempo de evolución y existencia de antecedentes). ', 'Consuma productos enriquecidos con hierro o vitaminas. Mantenga un horario de alimentación.', NULL, '0', 'A', 'Palidez.\r\nFatiga muscular.\r\nTrastornos neurologicos.\r\nAlteraciones del ritmo menstrual.\r\nTrastornos digestivos.\r\nAlteraciones renales.', 'Anemia, hemoglobina', '0'),
 (6, 'Dengue', 'Viral', 'El dengue es una patologia infecciosa de causa viral considerada una enfermedad tropical. Se transmite por la picadura de la hembra de un mosquito hematofago (que se alimenta de sangre), conocido popularmente como zancudo patas blancas, y cuyo nombre cientifico es Aedes aegypti. Este mosquito vive principalmente en habitats urbanos y cumple parte de su ciclo vital en reservorios de agua artificiales como floreros, estanques, neumaticos abandonados, etcetera. Pica al hombre durante el dia.', 'Lo mas importante para poder hacer un diagnostico de dengue es la clinica del paciente, interrogarle sobre viajes a zonas endemicas y exposicion a picaduras de insectos. Tambien es fundamental descartar otras enfermedades tropicales, principalmente la malaria o paludismo.', 'Utilizar ropa que le proteja como pantalones largos y camisas de manga larga. Hay que evitar el uso de perfumes y de ropas de colores oscuros o chillones.\r\nSe recomienda utilizar insecticidas repelentes en piel.\r\nEmplear repelente en spray que contenga permetrina para la ropa, ya que los mosquitos pueden picar incluso a traves de esta.\r\nImprescindible el uso del mosquiteros, o pequennos toldillos, especialmente en las camas, sitios donde haya pacientes infectados y zonas donde duerman ninnos.', NULL, '0', 'A', 'Inician despues de un periodo de incubacion que puede variar de cinco a ocho dias tras la picadura del mosquito. Habitualmente cursa con fiebre alta que se inicia de forma repentina y se acompanna de dolor de cabeza intenso, dolor alrededor de los ojos y detras de los globos oculares, cansancio y dolor en musculos y articulaciones.\r\nAl tercer dia de la fiebre, muchas veces aparece un exantema por el cuerpo, es decir, una erupcion generalizada de color rojizo, que dura unos dos o tres dias. Tambien puede haber nauseas, vomitos, perdida del apetito o dolor de garganta. La fiebre usualmente dura hasta una semana y suele ser intermitente. Una fiebre que dura mas de 10 dias no suele ser por dengue.', 'Dengue', '0'),
@@ -129,7 +132,9 @@ INSERT INTO `khlenfermedades` (`Id`, `Nombre`, `TipoEnfermedad`, `Descripcion`, 
 (9, 'Diabetes ', NULL, 'La diabetes es una enfermedad crónica que aparece debido a que el páncreas no fabrica la cantidad de insulina que el cuerpo humano necesita, o bien la fabrica de una calidad inferior. La insulina, una hormona producida por el páncreas, es la principal sustancia responsable del mantenimiento de los valores adecuados de azúcar en sangre', 'Se establece el diagnostico de diabetes cuando una persona tiene valores anormalmente elevados de azucar en la sangre. A menudo se controlan los valores de azucar en la sangre durante un examen anual de rutina o durante una exploracion clinica que se realiza antes de la incorporacion a un nuevo empleo o de la practica de un deporte.', 'Evitando el sobrepeso y la obesidad.\r\nRealice ejercicio fisico de forma regular.\r\nAbandone el tabaco y las bebidas alcohólicas.\r\nSiga una dieta alimentaria sana. \r\nMantener un horario de comidas regular en la medida de lo posible.\r\nTomar cantidades moderadas de hidratos de carbono antes de realizar ejercicios extraordinarios.', NULL, '', 'A', 'Frecuencia en orinar (fenomeno de la cama mojada en los niños).\r\nHambre inusual.\r\nSed excesiva.\r\nDebilidad y cansancio.\r\nPerdida de peso.\r\nIrritabilidad y cambios de animo.\r\nSensacion de malestar en el estomago y vomitos.\r\nInfecciones frecuentes.\r\nVista nublada.\r\nCortaduras y rasguños que no se curan, o que se curan muy lentamente.\r\nPicazon o entumecimiento en las manos o los pies.\r\nInfecciones recurrentes en la piel, la encia o la vejiga.\r\nAdemas se encuentran elevados niveles de azucar en la sangre y en la orina', 'Azúcar en la sangre,  Glucosa en la sangre ', NULL),
 (10, 'Gastritis', NULL, 'es una inflamación de la mucosa gástrica, que es la capa de células que reviste el estómago por dentro protegiéndolo de la acidez de los jugos gástricos. ', 'Para ello es necesario realizar una gastroscopia y obtener una muestra de la mucosa gastrica mediante biopsia para que pueda ser analizada. Por tanto, el diagnostico de la gastritis no es unicamente clinico (no se basa solo en los sintomas) sino que es necesaria la realizacion de pruebas invasivas (gastroscopia y biopsia) para confirmar su existencia.', '1. Evita consumir alimentos con mucha grasa.\r\n2. Controla y vigila tu ingesta de medicamentos.\r\n3. No fumes, ni bebas, ya que el alcohol está directamente asociado a la gastritis.\r\n4. Consume verduras verdes y amarillas, debido a que éstas son ricas en antioxidantes y betacoroteno.\r\n5. Consume entre 25 y 30 gramos de fibra todo los días.\r\n6. Realiza cinco comida, ya que la ausencia de alimento por mucho tiempo, te genera mayores ácidos en tu estómago y en consecuencia el desarrollo de la gastritis.\r\n7. Ingiere poca sal.\r\n8. Elige bebidas fermentadas, yogur o que contengan algún tipo de probióticos', NULL, '', 'A', 'Los mas frecuentes son malestar o dolor de estomago, nauseas, vomitos, eructos, ardor, o presencia de sangre en el vomito o en las heces.', 'dispepsia ', NULL),
 (28, 'Ebola', 'dsada', 'antes conocido como fiebre hemorragica del Ebola, es una enfermedad virica aguda grave, transmitida al ser humano por animales salvajes, que se propaga en las poblaciones humanas por transmision de persona a persona,se asocia principalmente al contacto directo o indirecto con sangre o secreciones corporales', 'Antes de esto se debe  hay que descartar la fiebre tifoidea, la malaria, la shigelosis, la septicemia, el colera, las neumonias, la leptospirosis, la peste, las rickettsiosis, la fiebre recurrente, las meningitis, las hepatitis y otras fiebres hemorragicas viricas.', 'En algunos casos, con el fin de reducir el riesgo de transmision al ser humano, puede ser necesario sacrificar a los animales infectados, supervisando la inhumacion o incineración de los cadaveres.', '-1', '0', 'A', 'son la aparicion subita de fiebre, debilidad intensa y dolores musculares, de cabeza y de garganta, seguido de vomitos, diarrea, erupciones cutaneas, pudiendo causar disfuncion renal y hepatica.  ', 'EVE', '0'),
-(67, 'test232312312', 'dasdas', 'dasdas', 'dsadas', 'sdasad', 'dsasad', 'dsadsa', 'A', 'dsaas', 'dasda', '');
+(67, 'test232312312', 'dasdas', 'dasdas', 'dsadas', 'sdasad', 'dsasad', 'dsadsa', 'A', 'dsaas', 'dasda', ''),
+(70, 'mamadolor', 'mamario', 'ffff', 'asdf', 'asdf', 'asd', 'asdf', 'A', 'asf', 'asdf,asdf,gg,mama,asd', NULL),
+(71, 'aaa', 'aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'A', 'aa', 'aa', NULL);
 
 -- --------------------------------------------------------
 
@@ -145,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `khlevaluacionescomentarios` (
   PRIMARY KEY (`Id`) USING BTREE,
   UNIQUE KEY `Index_4` (`IdUsuario`,`IdComentario`),
   KEY `FK_khlevaluacionescomentarios_2` (`IdComentario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los comentarios de los tratamientos.' AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los comentarios de los tratamientos.' AUTO_INCREMENT=36 ;
 
 --
 -- Volcado de datos para la tabla `khlevaluacionescomentarios`
@@ -171,7 +176,10 @@ INSERT INTO `khlevaluacionescomentarios` (`Id`, `IdUsuario`, `IdComentario`, `Ti
 (29, 1, 14, 'P'),
 (30, 1, 16, 'N'),
 (31, 25, 16, 'P'),
-(32, 25, 18, 'P');
+(32, 25, 18, 'P'),
+(33, 31, 20, 'P'),
+(34, 31, 4, 'P'),
+(35, 40, 32, 'P');
 
 --
 -- Disparadores `khlevaluacionescomentarios`
@@ -207,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `khlevaluacionestratamientos` (
   PRIMARY KEY (`Id`) USING BTREE,
   UNIQUE KEY `Index_4` (`idTratamiento`,`idUsuario`),
   KEY `FK_khlevaluacionestratamientos_2` (`idUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los tratamientos publicados.' AUTO_INCREMENT=23 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los tratamientos publicados.' AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `khlevaluacionestratamientos`
@@ -222,7 +230,8 @@ INSERT INTO `khlevaluacionestratamientos` (`Id`, `idUsuario`, `idTratamiento`, `
 (19, 25, 11, 'P'),
 (20, 1, 10, 'P'),
 (21, 1, 11, 'P'),
-(22, 1, 19, 'P');
+(22, 1, 19, 'P'),
+(23, 31, 10, 'N');
 
 --
 -- Disparadores `khlevaluacionestratamientos`
@@ -258,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `khlnotificaciones` (
   `IdUsuario` int(11) NOT NULL COMMENT 'Id del usuario que pertenece la notificacion.',
   PRIMARY KEY (`Id`),
   KEY `FK_khlnotificaciones_1` (`IdUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las notificaciones a los usuarios.' AUTO_INCREMENT=29 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las notificaciones a los usuarios.' AUTO_INCREMENT=36 ;
 
 --
 -- Volcado de datos para la tabla `khlnotificaciones`
@@ -267,25 +276,25 @@ CREATE TABLE IF NOT EXISTS `khlnotificaciones` (
 INSERT INTO `khlnotificaciones` (`Id`, `Fecha`, `Estado`, `Descripcion`, `IdUsuario`) VALUES
 (8, '2014-11-16 16:16:54', 'L', 'El usuario Administrador votó en un comentario que realizaste.', 1),
 (9, '2014-11-16 16:18:16', 'L', 'El usuario Administrador votó en un comentario que realizaste.', 1),
-(10, '2014-11-16 16:37:59', 'P', 'El usuario q votó en un tratamiento que publicaste.', 24),
-(11, '2014-11-16 16:41:13', 'P', 'El usuario q comentó en un tratamiento que publicaste.', 24),
-(12, '2014-11-16 17:05:24', 'L', 'El usuario q votó en un comentario que realizaste.', 1),
 (13, '2014-11-16 17:40:49', 'P', 'El usuario Administrador comentó en un tratamiento que publicaste.', 24),
-(14, '2014-11-16 21:21:10', 'L', 'El usuario q votó en un comentario que realizaste.', 1),
-(15, '2014-11-17 08:30:42', 'L', 'El usuario q votó en un tratamiento que publicaste.', 25),
-(16, '2014-11-17 11:14:53', 'P', 'El usuario q comentó en un tratamiento que publicaste.', 24),
 (17, '2014-11-18 09:27:35', 'P', 'El usuario Administrador votó en un tratamiento que publicaste.', 26),
 (18, '2014-11-18 09:29:07', 'P', 'El usuario Administrador votó en un tratamiento que publicaste.', 25),
 (19, '2014-11-18 12:12:28', 'P', 'El usuario crisman comentó en un tratamiento que publicaste.', 27),
 (20, '2014-11-18 12:41:13', 'P', 'El usuario felipelvrd comentó en un tratamiento que publicaste.', 24),
 (21, '2014-11-18 12:45:59', 'P', 'El usuario felipelvrd comentó en un tratamiento que publicaste.', 24),
-(22, '2014-11-18 12:49:44', 'P', 'El usuario qw comentó en un tratamiento que publicaste.', 24),
 (23, '2014-11-18 12:52:33', 'P', 'El usuario felipelvrd comentó en un tratamiento que publicaste.', 24),
 (24, '2014-11-18 13:02:13', 'L', 'El usuario felipelvrd comentó en un tratamiento que publicaste.', 29),
 (25, '2014-11-18 15:52:57', 'P', 'El usuario Colocho comentó en un tratamiento que publicaste.', 25),
 (26, '2014-11-18 16:03:51', 'P', 'El usuario crisman comentó en un tratamiento que publicaste.', 26),
 (27, '2014-11-18 16:06:31', 'P', 'El usuario harol comentó en un tratamiento que publicaste.', 26),
-(28, '2014-11-18 17:49:26', 'P', 'El usuario Administrador votó en un tratamiento que publicaste.', 1);
+(28, '2014-11-18 17:49:26', 'P', 'El usuario Administrador votó en un tratamiento que publicaste.', 1),
+(29, '2014-11-19 16:53:57', 'P', 'El usuario test comentó en un tratamiento que publicaste.', 27),
+(30, '2014-11-19 16:56:07', 'P', 'El usuario test votó en un comentario que realizaste.', 28),
+(31, '2014-11-19 17:13:44', 'P', 'El usuario test votó en un tratamiento que publicaste.', 26),
+(32, '2014-11-19 17:24:49', 'P', 'El usuario test votó en un comentario que realizaste.', 25),
+(33, '2014-11-19 17:55:15', 'P', 'El usuario 123 comentó en un tratamiento que publicaste.', 26),
+(34, '2014-11-19 17:55:20', 'L', 'El usuario 123 votó en un comentario que realizaste.', 40),
+(35, '2014-11-19 18:16:12', 'P', 'El usuario test comentó en un tratamiento que publicaste.', 26);
 
 -- --------------------------------------------------------
 
@@ -295,37 +304,18 @@ INSERT INTO `khlnotificaciones` (`Id`, `Fecha`, `Estado`, `Descripcion`, `IdUsua
 
 CREATE TABLE IF NOT EXISTS `khlsugerencias` (
   `Id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Id de la sugerencia.',
-  `Nombre` varchar(50) COLLATE utf8_spanish_ci NOT NULL COMMENT 'Nombre de la enfermedad que se sugiere.',
   `Descripcion` text CHARACTER SET latin1 COMMENT 'Descripcion de la enfermedad que se sugiere.',
-  `Fecha` datetime NOT NULL COMMENT 'Fecha en que se realizo la sugerencia.',
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con las sugerencias a nuevas enfermedades.' AUTO_INCREMENT=21 ;
+  `Id_Usuario` int(11) NOT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `Id_Usuario` (`Id_Usuario`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con las sugerencias a nuevas enfermedades.' AUTO_INCREMENT=24 ;
 
 --
 -- Volcado de datos para la tabla `khlsugerencias`
 --
 
-INSERT INTO `khlsugerencias` (`Id`, `Nombre`, `Descripcion`, `Fecha`) VALUES
-(1, 'leucemia', ' afecta a las células sanguíneas, generalmente a los glóbulos blancos. La enfermedad se produce a consecuencia de un error en el proceso de maduración de una célula madre a glóbulo blanco, que supone una alteración cromosómica que provoca que las células afectadas se vuelvan cancerosas y se multipliquen sin cesar, infiltrándose en la médula ósea, donde sustituyen a las células que producen las células sanguíneas normales', '2014-11-03 00:00:00'),
-(2, 'ñaña', 'tìldé', '0000-00-00 00:00:00'),
-(3, 'ñaña', 'tìldé', '0000-00-00 00:00:00'),
-(4, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(5, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(6, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(7, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(8, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(9, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(10, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(11, 'letra Ã±', 'tÃ­lde', '0000-00-00 00:00:00'),
-(12, 'letra ñ', 'tílde', '0000-00-00 00:00:00'),
-(13, 'Asma', 'es la respuesta a determinados estimulos que producen alergia: polen, acaros del polvo, particulas de la piel de gato y del perro, humo, aire frio, ciertos alimentos o aditivos alimenticios. Se caracteriza por la aparición de episodios de dificultad respiratoria (crisis o ataques), generalmente asociados a otros sintomas como tos, pitidos al respirar y sensación de ahogo', '2014-11-17 00:00:00'),
-(14, 'Artrosis', 'La artrosis es una enfermedad degenerativa de las articulaciones y produce el desgaste del cartilago. Esta patologia puede a producir incapacidad funcional, aunque es dificil que provoque un grado de invalidez que impida desempeñar las actividades cotidianas necesarias.', '2014-11-17 00:00:00'),
-(15, 'Varices', 'Las varices o venas varicosas son venas hinchadas a causa de una acumulacion anormal de sangre producida por una debilidad, a menudo heredada, en las paredes de las venas superficiales.', '2014-11-17 00:00:00'),
-(16, 'La torticolis', 'Es una contraccion muscular prolongada en la region del cuello que origina dolor e incapacidad de movimiento. Esta distonia provoca que, mientras que la cabeza apunta hacia un hombro, el menton quede señalando hacia el hombro opuesto.', '2014-11-17 00:00:00'),
-(17, 'La diarrea', 'Es un proceso infeccioso, de caracter leve en la mayor parte de los casos.', '2014-11-17 00:00:00'),
-(18, 'juanetes', 'Los juanetes (hallux valgus) son una deformidad del dedo gordo o primer dedo que produce una prominencia lateral del hueso.', '2014-11-17 00:00:00'),
-(19, 'Herpes', 'Se trata de una infeccion causada por el virus herpes, el cual tiene la capacidad de quedarse de forma latente en el organismo durante años. Tras una primera infeccion, el virus permanece de forma inactiva en el cuerpo humano, y vuelve a multiplicarse y a causar enfermedad en determinadas situaciones. Afecta a mas de un tercio de la población.', '2014-11-18 00:00:00'),
-(20, 'Cataratas', 'Una catarata es una nubosidad (opacidad) en el cristalino del ojo que dificulta la vision. Las cataratas son un problema que toda la poblacion va a padecer en algun momento.', '2014-11-18 00:00:00');
+INSERT INTO `khlsugerencias` (`Id`, `Descripcion`, `Id_Usuario`) VALUES
+(23, 'fas gas', 40);
 
 -- --------------------------------------------------------
 
@@ -347,34 +337,39 @@ CREATE TABLE IF NOT EXISTS `khltratamientos` (
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Index_1` (`IdUsuario`,`IdEnfermedad`) USING BTREE,
   KEY `FK_khltratamientos_1` (`IdEnfermedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC COMMENT='Tabla con los tratamientos de las enfermedades' AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC COMMENT='Tabla con los tratamientos de las enfermedades' AUTO_INCREMENT=57 ;
 
 --
 -- Volcado de datos para la tabla `khltratamientos`
 --
 
 INSERT INTO `khltratamientos` (`Id`, `IdUsuario`, `IdEnfermedad`, `Nombre`, `Descripcion`, `Indicaciones`, `Efectos_Segundarios`, `Referencias`, `CantidadVisitas`, `Fecha`) VALUES
-(2, 24, 1, 'Tratamiento 1', 'Tratamiento', '', '', '', 0, '2014-11-01 00:00:00'),
-(3, 29, 4, 'Tratamiento 2', 'En mujeres, con acné moderado se puede controlar con dosis altas de estrógenos orales, combinados co', '', '', '', 0, '2014-11-03 00:00:00'),
-(4, 29, 5, 'Tratamiento 3', 'realizar una transfusión de sangre.', '', '', '', 0, '2014-11-03 00:00:00'),
-(5, 25, 6, 'Tratamiento 4', 'Para evitar la deshidratación se debe tomar abundantes líquidos y guardar reposo en cama.', '', '', '', 0, '2014-11-03 00:00:00'),
-(6, 24, 8, 'Tratamiento farmacológico', 'se utilizan para corregir desequilibrios en los niveles de las sustancias químicas del cerebro, espe', '', 'el insomnio, nerviosismo, disfunción sexual, nause', '', 0, '2014-11-15 00:00:00'),
-(7, 25, 8, 'Psicoterapia', 'Su fin es ayudar al paciente a conocerse mejor y cambiar sus malas formas de pensar, sentir y actuar', '', 'No tiene', '', 0, '2014-11-15 00:00:00'),
-(8, 26, 8, 'Ejercicio físico', 'está demostrada la capacidad del ejercicio físico para mejorar el bienestar personal, tanto físico c', 'En los pacientes con depresión leve-moderada, un p', 'No tiene', '', 0, '2014-11-15 00:00:00'),
-(9, 29, 8, 'Hierba de San Juan (Hyper', 'sus propiedades antidepresivas han sido constatadas en numerosos estudios', 'tomarse siempre bajo prescripción y supervisión de', 'Presenta interacciones con otros medicamentos', '', 0, '2014-11-15 00:00:00'),
-(10, 26, 1, 'Tratamiento 2', 'Descripcion', 'indicaciones', 'efectos secundarios', 'referencias', 0, '0000-00-00 00:00:00'),
+(2, 24, 1, 'Tratamiento 1', 'Tratamiento', '', '', '', 0, '2014-11-20 00:08:18'),
+(3, 29, 4, 'Tratamiento 2', 'Retire toda la suciedad o maquillaje. Lavese una o dos veces al dia, incluso despues del ejercicio.', '', '', '', 0, '2014-11-03 00:00:00'),
+(4, 29, 5, 'Tratamiento 3', 'realizar una transfusion de sangre.', '', '', '', 0, '2014-11-03 00:00:00'),
+(5, 25, 6, 'Tratamiento 4', 'Para evitar la deshidratacion se debe tomar abundantes liquidos y guardar reposo en cama.', '', '', '', 0, '2014-11-03 00:00:00'),
+(6, 24, 8, 'antidepresivos', 'se utilizan para corregir desequilibrios en los niveles de las sustancias quimicas del cerebro, cont', '', 'el insomnio, nerviosismo, disfunción sexual, nause', '', 0, '2014-11-15 00:00:00'),
+(7, 25, 8, 'Psicoterapia', 'Su fin es ayudar al paciente a conocerse mejor y cambiar sus malas formas de pensar.', '', 'No tiene', '', 0, '2014-11-15 00:00:00'),
+(8, 26, 8, 'Ejercicio fisico', 'esta demostrada la capacidad del ejercicio fisico para mejorar el bienestar personal', 'En los pacientes con depresion leve-moderada,', 'No tiene', '', 0, '2014-11-15 00:00:00'),
+(9, 29, 8, 'Hierba de San Juan (Hyper', 'sus propiedades antidepresivas han sido constatadas en numerosos estudios', 'tomarse siempre bajo supervision del medico', 'Presenta interacciones con otros medicamentos', '', 0, '2014-11-15 00:00:00'),
+(10, 26, 1, 'Tratamiento 2', 'Descripcion', 'indicaciones', 'efectos secundarios', 'referencias', 0, '2014-11-20 00:04:51'),
 (11, 25, 1, 'Tratamiento 2 Modificado', 'Descripcion 2', 'Forma 2', 'Efectos 2', 'Referencias 2', 0, '2014-11-18 17:42:52'),
-(12, 27, 1, 'Pasar la gripe', 'El mejor tratamiento,lo que significa que hoy por hoy no tiene curacion', '', '', '', 0, '2014-11-17 00:00:00'),
-(13, 24, 9, 'Ser responsable con uno m', 'Si su diabetes es mellitus  realice una buena dieta, ejercicio físico y medicacion con responsabilid', '', '', '', 0, '2014-11-17 11:26:48'),
-(14, 29, 6, 'Aliviar sintomas', 'Para esta enfermedad solo se pueden tomar medicamentos para aliviar los sintomas, se puede evitar la', '', '', '', 0, '2014-11-17 00:00:00'),
+(12, 27, 1, 'Pasar la gripe.', 'El mejor tratamiento,lo que significa que hoy por hoy no tiene curacion', '', '', '', 0, '2014-11-20 00:25:06'),
+(13, 24, 9, 'Ser responsable con uno ', 'realice una buena dieta, ejercicio fisico y medicacion con responsabilidad', '', '', '', 0, '2014-11-17 11:26:48'),
+(14, 29, 6, 'Aliviar sintomas', ' solo se pueden tomar medicamentos para aliviar los sintomas, administrar paracetamol ', '', '', '', 0, '2014-11-17 00:00:00'),
 (15, 26, 7, 'Actividades', 'La mejor cura para esta enfermedad es ayudarle a la persona a realizar actividades donde pueda mejor', '', '', '', 0, '2014-11-18 00:00:00'),
-(16, 25, 7, 'Terapia', 'Realizar sesiones de terapia con la persona afectada, para que aprenda aceptarse a si misma, esta te', '', '', '', 0, '2014-11-18 00:00:00'),
-(17, 26, 4, 'Tratamiento', 'Lavar las zonas afectadas varias veces al día resulta poco eficaz, aunque mejora el aspecto de los p', '', '', '', 0, '2014-11-17 00:00:00'),
+(16, 25, 7, 'Terapia', 'Realizar sesiones de terapia con la persona afectada, para que aprenda aceptarse a si misma', '', '', '', 0, '2014-11-18 00:00:00'),
+(17, 26, 4, 'Tratamiento', 'Evite estregar y lavar la piel en forma repetitiva con un buen jabon', '', '', '', 0, '2014-11-17 00:00:00'),
 (19, 1, 1, 'Admin', 'El admin modifico este tratamiento', '<ol><li>primero</li><li>segundo</li></ol>', 'Muchos', 'Yo', 0, '2014-11-18 16:59:04'),
-(20, 27, 4, 'Tratamiento 1', 'Las compresas de agua caliente ayudan a ablandar los comedones, resultando más fácil su extracción', '', '', '', 0, '2014-11-18 00:00:00'),
-(21, 25, 10, 'Tratamiento', 'realice cambios en su dieta, evitando ciertos tipos de alimentos, bebidas o fármacos que puedan prod', '', '', '', 0, '2014-11-18 00:00:00'),
+(20, 27, 4, 'Tratamiento 1', 'Las compresas de agua caliente ayudan a ablandar los comedones, resultando mas facil su extraccion', '', '', '', 0, '2014-11-18 00:00:00'),
+(21, 25, 10, 'Tratamiento', 'realice cambios en su dieta, evitando ciertos tipos de alimentos, bebidas que producen acidez', '', '', '', 0, '2014-11-18 00:00:00'),
 (22, 27, 10, 'Tratamiento 1', 'Ingiera antiacidos y otros medicamentos que ayudan a disminuir la acidez en el estomago.', '', '', '', 0, '2014-11-18 00:00:00'),
-(27, 22, 5, 'Hierro', 'Es necesario la reposicion de hierro por vía oral en casos de anemia ferropenica; o de vitamina B12 ', '', '', '', 0, '2014-11-17 00:00:00');
+(27, 22, 5, 'Hierro', 'Es necesario la reposicion de hierro por via oral en casos de anemia ferropenica o de vitamina B12 ', '', '', '', 0, '2014-11-17 00:00:00'),
+(33, 29, 70, 'Tratamiento para ma', 'Una Descripcion', 'as', 'asd', '123', 0, '2014-11-19 23:56:13'),
+(34, 40, 1, 'fff', 'fff', 'fff', 'fff', 'fff', 0, '2014-11-19 23:54:40'),
+(40, 29, 1, 'aasdf', 'asdf', 'asdf', 'asdf', 'asdf', 0, '2014-11-20 00:17:53'),
+(53, 31, 70, 'asdf', '', 'asdf', 'asdf', 'asdf', 0, '2014-11-20 00:28:05'),
+(54, 31, 1, 'asdffff', 'asdffff', 'asdffff', 'asdffff', 'asdffff', 0, '2014-11-20 00:35:07');
 
 -- --------------------------------------------------------
 
@@ -395,7 +390,7 @@ CREATE TABLE IF NOT EXISTS `khlusuarios` (
   `Facebook` varchar(100) DEFAULT NULL COMMENT 'Url del perfil de facebook del usuario.',
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Correo` (`Correo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con los usuarios del sistema.' AUTO_INCREMENT=39 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con los usuarios del sistema.' AUTO_INCREMENT=41 ;
 
 --
 -- Volcado de datos para la tabla `khlusuarios`
@@ -413,7 +408,9 @@ INSERT INTO `khlusuarios` (`Id`, `Nombre`, `Correo`, `Contrasena`, `Rol`, `Estad
 (31, 'test', 'test', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'A', 'A', NULL, NULL, NULL, NULL),
 (33, 'cris', 'crisman.mena.gomez@est.una.ac.cr', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
 (35, 'Andes', 'elflaco23@hotmail.com', '181A2F37C574A2A1404C3CFBA0C60D52', 'U', 'A', NULL, NULL, NULL, NULL),
-(38, 'juan', 'juanlgu27@hotmail.com', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL);
+(38, 'juan', 'juanlgu27@hotmail.com', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
+(39, '123', '123@123', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
+(40, '123', '1234@123', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL);
 
 --
 -- Restricciones para tablas volcadas
@@ -445,6 +442,12 @@ ALTER TABLE `khlevaluacionestratamientos`
 --
 ALTER TABLE `khlnotificaciones`
   ADD CONSTRAINT `FK_khlnotificaciones_1` FOREIGN KEY (`IdUsuario`) REFERENCES `khlusuarios` (`Id`);
+
+--
+-- Filtros para la tabla `khlsugerencias`
+--
+ALTER TABLE `khlsugerencias`
+  ADD CONSTRAINT `khlsugerencias_ibfk_1` FOREIGN KEY (`Id_Usuario`) REFERENCES `khlusuarios` (`Id`);
 
 --
 -- Filtros para la tabla `khltratamientos`
