@@ -40,7 +40,7 @@ function nTratamiento(enf_id,id_enf){
 
                success:  function (response) {
                        if(response == 1){
-					   		url = "?p=NuevoTratamiento&enf_id="+enf_id+"&?n="+id_enf;
+					   		url = "?p=NuevoTratamiento&enf_id="+enf_id+"&n="+id_enf;
 							$(location).attr("href", url);
 					   }
 						else
