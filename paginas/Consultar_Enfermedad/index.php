@@ -16,10 +16,10 @@ Cargando
 
         
 		<div class="clRow clTexto-cen"  >
-			<img class="clIMG-responsive"  src="recursos/Logo2.png" width="426" height="118" alt="alt 500X300">
-		</div>
+<!--			<img class="clIMG-responsive"  src="recursos/Logo2.png" width="426" height="118" alt="alt 500X300">
+-->		</div>
         
-		<div class="clRow clTexto-cen group-enfermedad">
+		<div class="clRow clTexto-cen ">
         
             <h2 id="Nombre_Enfermedad">Nombre de la enfemedad</h2>
 
