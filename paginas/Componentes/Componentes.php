@@ -63,7 +63,7 @@
              <div class="clColum-esc-2 clColum-mov-2">
                    
                    <div class="group" style="width:50%; float:right;">
-                  <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style=" margin-right:5px; text-align:center">Ver mas</a>
+                  <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style=" margin-right:5px; line-height:25px; text-decoration:none;">Ver mas</a>
                    </div>   
                    
                    <?php @session_start();if( isset($_SESSION['idUsuario']) && ($_POST["idUsu"]==$_SESSION['idUsuario'] || $_SESSION['Rol']=='A')){?>
