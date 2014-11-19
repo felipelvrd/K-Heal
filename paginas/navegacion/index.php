@@ -56,7 +56,7 @@
 			<div>
 				 <form >                    
 					<div >
-						 <label for="txtUsuarioLogin">Usuario</label><input type="text"  id="txtUsuarioLogin" value="" />
+						 <label for="txtUsuarioLogin">Correo</label><input type="text"  id="txtUsuarioLogin" value="" />
 					</div>                        
 					<div >
 						 <label for="txtCotrasenaLogin">Contraseña</label><input type="password"  id="txtCotrasenaLogin" />
