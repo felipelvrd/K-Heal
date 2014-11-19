@@ -15,9 +15,7 @@ Cargando
 
 <div class="clContenedor" id="main">
 			
-    <div class="clRow clTexto-cen"  >
-			<img class="clIMG-responsive"  src="recursos/Logo2.png" width="426" height="118" alt="alt 500X300">
-    </div>
+    
         
 	<div class="clRow clTexto-cen group-enfermedad">
         
@@ -75,6 +73,7 @@ Cargando
 			</div>
 	</div>
 <div class="clRow clTexto-cen group-enfermedad">
+<h2>Comentarios</h2>
 <?php include 'paginas/Componentes/comentarios/index.php'; ?>
 </div>
 </body>

@@ -197,9 +197,9 @@ background:rgba(0,153,0,0.5);
     -moz-box-shadow: 2px 2px 5px #ccc;
     -webkit-box-shadow: 2px 2px 5px #ccc;
     box-shadow: 2px 2px 5px #ccc;
-    margin-bottom: 1em;
     padding-bottom: 1em;
 	text-align:justify;
+	margin:1em;
 	}
 .group-enfermedad h2 {
 	 -moz-border-radius: 4px;
