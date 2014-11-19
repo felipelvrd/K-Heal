@@ -10,28 +10,24 @@
 
 
 
-<<<<<<< .mine
+
 <div id='dvVotos' class="clRow">
-  <div id='dvMecure' title="Me cure" class="clColum-mov-3"> <a href="#" onClick="votar('P', <?php echo $_POST['id'];?>,<?php echo $nVoto; ?>);">
-    <p> <img class="clIMG-responsive" src="paginas/Componentes/votos/mecure.png" width="50" height="50" alt=""/> </p>
-=======
-<div id='dvVotos'>
-  <div id='dvMecure'> <a href="#" onClick="votar('P', <?php echo $_POST['id'];?>,<?php echo $nVoto; ?>);return false;">
-    <p> <img src="paginas/Componentes/votos/mecure.png" width="50" height="50" alt=""/> </p>
-    <p> Me cure </p>
->>>>>>> .r151
-    </a>
-    <p><span id='spVotosMecure<?php echo $nVoto?>'><?php obtenerVotos($_POST['id'],'P'); ?></span></p>
+  
+  <div class="clRow" style="margin-left:40%; margin-right:0px;">
+
+      <div id='dvMecure' title="Me cure" class="clColum-mov-2 clColum-esc-2"> 
+        <a href="#" onClick="votar('P', <?php echo $_POST['id'];?>,<?php echo $nVoto; ?>);return false;">
+        <p> <img class="clIMG-responsive" src="paginas/Componentes/votos/mecure.png"  alt=""/> </p>
+        </a>
+        <p><span id='spVotosMecure<?php echo $nVoto?>'><?php obtenerVotos($_POST['id'],'P'); ?></span></p>
+      </div>
+    
+      <div id='dvNocure' title="No me cure" class="clColum-mov-2 clColum-esc-2"> 
+        <a href="#" onClick="votar('N',<?php echo $_POST['id']; ?>,<?php echo $nVoto; ?>);">
+        <p><img class="clIMG-responsive" src="paginas/Componentes/votos/nocure.png" alt=""/></p>
+        <p><span id='spVotosNocure<?php echo $nVoto?>'><?php obtenerVotos($_POST['id'],'N'); ?></span></p>
+      </div>
+  
   </div>
-<<<<<<< .mine
-  <div id='dvNocure' title="No me cure" class="clColum-mov-3"> <a href="#" onClick="votar('N',<?php echo $_POST['id']; ?>,<?php echo $nVoto; ?>);">
-    <p><img class="clIMG-responsive" src="paginas/Componentes/votos/nocure.png" width="50" height="50" alt=""/></p>
-=======
-  <div id='dvNocure'> <a href="#" onClick="votar('N',<?php echo $_POST['id']; ?>,<?php echo $nVoto; ?>); return false;">
-    <p><img src="paginas/Componentes/votos/nocure.png" width="50" height="50" alt=""/></p>
-    <p>No Mecure</p>
->>>>>>> .r151
-    </a>
-    <p><span id='spVotosNocure<?php echo $nVoto?>'><?php obtenerVotos($_POST['id'],'N'); ?></span></p>
-  </div>
+  
 </div>

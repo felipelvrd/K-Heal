@@ -43,28 +43,48 @@
 
 </div>
 
-<div id="cmp_Tratamiento" class="clContenedor group" >
-		    <div >	   
-			 <div>				  
-				  <div >
-					 <h2 style="margin:0px"><?php echo $_POST["n"] ?></h2>  
-				  </div>			  
-				  <div style="max-height:100px; overflow:auto;">  
-						<p><?php echo $_POST["d"] ?></p>
-				  </div>	  
-			 </div>
-			 
-			 <div>
-				   <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style="float:right; margin-right:5px;">Ver mas</a>
+
+<div id="cmp_Tratamiento" class="clContenedor group">
+
+   <div class="clRow">
+         
+          <div class="clRow">
+             <h2 style="margin:0px"><?php echo $_POST["n"] ?> </h2>  
+          </div>
+          
+          <div class="clRow" >  
+            
+             <div class="clColum-esc-4 clColum-mov-4" style="max-height:100px; overflow:auto;">
+               
+             <p><?php echo $_POST["d"] ?></p>
+          
+             </div>
+             
+             <div class="clColum-esc-2 clColum-mov-2">
+                   
+                   <div class="group" style="width:50%; float:right;">
+                  <a href="index.php?p=Consultar_Tratamiento&id_trat=<?php echo $_POST["id"] ?>" style=" margin-right:5px; text-align:center">Ver mas</a>
+                   </div>   
+                   
                    <?php @session_start();if( isset($_SESSION['idUsuario']) && ($_POST["idUsu"]==$_SESSION['idUsuario'] || $_SESSION['Rol']=='A')){?>
-          			<a href="index.php?p=NuevoTratamiento&id_trat=<?php echo $_POST["id"] ?>&enf_id=<?php echo $_POST["idEnf"];?>" style="float:right; margin-right:5px;">Editar</a>
+                    <a href="index.php?p=NuevoTratamiento&id_trat=<?php echo $_POST["id"] ?>&enf_id=<?php echo $_POST["idEnf"];?>" style="float:right; margin-right:5px;">Editar</a>
                     <?php } ?>
                     
-				 <br></br>
-				 <div"><?php include "votos/index.php";?></div>
-			 </div>
-		   </div>
-		</div>
+                 <br></br>
+                 
+                 <div class="clRow">
+                   <?php include "votos/index.php";?>
+                </div>
+                
+             </div>
+          
+          
+         </div>
+ 
+   </div>
+
+</div>
+
   
 </body>
 </html>
