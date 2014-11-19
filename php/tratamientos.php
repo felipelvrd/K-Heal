@@ -83,7 +83,9 @@ else if($Accion==2){
 				 echo json_encode($arrayTratamientos);
         }
         else{
-            $salida="<li>No hay tratamientos<li>";
+			$arrayTratamientos = array();
+			
+            echo json_encode($arrayTratamientos);
         }
 			}
 			else{
