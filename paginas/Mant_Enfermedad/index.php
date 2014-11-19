@@ -6,8 +6,8 @@
 		
        <div class="clRow group">
          <h2>Sugerencias</h2>
-         <div class="clColum-esc-1"></div>
-           <div class="clColum-esc-4" style="min-height:200px;">
+         <div class="clColum-esc-1 clColum-mov-1"></div>
+           <div class="clColum-esc-4 clColum-mov-4" style="min-height:200px;">
              <table id="Sugerencias" class="display" cellspacing="" width="98%">
                     <thead>
                         <tr>
@@ -17,7 +17,7 @@
                     </thead>
              </table>
            </div>
-          <div class="clColum-esc-1"></div>
+          <div class="clColum-esc-1 clColum-mov-1"></div>
        </div>
         <div class="clRow group">
         <h2>Mantenimiento de enfermedades</h2>		

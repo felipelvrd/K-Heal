@@ -23,11 +23,12 @@
     
 </head>
 <body>
+<div class="clContenedor">
 <div id="BarraSuperior" class="nav" > 
   <?php include("paginas/navegacion/index.php"); ?>    
 </div>
 
-<div id="divFramePrincipal"> 
+<div id="divFramePrincipal" class="clRow"> 
 
    <?php 
    if(empty($_GET["p"]))
@@ -41,6 +42,7 @@
 <?php
 	include ("paginas/Componentes/Mensaje/index.php");
 ?>
+</div>
 
 </body>
 </html>

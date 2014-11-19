@@ -1,6 +1,6 @@
  <div id="wrapper">
             <div id="logo">
-                <img src="recursos/Logo2.png"/>
+                <img class="clIMG-responsive" src="recursos/Logo2.png"/>
             </div>
             <form id="searchForm" action="javascript:ObtenerDatos()"><!--javascript:search()-->
                 <div id="inputSearch">
