@@ -7,7 +7,8 @@ class Enfermedad
    public $diagnostico;
    public $prevencion;
    public $nombre;	
-   public $test;
+   public $referencias;
+   public $enfermedades_relacionadas;
 }
 ?>   
 

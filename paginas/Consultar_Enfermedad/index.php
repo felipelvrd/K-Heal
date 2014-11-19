@@ -66,15 +66,22 @@ Cargando
 
 			<div class="group-enfermedad">
 				<h2>Prevencion </h2>
-				<p id="DivPrevencion" class="descrEnfer">
+				<p id="divPrevencion" class="descrEnfer">
 				Datos
 				</p>
 			</div>
 
+             <div class="group-enfermedad">
+				<h2>Enfermedades Relacionadas</h2>
+				<p id="divEnferm_Relacionadas" class="descrEnfer">
+				   Sin enfermedades relacionadas
+				</p>
+			</div>
+              
 			<div class="group-enfermedad">
 				<h2>Referencias</h2>
-				<p id="DivReferencias" class="descrEnfer">
-				Datos
+				<p id="divReferencias" class="descrEnfer">
+				   Sin referencias 
 				</p>
 			</div>
 

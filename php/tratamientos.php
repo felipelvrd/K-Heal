@@ -2,7 +2,7 @@
 
 include_once("phpClassConexion.php");
 
-header('Content-Type: application/json; charset = latin1_swedish_ci');
+header('Content-Type: application/json;');
 
 
 
@@ -56,6 +56,7 @@ else if($Accion==2){
 	if($conexion->Conectar()==true){
 		try{	
 			//Listo los tratamientos
+			header('charset = latin1_spanish_ci');
 			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where idEnfermedad = $IdEnfermedad")){
 				//Si el resultado tiene mas de 0 columnas
 				

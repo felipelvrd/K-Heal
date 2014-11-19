@@ -31,7 +31,6 @@ Cargando
                             <h2>MENU</h2>
                             <ul>
                               <li><a href="#divCuerpoConsTrat" >Inicio</a></li>
-                              <li><a href="#divTipo">Tipo</a></li>
                               <li><a href="#divAplicacion"> Forma de Aplicarlo</a></li>
                               <li><a href="#DivEfecConsTrat"> Efectos Adversos</a></li>  
                               <li><a href="#DivEnlacesConsTrat"> Enlaces Externos</a></li>  
@@ -51,13 +50,6 @@ Cargando
 				</div>
 
 				<div class="group-enfermedad">
-					<h2>Tipo </h2>
-					<p id="divTipo"p>
-					Datos
-					</p>
-				</div>
-
-				<div class="group-enfermedad">
 					<h2>Forma de Aplicarlo</h2>
 					<div id="divAplicacion" >
 					Datos
@@ -66,16 +58,16 @@ Cargando
 
 				<div class="group-enfermedad">
 					<h2>Efectos Segundarios</h2>
-					<p id="DivEfecConsTrat" >
-					Datos
-					</p>
+				     <div id="DivEfecConsTrat" >
+					   Datos
+					</div>
 				</div>
 
 				<div class="group-enfermedad">
 					<h2>Referencias</h2>
-					<p id="DivReferencias" >
+					<div id="DivReferencias" >
 					Datos
-					</p>
+					</div>
 				</div>               
 				
                 <div id="mantTrata"></div>

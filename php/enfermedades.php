@@ -164,6 +164,8 @@ else if($Accion==3){
 						$Enfermedad->nombre = $row["Nombre"];
 						$Enfermedad->sintomas = $row["Sintomas"];
 						$Enfermedad->prevencion = $row["Prevencion"];
+						$Enfermedad->enfermedades_relacionadas = $row["Enfermedades_Relacionadas"];
+						$Enfermedad->referencias = $row["Referencias"];
 					}
 
 	              echo json_encode($Enfermedad); 
