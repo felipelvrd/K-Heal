@@ -19,13 +19,13 @@ function registrarTratamiento(enf_id){
                },
                success:  function (response) {
                        $('#dvMsg').html(response);
-					    url = "?p=Listar_Tratamientos&enf_id="+enf_id;
+					    url = "?p=Listar_Tratamientos&enf_id="+enf_id+"&n="+$_GET('n');
       					$(location).attr("href", url);
                }
        });
 }
 
-function modificarTratamiento(id_trat){
+function modificarTratamiento(id_trat,enf_n){
 	var parametros = {
 		   "Id" : id_trat,
 		   "Nombre" : $('#txNombre').val(),
@@ -44,7 +44,7 @@ function modificarTratamiento(id_trat){
                },
                success:  function (response) {
                        $('#dvMsg').html(response);
-					    url = "?p=Listar_Tratamientos&enf_id="+$_GET('enf_id');
+					    url = "?p=Listar_Tratamientos&enf_id="+$_GET('enf_id') + "&n="+$_GET('n');
       					$(location).attr("href", url);
                }
        });

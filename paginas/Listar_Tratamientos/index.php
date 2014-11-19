@@ -24,11 +24,11 @@ Cargando
             
 			<div class="clColum-esc-4 clColum-mov-6">
 
-				<h2 style="text-align:center;" >Lista de Tratamientos</h2>
+				<h2 style="text-align:center;" id="h2lTratamientos" >Lista de Tratamientos</h2>
 				<div id="divListaTrata" >                 
                  <!-- Aca se genera el codigo dinamicamente -->
 				</div>	
-                <p><a href="#" onClick="nTratamiento($_GET('enf_id'));return false;">Nuevo tratamiento</a></p>
+                <p><a href="#" onClick="nTratamiento($_GET('enf_id'),$_GET('n'));return false;">Nuevo tratamiento</a></p>
 
 			</div>
             

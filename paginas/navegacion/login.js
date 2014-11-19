@@ -33,8 +33,10 @@ function logear(email,contrasena){
                success:  function (response) {
                        msgMostrar(response.msg,response.tipo);
 					   cargarBarra(0);
-					   $("#venModaIngresar").hide();
-					   location.reload();
+					   if(response.tipo==2){
+						$("#venModaIngresar").hide();
+						location.reload();
+					   }
                }
        });
 }
