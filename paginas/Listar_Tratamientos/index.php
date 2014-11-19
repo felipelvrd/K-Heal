@@ -14,42 +14,26 @@ Cargando
     
     <div class="clContenedor" id="main">
 		
-		<div class="clRow group" style="text-align:center">
-         <h2 id="h2_Enfermedad_Consultada">Enfermedad Consultada</h2>
-         
-			<div class="clColum-esc-1 clColum-mov-6" >
-			</div>
-<<<<<<< .mine
-			<div class="clColum-esc-4 clColum-mov-6">
-=======
-			<div class="clColum-esc-2 clColum-mov-6">
-				<h2>Enfermedad Consultada</h2>
-			</div>
-			<div class="clColum-esc-1 clColum-mov-6">
-			</div>
-		</div>
-		<div class="clRow" >
-			<div class="clColum-esc-2 clColum-mov-6" >
-			</div>
-			<div class="clColum-esc-2 clColum-mov-6">
-				<div id="divFichaEnfermConsTrata">&nbsp;Datos en ficha tecnica de la Enfermedad</div>
-			</div>
-			<div class="clColum-esc-1 clColum-mov-6">
-			</div>
-		</div>
 		<div class="clRow">
-			<div class="clColum-esc-2 clColum-mov-6" >
-			</div>
-			<div style="width:80%; margin:auto; ">
->>>>>>> .r149
-				<h2>Lista de Tratamientos</h2>
+        
+            <div class="clRow " style="text-align:center">
+            <h2 id="h2_Enfermedad_Consultada">Enfermedad Consultada</h2>
+            <div>
+
+			<div class="clColum-esc-1 clColum-mov-6" ></div>
+            
+			<div class="clColum-esc-4 clColum-mov-6">
+
+				<h2 style="text-align:center;" >Lista de Tratamientos</h2>
 				<div id="divListaTrata" >                 
                  <!-- Aca se genera el codigo dinamicamente -->
 				</div>	
                 <p><a href="#" onClick="nTratamiento($_GET('enf_id'));return false;">Nuevo tratamiento</a></p>
 
 			</div>
-			<div class="clColum-esc-1 clColum-mov-6">
-			</div>
-		</div>
+            
+			<div class="clColum-esc-1 clColum-mov-6"></div>
+            
+         </div>  
+
 	</div>
