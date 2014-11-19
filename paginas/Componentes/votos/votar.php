@@ -12,7 +12,7 @@ if($conexion->Conectar()==true){
 	$msg;
 	try{
 		if(!isset($_SESSION['idUsuario'])){
-			throw new Exception("Necesita estar logueado para poder votar");
+			throw new Exception("Necesita acceder para poder votar");
 		}
 		//Verifico si el correo ya esta registrado
 		if($resultado=mysqli_query($conexion->conect,"Select id from khlevaluacionestratamientos where idTratamiento = $idTratamiento and idUsuario=$idUsuario;"))

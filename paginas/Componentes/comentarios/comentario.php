@@ -14,7 +14,7 @@ if($accion==1){
 	if($conexion->Conectar()==true){
 		try{
 			if(!isset($_SESSION['idUsuario'])){
-				throw new Exception("Necesita estar logueado para poder comentar");
+				throw new Exception("Necesita acceder para poder comentar");
 			}
 			if($resultado=mysqli_query($conexion->conect,"INSERT INTO hklcomentarios (Descripcion, IdTratamientos, IdUsuario,Fecha) VALUES ('$Descripcion',$IdTratamientos,$idUsuario,'$Fecha');")){
 				$msg=array("msg"=>"Comentario registrado satisfactoriamente", "tipo" => 2);
@@ -35,7 +35,15 @@ else if ($accion==2){
 	$conexion= new DBManager();//Instancia de la Conexion a BD
 	if($conexion->Conectar()==true){
 		//Si la consulta produjo resultados
-		if($resultado=mysqli_query($conexion->conect,"SELECT distinct(c.Descripcion),c.Id, c.Fecha, u.Nombre FROM hklcomentarios c inner join khlusuarios u on c.IdUsuario = u.Id  where IdTratamientos = $IdTratamientos;")){
+		if($resultado=mysqli_query($conexion->conect,"SELECT DISTINCT (
+														c.Descripcion
+														), c.Id, c.Fecha, u.Nombre
+														FROM hklcomentarios c
+														INNER JOIN khlusuarios u ON c.IdUsuario = u.Id
+														LEFT JOIN khlevaluacionescomentarios e ON c.id = e.IdComentario
+														WHERE IdTratamientos =$IdTratamientos
+														GROUP BY e.IdComentario
+														ORDER BY COUNT( e.id ) desc;")){
 			//Si el resultado tiene mas de 0 columnas
 			if($resultado->num_rows!=0){
 				//Si todavia hay filas del resultado por procesar

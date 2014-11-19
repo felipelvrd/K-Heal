@@ -11,7 +11,7 @@ $conexion= new DBManager();//Instancia de la Conexion a BD
 if($conexion->Conectar()==true){
 	try{
 		if(!isset($_SESSION['idUsuario'])){
-			throw new Exception("Necesita estar logueado para poder votar");
+			throw new Exception("Necesita acceder para poder votar");
 		}
 		//Verifico si el correo ya esta registrado
 		if($resultado=mysqli_query($conexion->conect,"Select id from khlevaluacionescomentarios where IdComentario = $IdComentario and idUsuario=$idUsuario;"))

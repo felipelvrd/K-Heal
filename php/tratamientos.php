@@ -57,7 +57,12 @@ else if($Accion==2){
 		try{	
 			//Listo los tratamientos
 			header('charset = latin1_spanish_ci');
-			if($resultado=mysqli_query($conexion->conect,"Select * from khltratamientos where idEnfermedad = $IdEnfermedad")){
+			if($resultado=mysqli_query($conexion->conect,"SELECT t . * 
+														FROM khltratamientos t
+														LEFT JOIN khlevaluacionestratamientos e ON t.id = e.idTratamiento
+														WHERE t.idEnfermedad = $IdEnfermedad
+														GROUP BY e.idTratamiento
+														order by count(e.id) desc;")){
 				//Si el resultado tiene mas de 0 columnas
 				
 				include_once("clTratamiento.php");

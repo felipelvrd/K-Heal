@@ -39,7 +39,7 @@ function nTratamiento(enf_id){
 							$(location).attr("href", url);
 					   }
 						else
-							msgMostrar("Necesita estar logueado para poder publicar un tratamiento",1);
+							msgMostrar("Necesita acceder para poder publicar un tratamiento",1);
                }
        });
 }
