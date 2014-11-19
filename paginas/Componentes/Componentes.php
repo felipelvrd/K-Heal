@@ -71,7 +71,7 @@
 				   
                  
 				   <?php @session_start();if( isset($_SESSION['idUsuario']) && ($_POST["idUsu"]==$_SESSION['idUsuario'] || $_SESSION['Rol']=='A')){?><div class="group" style="width:50%; float:right;">
-                    <a href="index.php?p=NuevoTratamiento&id_trat=<?php echo $_POST["id"] ?>&enf_id=<?php echo $_POST["idEnf"];?>" style="margin-right:5px; line-height:25px; text-decoration:none;">Editar</a>
+                    <a href="index.php?p=NuevoTratamiento&id_trat=<?php echo $_POST["id"] ?>&enf_id=<?php echo $_POST["idEnf"];?>&n=<?php echo $_POST["n"]?>" style="margin-right:5px; line-height:25px; text-decoration:none;">Editar</a>
                  </div>        <?php } ?>
 				   
 				 
