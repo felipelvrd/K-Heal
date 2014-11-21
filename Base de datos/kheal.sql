@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 19-11-2014 a las 18:43:47
+-- Tiempo de generación: 20-11-2014 a las 20:34:20
 -- Versión del servidor: 5.5.40
 -- Versión de PHP: 5.4.4-14+deb7u14
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `hklcomentarios` (
   PRIMARY KEY (`Id`),
   KEY `FK_hklcomentarios_1` (`IdTratamientos`),
   KEY `FK_hklcomentarios_2` (`IdUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con los comentarios de los tratamientos publicados.' AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci COMMENT='Tabla con los comentarios de los tratamientos publicados.' AUTO_INCREMENT=38 ;
 
 --
 -- Volcado de datos para la tabla `hklcomentarios`
@@ -72,7 +72,11 @@ INSERT INTO `hklcomentarios` (`Id`, `Descripcion`, `IdTratamientos`, `IdUsuario`
 (30, ' Los jabones antibacterianos no resultan particularmente beneficiosos y si bien los jabones abrasivos pueden secar mejor las lesiones pueden tambien irritar la piel. ', 17, 25, '2014-11-18 00:00:00'),
 (31, 'tÃ­lde Ã±', 12, 31, '2014-11-19 22:53:56'),
 (32, 'asdf asdf asdf asdf', 10, 40, '2014-11-19 23:55:15'),
-(33, '', 10, 31, '2014-11-20 00:16:09');
+(33, '', 10, 31, '2014-11-20 00:16:09'),
+(34, 'comentario', 2, 25, '2014-11-20 17:28:52'),
+(35, 'comentario', 2, 25, '2014-11-20 17:29:16'),
+(36, 'comentario', 2, 25, '2014-11-20 17:31:48'),
+(37, 'Excelente!!! <b>Es genial</b>', 61, 41, '2014-11-21 02:31:21');
 
 --
 -- Disparadores `hklcomentarios`
@@ -150,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `khlevaluacionescomentarios` (
   PRIMARY KEY (`Id`) USING BTREE,
   UNIQUE KEY `Index_4` (`IdUsuario`,`IdComentario`),
   KEY `FK_khlevaluacionescomentarios_2` (`IdComentario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los comentarios de los tratamientos.' AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los comentarios de los tratamientos.' AUTO_INCREMENT=37 ;
 
 --
 -- Volcado de datos para la tabla `khlevaluacionescomentarios`
@@ -179,7 +183,8 @@ INSERT INTO `khlevaluacionescomentarios` (`Id`, `IdUsuario`, `IdComentario`, `Ti
 (32, 25, 18, 'P'),
 (33, 31, 20, 'P'),
 (34, 31, 4, 'P'),
-(35, 40, 32, 'P');
+(35, 40, 32, 'P'),
+(36, 41, 37, 'P');
 
 --
 -- Disparadores `khlevaluacionescomentarios`
@@ -215,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `khlevaluacionestratamientos` (
   PRIMARY KEY (`Id`) USING BTREE,
   UNIQUE KEY `Index_4` (`idTratamiento`,`idUsuario`),
   KEY `FK_khlevaluacionestratamientos_2` (`idUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los tratamientos publicados.' AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las evaluaciones a los tratamientos publicados.' AUTO_INCREMENT=25 ;
 
 --
 -- Volcado de datos para la tabla `khlevaluacionestratamientos`
@@ -231,7 +236,8 @@ INSERT INTO `khlevaluacionestratamientos` (`Id`, `idUsuario`, `idTratamiento`, `
 (20, 1, 10, 'P'),
 (21, 1, 11, 'P'),
 (22, 1, 19, 'P'),
-(23, 31, 10, 'N');
+(23, 31, 10, 'N'),
+(24, 41, 61, 'P');
 
 --
 -- Disparadores `khlevaluacionestratamientos`
@@ -267,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `khlnotificaciones` (
   `IdUsuario` int(11) NOT NULL COMMENT 'Id del usuario que pertenece la notificacion.',
   PRIMARY KEY (`Id`),
   KEY `FK_khlnotificaciones_1` (`IdUsuario`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las notificaciones a los usuarios.' AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con las notificaciones a los usuarios.' AUTO_INCREMENT=42 ;
 
 --
 -- Volcado de datos para la tabla `khlnotificaciones`
@@ -294,7 +300,13 @@ INSERT INTO `khlnotificaciones` (`Id`, `Fecha`, `Estado`, `Descripcion`, `IdUsua
 (32, '2014-11-19 17:24:49', 'P', 'El usuario test votó en un comentario que realizaste.', 25),
 (33, '2014-11-19 17:55:15', 'P', 'El usuario 123 comentó en un tratamiento que publicaste.', 26),
 (34, '2014-11-19 17:55:20', 'L', 'El usuario 123 votó en un comentario que realizaste.', 40),
-(35, '2014-11-19 18:16:12', 'P', 'El usuario test comentó en un tratamiento que publicaste.', 26);
+(35, '2014-11-19 18:16:12', 'P', 'El usuario test comentó en un tratamiento que publicaste.', 26),
+(36, '2014-11-20 11:28:18', 'P', 'El usuario harol comentó en un tratamiento que publicaste.', 24),
+(37, '2014-11-20 11:28:42', 'P', 'El usuario harol comentó en un tratamiento que publicaste.', 24),
+(38, '2014-11-20 11:31:15', 'P', 'El usuario harol comentó en un tratamiento que publicaste.', 24),
+(39, '2014-11-20 20:29:51', 'P', 'El usuario Luis votó en un tratamiento que publicaste.', 41),
+(40, '2014-11-20 20:30:47', 'P', 'El usuario Luis comentó en un tratamiento que publicaste.', 41),
+(41, '2014-11-20 20:30:52', 'P', 'El usuario Luis votó en un comentario que realizaste.', 41);
 
 -- --------------------------------------------------------
 
@@ -335,9 +347,9 @@ CREATE TABLE IF NOT EXISTS `khltratamientos` (
   `CantidadVisitas` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Cantidad de visitas que ha recibido el tratamiento.',
   `Fecha` datetime NOT NULL COMMENT 'Fecha en que se publico el tratamiento.',
   PRIMARY KEY (`Id`),
-  UNIQUE KEY `Index_1` (`IdUsuario`,`IdEnfermedad`) USING BTREE,
-  KEY `FK_khltratamientos_1` (`IdEnfermedad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC COMMENT='Tabla con los tratamientos de las enfermedades' AUTO_INCREMENT=57 ;
+  KEY `FK_khltratamientos_1` (`IdEnfermedad`),
+  KEY `Index_1` (`IdUsuario`,`IdEnfermedad`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 ROW_FORMAT=DYNAMIC COMMENT='Tabla con los tratamientos de las enfermedades' AUTO_INCREMENT=62 ;
 
 --
 -- Volcado de datos para la tabla `khltratamientos`
@@ -369,7 +381,9 @@ INSERT INTO `khltratamientos` (`Id`, `IdUsuario`, `IdEnfermedad`, `Nombre`, `Des
 (34, 40, 1, 'fff', 'fff', 'fff', 'fff', 'fff', 0, '2014-11-19 23:54:40'),
 (40, 29, 1, 'aasdf', 'asdf', 'asdf', 'asdf', 'asdf', 0, '2014-11-20 00:17:53'),
 (53, 31, 70, 'asdf', '', 'asdf', 'asdf', 'asdf', 0, '2014-11-20 00:28:05'),
-(54, 31, 1, 'asdffff', 'asdffff', 'asdffff', 'asdffff', 'asdffff', 0, '2014-11-20 00:35:07');
+(54, 31, 1, 'asdffff', 'asdffff', 'asdffff', 'asdffff', 'asdffff', 0, '2014-11-20 00:35:07'),
+(60, 25, 1, 'Test', 'test', 'test', 'test', '<u>test</u>', 0, '2014-11-21 02:19:15'),
+(61, 41, 1, 'test', 'prueba modificadoa', '', '', '', 0, '2014-11-21 02:30:35');
 
 -- --------------------------------------------------------
 
@@ -390,7 +404,7 @@ CREATE TABLE IF NOT EXISTS `khlusuarios` (
   `Facebook` varchar(100) DEFAULT NULL COMMENT 'Url del perfil de facebook del usuario.',
   PRIMARY KEY (`Id`),
   UNIQUE KEY `Correo` (`Correo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con los usuarios del sistema.' AUTO_INCREMENT=41 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla con los usuarios del sistema.' AUTO_INCREMENT=44 ;
 
 --
 -- Volcado de datos para la tabla `khlusuarios`
@@ -410,7 +424,10 @@ INSERT INTO `khlusuarios` (`Id`, `Nombre`, `Correo`, `Contrasena`, `Rol`, `Estad
 (35, 'Andes', 'elflaco23@hotmail.com', '181A2F37C574A2A1404C3CFBA0C60D52', 'U', 'A', NULL, NULL, NULL, NULL),
 (38, 'juan', 'juanlgu27@hotmail.com', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
 (39, '123', '123@123', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
-(40, '123', '1234@123', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL);
+(40, '123', '1234@123', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
+(41, 'Luis', 'Luis@gmail.com', 'D8F5ACF131F55C2CDDE63E46BFBBB5AD', 'U', 'A', NULL, NULL, NULL, NULL),
+(42, 'qwe', 'qwe', 'BCC50C9C9273481542F19C7EB68BE3CC', 'U', 'A', NULL, NULL, NULL, NULL),
+(43, '', '', '31D6CFE0D16AE931B73C59D7E0C089C0', 'U', 'A', NULL, NULL, NULL, NULL);
 
 --
 -- Restricciones para tablas volcadas
