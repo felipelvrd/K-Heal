@@ -33,14 +33,14 @@ function Listar_Tratamientos(id,NombreEnf){
        });
 }
 
-function nTratamiento(enf_id,id_enf){
+function nTratamiento(id_enf,enf_id){
        $.ajax({
                url:   'paginas/Listar_Tratamientos/isLogin.php',
                type:  'post',
 
                success:  function (response) {
                        if(response == 1){
-					   		url = "?p=NuevoTratamiento&enf_id="+enf_id+"&n="+id_enf;
+					   		url = "?p=NuevoTratamiento&n="+id_enf+"&enf_id="+enf_id;
 							$(location).attr("href", url);
 					   }
 						else

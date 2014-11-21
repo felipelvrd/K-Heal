@@ -35,15 +35,7 @@ else if ($accion==2){
 	$conexion= new DBManager();//Instancia de la Conexion a BD
 	if($conexion->Conectar()==true){
 		//Si la consulta produjo resultados
-		if($resultado=mysqli_query($conexion->conect,"SELECT DISTINCT (
-														c.Descripcion
-														), c.Id, c.Fecha, u.Nombre
-														FROM hklcomentarios c
-														INNER JOIN khlusuarios u ON c.IdUsuario = u.Id
-														LEFT JOIN khlevaluacionescomentarios e ON c.id = e.IdComentario
-														WHERE IdTratamientos =$IdTratamientos
-														GROUP BY e.IdComentario
-														ORDER BY COUNT( e.id ) desc;")){
+		if($resultado=mysqli_query($conexion->conect,"SELECT distinct(c.Descripcion),c.Id, c.Fecha, u.Nombre FROM hklcomentarios c inner join khlusuarios u on c.IdUsuario = u.Id  where IdTratamientos = $IdTratamientos;")){
 			//Si el resultado tiene mas de 0 columnas
 			if($resultado->num_rows!=0){
 				//Si todavia hay filas del resultado por procesar

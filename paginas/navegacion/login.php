@@ -18,7 +18,7 @@ if($conexion->Conectar()==true){
 				$row=$resultado->fetch_assoc();
 				//verifico si es usuario activo
 				if($row['estado']=='A'){
-					session_start();
+					@session_start();
 					$_SESSION['idUsuario']=$row['id'];
 					$_SESSION['Rol']=$row['Rol'];
 					$msg=array("msg" => "Login exitoso", "tipo"=>2);

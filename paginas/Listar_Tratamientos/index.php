@@ -28,7 +28,7 @@ Cargando
 				<div id="divListaTrata" >                 
                  <!-- Aca se genera el codigo dinamicamente -->
 				</div>	
-                <p><a href="#" onClick="nTratamiento($_GET('enf_id'),$_GET('n'));return false;">Nuevo tratamiento</a></p>
+                <p><a href="#" onClick="nTratamiento($_GET('n'),$_GET('enf_id'));return false;">Nuevo tratamiento</a></p>
 
 			</div>
             
